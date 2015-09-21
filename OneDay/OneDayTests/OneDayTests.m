@@ -2,8 +2,8 @@
 //  OneDayTests.m
 //  OneDayTests
 //
-//  Created by feng on 15/9/21.
-//  Copyright (c) 2015年 feng. All rights reserved.
+//  Created by 段志鑫 on 15/9/18.
+//  Copyright (c) 2015年 Mr.ZhixinDuan. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

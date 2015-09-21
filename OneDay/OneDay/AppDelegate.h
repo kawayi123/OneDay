@@ -2,15 +2,23 @@
 //  AppDelegate.h
 //  OneDay
 //
-//  Created by feng on 15/9/21.
-//  Copyright (c) 2015年 feng. All rights reserved.
+//  Created by 段志鑫 on 15/9/18.
+//  Copyright (c) 2015年 Mr.ZhixinDuan. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+- (void)saveContext;
+- (NSURL *)applicationDocumentsDirectory;
 
 
 @end
