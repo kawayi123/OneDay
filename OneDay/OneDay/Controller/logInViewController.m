@@ -9,6 +9,11 @@
 #import "logInViewController.h"
 
 @interface logInViewController ()
+- (IBAction)loginAction:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)forgetPasswordACtion:(UIButton *)sender forEvent:(UIEvent *)event;
+
+
+- (IBAction)signupAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
 @end
 
@@ -34,12 +39,14 @@
 }
 */
 
-- (IBAction)seePassWord:(UISwitch *)sender {
+- (IBAction)loginAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    
 }
 
-- (IBAction)remember:(UISwitch *)sender {
+- (IBAction)forgetPasswordACtion:(UIButton *)sender forEvent:(UIEvent *)event {
 }
 
-- (IBAction)logInAction:(UIButton *)sender {
+
+- (IBAction)signupAction:(UIButton *)sender forEvent:(UIEvent *)event {
 }
 @end
