@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="INI-wf-Ys5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AbK-GA-YN8">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -33,11 +33,17 @@
                                 <rect key="frame" x="92" y="126" width="267" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2m1-o6-5aw" id="JnV-At-usn"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="看不到我~看不到我~看不到我~" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ee2-va-hOq">
                                 <rect key="frame" x="92" y="179" width="267" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2m1-o6-5aw" id="K1P-4J-pD0"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4H-TJ-j2e">
                                 <rect key="frame" x="313" y="629" width="46" height="30"/>
@@ -50,16 +56,9 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="signupAction:forEvent:" destination="2m1-o6-5aw" eventType="touchUpInside" id="UKj-33-cVy"/>
                                     <segue destination="pWI-b9-2tc" kind="show" identifier="res" id="3zc-8a-igS"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKh-Jk-pzN">
-                                <rect key="frame" x="16" y="629" width="60" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="忘记密码？">
-                                    <color key="titleColor" red="1" green="0.58647905219999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hEz-zg-Kde">
                                 <rect key="frame" x="310" y="234" width="51" height="31"/>
@@ -96,6 +95,20 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginAction:forEvent:" destination="2m1-o6-5aw" eventType="touchUpInside" id="t7Z-7W-z7D"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKh-Jk-pzN">
+                                <rect key="frame" x="16" y="629" width="60" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="忘记密码？">
+                                    <color key="titleColor" red="1" green="0.58647905219999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="forgetPasswordACtion:forEvent:" destination="2m1-o6-5aw" eventType="touchUpInside" id="wFV-wg-7jI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99766583725002722" blue="0.96204682867932645" alpha="1" colorSpace="calibratedRGB"/>
@@ -149,6 +162,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="登陆" id="SRK-Ok-Qmi"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="displayPwd" destination="hEz-zg-Kde" id="lI2-eZ-gVf"/>
+                        <outlet property="loginTF" destination="UEp-57-yDG" id="azG-If-snx"/>
+                        <outlet property="pwdTF" destination="Ee2-va-hOq" id="MhU-6o-la3"/>
+                        <outlet property="rememberPwd" destination="tfp-eu-Veh" id="J2P-Yy-QNY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZl-Y2-Era" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -173,31 +192,49 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pWI-b9-2tc" id="gdY-wg-Ldd"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请确认密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hoo-Dw-aBX">
                                 <rect key="frame" x="16" y="234" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pWI-b9-2tc" id="UzZ-0H-Lmd"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入邮箱" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qr5-ZZ-szQ">
                                 <rect key="frame" x="16" y="294" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pWI-b9-2tc" id="Qve-V8-FcK"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="昵称" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PgU-zP-JgZ">
                                 <rect key="frame" x="16" y="377" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pWI-b9-2tc" id="H6s-4G-DL1"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e3L-9X-pnW">
                                 <rect key="frame" x="16" y="434" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pWI-b9-2tc" id="Jfw-Lt-7YE"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="个性签名，可不填" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZXj-Fx-F8t">
                                 <rect key="frame" x="16" y="492" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pWI-b9-2tc" id="r4V-yn-VTS"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPt-M1-eTc">
                                 <rect key="frame" x="16" y="602" width="343" height="45"/>
@@ -207,11 +244,17 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signupAction:forEvent:" destination="pWI-b9-2tc" eventType="touchUpInside" id="0hr-q1-AoA"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OBP-LL-A60">
                                 <rect key="frame" x="16" y="174" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pWI-b9-2tc" id="5GV-32-6la"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注册信息" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1A-MG-ZW6">
                                 <rect key="frame" x="153" y="77" width="68" height="21"/>
@@ -271,6 +314,15 @@
                     </view>
                     <navigationItem key="navigationItem" title="注册" id="PiW-gd-3jl"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="PersonalsignatureTF" destination="ZXj-Fx-F8t" id="Q1z-RS-H4N"/>
+                        <outlet property="confirmPwdTF" destination="hoo-Dw-aBX" id="whP-k4-kWK"/>
+                        <outlet property="emailTF" destination="Qr5-ZZ-szQ" id="omX-Oc-vKU"/>
+                        <outlet property="nickNameTF" destination="PgU-zP-JgZ" id="xfj-Bd-QSe"/>
+                        <outlet property="passwordTF" destination="OBP-LL-A60" id="I4A-vH-g2E"/>
+                        <outlet property="phoneNUmberTF" destination="e3L-9X-pnW" id="Y40-Lc-CUP"/>
+                        <outlet property="usernameTF" destination="iVu-cA-lhh" id="Qbk-f3-TH7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drB-FF-o8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -789,7 +841,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zmW-rJ-3cd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-967.5" y="373.5"/>
+            <point key="canvasLocation" x="64.5" y="297.5"/>
         </scene>
         <!--settingUp-->
         <scene sceneID="D8a-O8-bEQ">
@@ -869,7 +921,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Skb-Ox-Lgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-491.5" y="373.5"/>
+            <point key="canvasLocation" x="540.5" y="297.5"/>
         </scene>
         <!--个人资料-->
         <scene sceneID="SZG-aI-YhC">
@@ -1016,7 +1068,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1O-EP-wy4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-967.5" y="1179.5"/>
+            <point key="canvasLocation" x="64.5" y="1103.5"/>
         </scene>
         <!--联系我们-->
         <scene sceneID="HmH-0d-8Ur">
@@ -1062,7 +1114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fS-jY-Bvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-491.5" y="1179.5"/>
+            <point key="canvasLocation" x="540.5" y="1103.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3tN-Dc-qzu">
@@ -1128,7 +1180,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择一个喜欢的颜色：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fih-Dj-uC9">
-                                <rect key="frame" x="49" y="499" width="170" height="20.5"/>
+                                <rect key="frame" x="49" y="499" width="170" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1303,7 +1355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFU-kc-zPD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-13.5" y="373.5"/>
+            <point key="canvasLocation" x="1018.5" y="297.5"/>
         </scene>
         <!--日程列表-->
         <scene sceneID="fPD-XU-m0v">
@@ -1467,7 +1519,7 @@
         <!--introduce-->
         <scene sceneID="Nk3-37-jyq">
             <objects>
-                <viewController title="introduce" id="SyP-M0-54a" sceneMemberID="viewController">
+                <viewController title="introduce" id="SyP-M0-54a" customClass="SplashscreenViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r3t-M1-AX8"/>
                         <viewControllerLayoutGuide type="bottom" id="DO2-kq-1C4"/>
@@ -1481,7 +1533,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHX-kT-UsM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="944.5" y="-1269.5"/>
+            <point key="canvasLocation" x="-865.5" y="297.5"/>
         </scene>
         <!--发布-->
         <scene sceneID="8QZ-vq-28z">
@@ -1506,7 +1558,7 @@
         <!--Navigation Controller-->
         <scene sceneID="qci-YF-o3g">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C5K-z2-LNO" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="nav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="C5K-z2-LNO" customClass="navigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="owX-Cf-0yb">
@@ -1520,7 +1572,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C05-yv-gig" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1435.5" y="373.5"/>
+            <point key="canvasLocation" x="-403.5" y="297.5"/>
         </scene>
     </scenes>
     <resources>

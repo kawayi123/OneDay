@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface logInViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *loginTF;
+@property (weak, nonatomic) IBOutlet UITextField *pwdTF;
+@property (weak, nonatomic) IBOutlet UISwitch *displayPwd;
+@property (weak, nonatomic) IBOutlet UISwitch *rememberPwd;
 
 @end
