@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		880DDA981BB0EE5E0018C555 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880DDA971BB0EE5E0018C555 /* AudioToolbox.framework */; };
+		880DDA9A1BB0EE6C0018C555 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880DDA991BB0EE6C0018C555 /* SystemConfiguration.framework */; };
+		880DDA9C1BB0EE7A0018C555 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 880DDA9B1BB0EE7A0018C555 /* libsqlite3.dylib */; };
+		880DDA9F1BB0EF510018C555 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880DDA9D1BB0EF510018C555 /* Bolts.framework */; };
+		880DDAA01BB0EF510018C555 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880DDA9E1BB0EF510018C555 /* Parse.framework */; };
 		8B6D79C21BAFACEC0082DFF3 /* 背景.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B6D79C11BAFACEC0082DFF3 /* 背景.png */; };
 		8B6D79DF1BAFF7110082DFF3 /* calendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6D79CC1BAFF7110082DFF3 /* calendarViewController.m */; };
 		8B6D79E01BAFF7110082DFF3 /* dayListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6D79CE1BAFF7110082DFF3 /* dayListViewController.m */; };
@@ -44,6 +49,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		880DDA971BB0EE5E0018C555 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		880DDA991BB0EE6C0018C555 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		880DDA9B1BB0EE7A0018C555 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		880DDA9D1BB0EF510018C555 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		880DDA9E1BB0EF510018C555 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		8B6D79C11BAFACEC0082DFF3 /* 背景.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "背景.png"; sourceTree = "<group>"; };
 		8B6D79CB1BAFF7110082DFF3 /* calendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calendarViewController.h; sourceTree = "<group>"; };
 		8B6D79CC1BAFF7110082DFF3 /* calendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = calendarViewController.m; sourceTree = "<group>"; };
@@ -96,6 +106,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				880DDA9F1BB0EF510018C555 /* Bolts.framework in Frameworks */,
+				880DDAA01BB0EF510018C555 /* Parse.framework in Frameworks */,
+				880DDA9C1BB0EE7A0018C555 /* libsqlite3.dylib in Frameworks */,
+				880DDA9A1BB0EE6C0018C555 /* SystemConfiguration.framework in Frameworks */,
+				880DDA981BB0EE5E0018C555 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +230,11 @@
 		8B95AC521BAC2339001D54E2 = {
 			isa = PBXGroup;
 			children = (
+				880DDA9B1BB0EE7A0018C555 /* libsqlite3.dylib */,
+				880DDA9D1BB0EF510018C555 /* Bolts.framework */,
+				880DDA9E1BB0EF510018C555 /* Parse.framework */,
+				880DDA991BB0EE6C0018C555 /* SystemConfiguration.framework */,
+				880DDA971BB0EE5E0018C555 /* AudioToolbox.framework */,
 				8B95AC5D1BAC233A001D54E2 /* OneDay */,
 				8B95AC7A1BAC233A001D54E2 /* OneDayTests */,
 				8B95AC5C1BAC233A001D54E2 /* Products */,
@@ -521,6 +541,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = OneDay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -531,6 +555,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = OneDay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
