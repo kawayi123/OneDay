@@ -9,11 +9,10 @@
 #import "logInViewController.h"
 
 @interface logInViewController ()
-- (IBAction)loginAction:(UIButton *)sender forEvent:(UIEvent *)event;
-- (IBAction)forgetPasswordACtion:(UIButton *)sender forEvent:(UIEvent *)event;
 
-
+- (IBAction)forgetpwd:(UIButton *)sender forEvent:(UIEvent *)event;
 - (IBAction)signupAction:(UIButton *)sender forEvent:(UIEvent *)event;
+
 
 @end
 
@@ -28,7 +27,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    [theTextField resignFirstResponder];
+    return YES;
+}
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    [self.view endEditing:YES];
+}
 /*
 #pragma mark - Navigation
 
@@ -39,14 +46,11 @@
 }
 */
 
-- (IBAction)loginAction:(UIButton *)sender forEvent:(UIEvent *)event {
-    
-}
 
-- (IBAction)forgetPasswordACtion:(UIButton *)sender forEvent:(UIEvent *)event {
+- (IBAction)forgetpwd:(UIButton *)sender forEvent:(UIEvent *)event {
 }
-
 
 - (IBAction)signupAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    
 }
 @end

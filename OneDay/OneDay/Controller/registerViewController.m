@@ -43,15 +43,16 @@
 }
 */
 
+
 - (IBAction)signupAction:(UIButton *)sender forEvent:(UIEvent *)event {
     NSString *username = _usernameTF.text;
-    NSString *password = _passwordTF.text;
-    NSString *email = _emailTF.text;
-    NSString *nickName=_nickNameTF.text;
-    NSString *phoneNUmber=_phoneNUmberTF.text;
-    NSString *Personalsignature=_PersonalsignatureTF.text;
-    NSString *confirmPwd = _confirmPwdTF.text;
-    if ([username isEqualToString:@""]||[email isEqualToString:@""]||[password isEqualToString:@""]||[confirmPwd isEqualToString:@""]) {
+    NSString *password = _EnterpwdAction.text;
+    NSString *email = _email.text;
+    NSString *nickName=_nickname.text;
+    NSString *phoneNUmber=_phonenum.text;
+    NSString *Personalsignature=_Personalitysignature.text;
+    NSString *confirmPwd = _confrimpwd.text;
+    if ([username isEqualToString:@""]||[email isEqualToString:@""]||[password isEqualToString:@""]||[confirmPwd isEqualToString:@""]||[nickName isEqualToString:@""]||[phoneNUmber isEqualToString:@""]||[Personalsignature isEqualToString:@""]) {
         [Utilities popUpAlertViewWithMsg:@"请填写所有信息" andTitle:nil];
         return;
     }if (![password isEqualToString:confirmPwd]) {
@@ -62,7 +63,10 @@
     user.username = username;
     user.password = password;
     user.email = email;
-    user[@"greedCoin"] = @10000;
+    user[@"NickName"] = nickName;
+    user[@"PhoneNum"] = phoneNUmber;
+    user[@"PeoSignature"] = Personalsignature;
+
     //设置ActivityIndicatorView保护膜
     UIActivityIndicatorView *aiv = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     aiv.frame = self.view.bounds;
@@ -89,6 +93,5 @@
              [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
          }
      }];
-
 }
 @end

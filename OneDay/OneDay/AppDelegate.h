@@ -6,8 +6,6 @@
 //  Copyright (c) 2015年 Mr.ZhixinDuan. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
