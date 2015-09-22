@@ -14,4 +14,10 @@
 @property (weak, nonatomic) IBOutlet UISwitch *displayPwd;
 @property (weak, nonatomic) IBOutlet UISwitch *rememberPwd;
 
+@property (weak, nonatomic) IBOutlet UITextField *userName;
+@property (weak, nonatomic) IBOutlet UITextField *passWord;
+- (IBAction)seePassWord:(UISwitch *)sender;
+- (IBAction)remember:(UISwitch *)sender;
+- (IBAction)logInAction:(UIButton *)sender;
+
 @end
