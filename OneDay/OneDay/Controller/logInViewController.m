@@ -34,4 +34,12 @@
 }
 */
 
+- (IBAction)seePassWord:(UISwitch *)sender {
+}
+
+- (IBAction)remember:(UISwitch *)sender {
+}
+
+- (IBAction)logInAction:(UIButton *)sender {
+}
 @end

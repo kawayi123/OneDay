@@ -64,6 +64,19 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hEz-zg-Kde">
                                 <rect key="frame" x="310" y="234" width="51" height="31"/>
                                 <color key="onTintColor" red="1" green="0.58647905220006591" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="seePassWord:" destination="2m1-o6-5aw" eventType="valueChanged" id="Lfv-ID-SVS"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tfp-eu-Veh">
+                                <rect key="frame" x="99" y="234" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="mfo-Ph-Bdb"/>
+                                </constraints>
+                                <color key="onTintColor" red="1" green="0.58647905219999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="remember:" destination="2m1-o6-5aw" eventType="valueChanged" id="vsd-2E-MPa"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="显示密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O06-Cb-fsk">
                                 <rect key="frame" x="234" y="239" width="68" height="21"/>
@@ -77,13 +90,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tfp-eu-Veh">
-                                <rect key="frame" x="99" y="234" width="51" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="mfo-Ph-Bdb"/>
-                                </constraints>
-                                <color key="onTintColor" red="1" green="0.58647905219999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sb-gk-78t">
                                 <rect key="frame" x="16" y="378" width="343" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.58647905219999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -96,6 +102,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="logInAction:" destination="2m1-o6-5aw" eventType="touchUpInside" id="D9M-Ya-G1L"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99766583725002722" blue="0.96204682867932645" alpha="1" colorSpace="calibratedRGB"/>
@@ -149,6 +158,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="登陆" id="SRK-Ok-Qmi"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="passWord" destination="Ee2-va-hOq" id="Xct-18-fTb"/>
+                        <outlet property="userName" destination="UEp-57-yDG" id="3Pa-Zo-WQ0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZl-Y2-Era" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -171,6 +184,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="hK8-Xh-EtY"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OBP-LL-A60">
+                                <rect key="frame" x="16" y="174" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -208,11 +226,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OBP-LL-A60">
-                                <rect key="frame" x="16" y="174" width="343" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注册信息" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1A-MG-ZW6">
                                 <rect key="frame" x="153" y="77" width="68" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -271,6 +284,15 @@
                     </view>
                     <navigationItem key="navigationItem" title="注册" id="PiW-gd-3jl"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="DIYsignature" destination="ZXj-Fx-F8t" id="RRW-Ov-gdK"/>
+                        <outlet property="EmailWord" destination="Qr5-ZZ-szQ" id="nwM-Qw-Kou"/>
+                        <outlet property="passWord" destination="OBP-LL-A60" id="oKu-LQ-FEb"/>
+                        <outlet property="passWordAging" destination="hoo-Dw-aBX" id="h3c-5T-bO0"/>
+                        <outlet property="perName" destination="PgU-zP-JgZ" id="d6b-Ze-bOt"/>
+                        <outlet property="telPhone" destination="e3L-9X-pnW" id="3mN-f9-NDz"/>
+                        <outlet property="userName" destination="iVu-cA-lhh" id="gxg-15-wVb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drB-FF-o8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
