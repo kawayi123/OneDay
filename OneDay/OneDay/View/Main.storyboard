@@ -746,12 +746,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSW-v9-ZbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2090.5" y="1056.5"/>
+            <point key="canvasLocation" x="2902.5" y="1056.5"/>
         </scene>
         <!--leftView-->
         <scene sceneID="wjd-VB-xUq">
             <objects>
-                <viewController storyboardIdentifier="l" title="leftView" id="pIc-ik-KnP" customClass="leftViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="left" title="leftView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pIc-ik-KnP" customClass="leftViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nk3-sd-u5O"/>
                         <viewControllerLayoutGuide type="bottom" id="7px-5r-X46"/>
@@ -799,6 +799,15 @@
                                             </state>
                                             <connections>
                                                 <segue destination="hhR-nd-Xq4" kind="show" id="gtn-Oa-Ovj"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyp-SG-Xyr">
+                                            <rect key="frame" x="217" y="12" width="30" height="30"/>
+                                            <state key="normal" title="设置">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="vP3-5k-wnX" kind="show" id="M8c-a1-Xbh"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -850,15 +859,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="bx8-of-nRj" secondAttribute="trailing" constant="-16" id="1de-WZ-UYl"/>
                             <constraint firstItem="bx8-of-nRj" firstAttribute="leading" secondItem="Iyg-lx-I0O" secondAttribute="leadingMargin" constant="-16" id="4TI-jy-n9j"/>
                             <constraint firstItem="7px-5r-X46" firstAttribute="top" secondItem="bx8-of-nRj" secondAttribute="bottom" id="PoB-0W-yVR"/>
-                            <constraint firstItem="bx8-of-nRj" firstAttribute="top" secondItem="Nk3-sd-u5O" secondAttribute="bottom" constant="6" id="SVY-6k-Eua"/>
+                            <constraint firstItem="bx8-of-nRj" firstAttribute="top" secondItem="Nk3-sd-u5O" secondAttribute="bottom" constant="50" id="SVY-6k-Eua"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Z1c-Hs-adM">
-                        <barButtonItem key="rightBarButtonItem" systemItem="fastForward" id="Yqj-kv-BNL">
-                            <connections>
-                                <segue destination="auQ-tq-yAP" kind="show" id="KmG-bf-O59"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="fastForward" id="Yqj-kv-BNL"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
@@ -885,7 +890,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="My6-D0-MDI">
-                                <rect key="frame" x="16" y="154" width="255" height="45"/>
+                                <rect key="frame" x="16" y="154" width="343" height="45"/>
                                 <color key="backgroundColor" red="1" green="0.70627464669999995" blue="0.31095897719999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="qqq12345">
@@ -909,11 +914,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RSk-xc-Fg5">
-                                <rect key="frame" x="222" y="253" width="51" height="31"/>
+                                <rect key="frame" x="303" y="253" width="51" height="31"/>
                                 <color key="onTintColor" red="1" green="0.58647905219999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TJz-Os-aXv">
-                                <rect key="frame" x="222" y="318" width="51" height="31"/>
+                                <rect key="frame" x="303" y="320" width="51" height="31"/>
                                 <color key="onTintColor" red="1" green="0.58647905219999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MH-Xe-QoR">
@@ -933,18 +938,24 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OcF-3A-w3K">
-                                <rect key="frame" x="222" y="384" width="51" height="31"/>
+                                <rect key="frame" x="303" y="384" width="51" height="31"/>
                                 <color key="onTintColor" red="1" green="0.58647905219999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.92345482797247258" blue="0.77249271902741112" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="设置" id="u3V-Tc-zU5"/>
+                    <navigationItem key="navigationItem" title="设置" id="u3V-Tc-zU5">
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="m8R-6g-QW0">
+                            <connections>
+                                <action selector="backAction:" destination="auQ-tq-yAP" id="Ldu-Hq-5AH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Skb-Ox-Lgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-491.5" y="373.5"/>
+            <point key="canvasLocation" x="32.5" y="373.5"/>
         </scene>
         <!--个人资料-->
         <scene sceneID="SZG-aI-YhC">
@@ -1137,7 +1148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fS-jY-Bvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-491.5" y="1179.5"/>
+            <point key="canvasLocation" x="32.5" y="1179.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3tN-Dc-qzu">
@@ -1159,7 +1170,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KDj-Oq-nms" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1503.5" y="297.5"/>
+            <point key="canvasLocation" x="2315.5" y="297.5"/>
         </scene>
         <!--setDayList-->
         <scene sceneID="zgA-1v-gnv">
@@ -1378,7 +1389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFU-kc-zPD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-13.5" y="373.5"/>
+            <point key="canvasLocation" x="546.5" y="372.5"/>
         </scene>
         <!--日程列表-->
         <scene sceneID="fPD-XU-m0v">
@@ -1397,7 +1408,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bit-by-zg9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1503.5" y="1056.5"/>
+            <point key="canvasLocation" x="2315.5" y="1056.5"/>
         </scene>
         <!--星期-->
         <scene sceneID="CZX-7K-WMe">
@@ -1579,23 +1590,24 @@
             <point key="canvasLocation" x="1503.5" y="3414.5"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="qci-YF-o3g">
+        <scene sceneID="48R-EX-S3a">
             <objects>
-                <navigationController storyboardIdentifier="left" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="C5K-z2-LNO" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vP3-5k-wnX" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="4gF-ZV-xDa"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="owX-Cf-0yb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kgm-3f-c3i">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="pIc-ik-KnP" kind="relationship" relationship="rootViewController" id="jol-Lt-cI8"/>
+                        <segue destination="auQ-tq-yAP" kind="relationship" relationship="rootViewController" id="Mw5-ol-JeM"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C05-yv-gig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dpX-SW-dSe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1435.5" y="373.5"/>
+            <point key="canvasLocation" x="-492" y="373"/>
         </scene>
     </scenes>
     <resources>
