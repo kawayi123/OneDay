@@ -10,8 +10,6 @@
 	<string>OneDay</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>54B6147D0AC5C635D20403DA3925F2689C03BA96</key>
-		<string>https://github.com/OncEarn/test.git</string>
 		<key>A8E6B89408C599EEF2EBE3F01D382CC221996EFA</key>
 		<string>https://github.com/kawayi123/OneDay.git</string>
 	</dict>
@@ -19,8 +17,6 @@
 	<string>OneDay/OneDay.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>54B6147D0AC5C635D20403DA3925F2689C03BA96</key>
-		<string>../../../..</string>
 		<key>A8E6B89408C599EEF2EBE3F01D382CC221996EFA</key>
 		<string>../../..</string>
 	</dict>
@@ -36,17 +32,9 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>54B6147D0AC5C635D20403DA3925F2689C03BA96</string>
-			<key>IDESourceControlWCCName</key>
-			<string></string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>A8E6B89408C599EEF2EBE3F01D382CC221996EFA</string>
 			<key>IDESourceControlWCCName</key>
-			<string>2</string>
+			<string>git</string>
 		</dict>
 	</array>
 </dict>

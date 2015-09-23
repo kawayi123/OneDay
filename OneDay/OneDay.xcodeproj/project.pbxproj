@@ -7,46 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		880DDA981BB0EE5E0018C555 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880DDA971BB0EE5E0018C555 /* AudioToolbox.framework */; };
-		880DDA9A1BB0EE6C0018C555 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880DDA991BB0EE6C0018C555 /* SystemConfiguration.framework */; };
-		880DDA9C1BB0EE7A0018C555 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 880DDA9B1BB0EE7A0018C555 /* libsqlite3.dylib */; };
-		880DDA9F1BB0EF510018C555 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880DDA9D1BB0EF510018C555 /* Bolts.framework */; };
-		880DDAA01BB0EF510018C555 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880DDA9E1BB0EF510018C555 /* Parse.framework */; };
-		8B6D79DF1BAFF7110082DFF3 /* calendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6D79CC1BAFF7110082DFF3 /* calendarViewController.m */; };
-		8B6D79E01BAFF7110082DFF3 /* dayListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6D79CE1BAFF7110082DFF3 /* dayListViewController.m */; };
-		8B6D79E11BAFF7110082DFF3 /* introduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6D79D01BAFF7110082DFF3 /* introduceViewController.m */; };
-		8B6D79E21BAFF7110082DFF3 /* issueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6D79D21BAFF7110082DFF3 /* issueViewController.m */; };
-		8B6D79E31BAFF7110082DFF3 /* leftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6D79D41BAFF7110082DFF3 /* leftViewController.m */; };
-		8B6D79E41BAFF7110082DFF3 /* logInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6D79D61BAFF7110082DFF3 /* logInViewController.m */; };
-		8B6D79E51BAFF7110082DFF3 /* registerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6D79D81BAFF7110082DFF3 /* registerViewController.m */; };
-		8B6D79E61BAFF7110082DFF3 /* setDayListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6D79DA1BAFF7110082DFF3 /* setDayListViewController.m */; };
-		8B6D79E71BAFF7110082DFF3 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6D79DC1BAFF7110082DFF3 /* TabBarController.m */; };
-		8B6D79E81BAFF7110082DFF3 /* weekDaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6D79DE1BAFF7110082DFF3 /* weekDaysViewController.m */; };
-		8B6D79EB1BB033AD0082DFF3 /* pickDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6D79EA1BB033AD0082DFF3 /* pickDateViewController.m */; };
-		8B6D79EE1BB0341A0082DFF3 /* settingUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6D79ED1BB0341A0082DFF3 /* settingUpViewController.m */; };
-		8B6D79F11BB034800082DFF3 /* myAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6D79F01BB034800082DFF3 /* myAccountViewController.m */; };
-		8B6D79F41BB034EE0082DFF3 /* personalDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6D79F31BB034EE0082DFF3 /* personalDataViewController.m */; };
-		8B6D79F71BB035BE0082DFF3 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6D79F61BB035BE0082DFF3 /* TableViewCell.m */; };
-		8B6D79FA1BB0363B0082DFF3 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6D79F91BB0363B0082DFF3 /* CollectionViewCell.m */; };
 		8B95AC611BAC233A001D54E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B95AC601BAC233A001D54E2 /* main.m */; };
 		8B95AC641BAC233A001D54E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B95AC631BAC233A001D54E2 /* AppDelegate.m */; };
-		8B95AC671BAC233A001D54E2 /* OneDay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B95AC651BAC233A001D54E2 /* OneDay.xcdatamodeld */; };
-		8B95AC6D1BAC233A001D54E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B95AC6B1BAC233A001D54E2 /* Main.storyboard */; };
-		8B95AC6F1BAC233A001D54E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B95AC6E1BAC233A001D54E2 /* Images.xcassets */; };
-		8B95AC721BAC233A001D54E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B95AC701BAC233A001D54E2 /* LaunchScreen.xib */; };
 		8B95AC7E1BAC233A001D54E2 /* OneDayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B95AC7D1BAC233A001D54E2 /* OneDayTests.m */; };
-		B2A3C3901BB12BC1009E205D /* SplashscreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A3C38F1BB12BC1009E205D /* SplashscreenViewController.m */; };
-		B2A3C3991BB12DA9009E205D /* WZFlashButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A3C3981BB12DA9009E205D /* WZFlashButton.m */; };
-		B2A3C39E1BB12E1D009E205D /* HMImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A3C39B1BB12E1D009E205D /* HMImageModel.m */; };
-		B2A3C39F1BB12E1D009E205D /* UIView+FrameExpand.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A3C39D1BB12E1D009E205D /* UIView+FrameExpand.m */; };
-		B2A3C3AA1BB13546009E205D /* storageMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A3C3A71BB13546009E205D /* storageMgr.m */; };
-		B2A3C3AB1BB13546009E205D /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A3C3A91BB13546009E205D /* Utilities.m */; };
-		B2A3C3CE1BB1485E009E205D /* ECPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A3C3C21BB1485E009E205D /* ECPercentDrivenInteractiveTransition.m */; };
-		B2A3C3CF1BB1485E009E205D /* ECSlidingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A3C3C41BB1485E009E205D /* ECSlidingAnimationController.m */; };
-		B2A3C3D01BB1485E009E205D /* ECSlidingInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A3C3C71BB1485E009E205D /* ECSlidingInteractiveTransition.m */; };
-		B2A3C3D11BB1485E009E205D /* ECSlidingSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A3C3C91BB1485E009E205D /* ECSlidingSegue.m */; };
-		B2A3C3D21BB1485E009E205D /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A3C3CB1BB1485E009E205D /* ECSlidingViewController.m */; };
-		B2A3C3D31BB1485E009E205D /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A3C3CD1BB1485E009E205D /* UIViewController+ECSlidingViewController.m */; };
+		8BDD283C1BB234AA008BB393 /* ECPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28181BB234AA008BB393 /* ECPercentDrivenInteractiveTransition.m */; };
+		8BDD283D1BB234AA008BB393 /* ECSlidingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD281A1BB234AA008BB393 /* ECSlidingAnimationController.m */; };
+		8BDD283E1BB234AA008BB393 /* ECSlidingInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD281D1BB234AA008BB393 /* ECSlidingInteractiveTransition.m */; };
+		8BDD283F1BB234AA008BB393 /* ECSlidingSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD281F1BB234AA008BB393 /* ECSlidingSegue.m */; };
+		8BDD28401BB234AA008BB393 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28211BB234AA008BB393 /* ECSlidingViewController.m */; };
+		8BDD28411BB234AA008BB393 /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28231BB234AA008BB393 /* UIViewController+ECSlidingViewController.m */; };
+		8BDD28421BB234AA008BB393 /* WZFlashButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28251BB234AA008BB393 /* WZFlashButton.m */; };
+		8BDD28461BB234AA008BB393 /* OneDay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD282F1BB234AA008BB393 /* OneDay.xcdatamodeld */; };
+		8BDD28471BB234AA008BB393 /* storageMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28331BB234AA008BB393 /* storageMgr.m */; };
+		8BDD28481BB234AA008BB393 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28351BB234AA008BB393 /* Utilities.m */; };
+		8BDD28801BB23575008BB393 /* calendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28501BB23575008BB393 /* calendarViewController.m */; };
+		8BDD28811BB23575008BB393 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28521BB23575008BB393 /* CollectionViewCell.m */; };
+		8BDD28821BB23575008BB393 /* dayListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28541BB23575008BB393 /* dayListViewController.m */; };
+		8BDD28831BB23575008BB393 /* HMImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28561BB23575008BB393 /* HMImageModel.m */; };
+		8BDD28841BB23575008BB393 /* introduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28581BB23575008BB393 /* introduceViewController.m */; };
+		8BDD28851BB23575008BB393 /* issueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD285A1BB23575008BB393 /* issueViewController.m */; };
+		8BDD28861BB23575008BB393 /* leftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD285C1BB23575008BB393 /* leftViewController.m */; };
+		8BDD28871BB23575008BB393 /* logInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD285E1BB23575008BB393 /* logInViewController.m */; };
+		8BDD28881BB23575008BB393 /* myAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28601BB23575008BB393 /* myAccountViewController.m */; };
+		8BDD28891BB23575008BB393 /* navigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28621BB23575008BB393 /* navigationController.m */; };
+		8BDD288A1BB23575008BB393 /* personalDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28641BB23575008BB393 /* personalDataViewController.m */; };
+		8BDD288B1BB23575008BB393 /* pickDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28661BB23575008BB393 /* pickDateViewController.m */; };
+		8BDD288C1BB23575008BB393 /* registerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28681BB23575008BB393 /* registerViewController.m */; };
+		8BDD288D1BB23575008BB393 /* setDayListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD286A1BB23575008BB393 /* setDayListViewController.m */; };
+		8BDD288E1BB23575008BB393 /* settingUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD286C1BB23575008BB393 /* settingUpViewController.m */; };
+		8BDD288F1BB23575008BB393 /* SplashscreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD286E1BB23575008BB393 /* SplashscreenViewController.m */; };
+		8BDD28901BB23575008BB393 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28701BB23575008BB393 /* TabBarController.m */; };
+		8BDD28911BB23575008BB393 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28721BB23575008BB393 /* TableViewCell.m */; };
+		8BDD28921BB23575008BB393 /* UIView+FrameExpand.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28741BB23575008BB393 /* UIView+FrameExpand.m */; };
+		8BDD28931BB23575008BB393 /* weekDaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28761BB23575008BB393 /* weekDaysViewController.m */; };
+		8BDD28941BB23575008BB393 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD28781BB23575008BB393 /* 1.png */; };
+		8BDD28951BB23575008BB393 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD28791BB23575008BB393 /* 2.png */; };
+		8BDD28961BB23575008BB393 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD287A1BB23575008BB393 /* 3.png */; };
+		8BDD28971BB23575008BB393 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD287B1BB23575008BB393 /* 4.png */; };
+		8BDD28981BB23575008BB393 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD287C1BB23575008BB393 /* 5.png */; };
+		8BDD28991BB23575008BB393 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD287D1BB23575008BB393 /* Images.xcassets */; };
+		8BDD289A1BB23575008BB393 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD287E1BB23575008BB393 /* LaunchScreen.xib */; };
+		8BDD289B1BB23575008BB393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD287F1BB23575008BB393 /* Main.storyboard */; };
+		8BDD28A51BB2381E008BB393 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BDD28A31BB2381E008BB393 /* Bolts.framework */; };
+		8BDD28A61BB2381E008BB393 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BDD28A41BB2381E008BB393 /* Parse.framework */; };
+		8BDD28A81BB2382D008BB393 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BDD28A71BB2382D008BB393 /* libsqlite3.dylib */; };
+		8BDD28AA1BB2383F008BB393 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BDD28A91BB2383F008BB393 /* AudioToolbox.framework */; };
+		8BDD28AC1BB2384C008BB393 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BDD28AB1BB2384C008BB393 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,82 +66,89 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		880DDA971BB0EE5E0018C555 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		880DDA991BB0EE6C0018C555 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		880DDA9B1BB0EE7A0018C555 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		880DDA9D1BB0EF510018C555 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../Bolts.framework; sourceTree = "<group>"; };
-		880DDA9E1BB0EF510018C555 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Parse.framework; sourceTree = "<group>"; };
-		8B6D79CB1BAFF7110082DFF3 /* calendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calendarViewController.h; sourceTree = "<group>"; };
-		8B6D79CC1BAFF7110082DFF3 /* calendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = calendarViewController.m; sourceTree = "<group>"; };
-		8B6D79CD1BAFF7110082DFF3 /* dayListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dayListViewController.h; sourceTree = "<group>"; };
-		8B6D79CE1BAFF7110082DFF3 /* dayListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dayListViewController.m; sourceTree = "<group>"; };
-		8B6D79CF1BAFF7110082DFF3 /* introduceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = introduceViewController.h; sourceTree = "<group>"; };
-		8B6D79D01BAFF7110082DFF3 /* introduceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = introduceViewController.m; sourceTree = "<group>"; };
-		8B6D79D11BAFF7110082DFF3 /* issueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = issueViewController.h; sourceTree = "<group>"; };
-		8B6D79D21BAFF7110082DFF3 /* issueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = issueViewController.m; sourceTree = "<group>"; };
-		8B6D79D31BAFF7110082DFF3 /* leftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leftViewController.h; sourceTree = "<group>"; };
-		8B6D79D41BAFF7110082DFF3 /* leftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = leftViewController.m; sourceTree = "<group>"; };
-		8B6D79D51BAFF7110082DFF3 /* logInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logInViewController.h; sourceTree = "<group>"; };
-		8B6D79D61BAFF7110082DFF3 /* logInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = logInViewController.m; sourceTree = "<group>"; };
-		8B6D79D71BAFF7110082DFF3 /* registerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registerViewController.h; sourceTree = "<group>"; };
-		8B6D79D81BAFF7110082DFF3 /* registerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = registerViewController.m; sourceTree = "<group>"; };
-		8B6D79D91BAFF7110082DFF3 /* setDayListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = setDayListViewController.h; sourceTree = "<group>"; };
-		8B6D79DA1BAFF7110082DFF3 /* setDayListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = setDayListViewController.m; sourceTree = "<group>"; };
-		8B6D79DB1BAFF7110082DFF3 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
-		8B6D79DC1BAFF7110082DFF3 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
-		8B6D79DD1BAFF7110082DFF3 /* weekDaysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = weekDaysViewController.h; sourceTree = "<group>"; };
-		8B6D79DE1BAFF7110082DFF3 /* weekDaysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = weekDaysViewController.m; sourceTree = "<group>"; };
-		8B6D79E91BB033AD0082DFF3 /* pickDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pickDateViewController.h; sourceTree = "<group>"; };
-		8B6D79EA1BB033AD0082DFF3 /* pickDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pickDateViewController.m; sourceTree = "<group>"; };
-		8B6D79EC1BB0341A0082DFF3 /* settingUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingUpViewController.h; sourceTree = "<group>"; };
-		8B6D79ED1BB0341A0082DFF3 /* settingUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settingUpViewController.m; sourceTree = "<group>"; };
-		8B6D79EF1BB034800082DFF3 /* myAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myAccountViewController.h; sourceTree = "<group>"; };
-		8B6D79F01BB034800082DFF3 /* myAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myAccountViewController.m; sourceTree = "<group>"; };
-		8B6D79F21BB034EE0082DFF3 /* personalDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = personalDataViewController.h; sourceTree = "<group>"; };
-		8B6D79F31BB034EE0082DFF3 /* personalDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = personalDataViewController.m; sourceTree = "<group>"; };
-		8B6D79F51BB035BE0082DFF3 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
-		8B6D79F61BB035BE0082DFF3 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
-		8B6D79F81BB0363B0082DFF3 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
-		8B6D79F91BB0363B0082DFF3 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		8B95AC5B1BAC233A001D54E2 /* OneDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B95AC5F1BAC233A001D54E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B95AC601BAC233A001D54E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8B95AC621BAC233A001D54E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8B95AC631BAC233A001D54E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8B95AC661BAC233A001D54E2 /* OneDay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OneDay.xcdatamodel; sourceTree = "<group>"; };
-		8B95AC6C1BAC233A001D54E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8B95AC6E1BAC233A001D54E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
-		8B95AC711BAC233A001D54E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8B95AC771BAC233A001D54E2 /* OneDayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneDayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B95AC7C1BAC233A001D54E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B95AC7D1BAC233A001D54E2 /* OneDayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneDayTests.m; sourceTree = "<group>"; };
+		8BDD28171BB234AA008BB393 /* ECPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
+		8BDD28181BB234AA008BB393 /* ECPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
+		8BDD28191BB234AA008BB393 /* ECSlidingAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingAnimationController.h; sourceTree = "<group>"; };
+		8BDD281A1BB234AA008BB393 /* ECSlidingAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingAnimationController.m; sourceTree = "<group>"; };
+		8BDD281B1BB234AA008BB393 /* ECSlidingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingConstants.h; sourceTree = "<group>"; };
+		8BDD281C1BB234AA008BB393 /* ECSlidingInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingInteractiveTransition.h; sourceTree = "<group>"; };
+		8BDD281D1BB234AA008BB393 /* ECSlidingInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingInteractiveTransition.m; sourceTree = "<group>"; };
+		8BDD281E1BB234AA008BB393 /* ECSlidingSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingSegue.h; sourceTree = "<group>"; };
+		8BDD281F1BB234AA008BB393 /* ECSlidingSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingSegue.m; sourceTree = "<group>"; };
+		8BDD28201BB234AA008BB393 /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
+		8BDD28211BB234AA008BB393 /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
+		8BDD28221BB234AA008BB393 /* UIViewController+ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ECSlidingViewController.h"; sourceTree = "<group>"; };
+		8BDD28231BB234AA008BB393 /* UIViewController+ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ECSlidingViewController.m"; sourceTree = "<group>"; };
+		8BDD28241BB234AA008BB393 /* WZFlashButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZFlashButton.h; sourceTree = "<group>"; };
+		8BDD28251BB234AA008BB393 /* WZFlashButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZFlashButton.m; sourceTree = "<group>"; };
+		8BDD28271BB234AA008BB393 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		8BDD28301BB234AA008BB393 /* OneDay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OneDay.xcdatamodel; sourceTree = "<group>"; };
+		8BDD28321BB234AA008BB393 /* storageMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = storageMgr.h; sourceTree = "<group>"; };
+		8BDD28331BB234AA008BB393 /* storageMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = storageMgr.m; sourceTree = "<group>"; };
+		8BDD28341BB234AA008BB393 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		8BDD28351BB234AA008BB393 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		8BDD284F1BB23575008BB393 /* calendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calendarViewController.h; sourceTree = "<group>"; };
+		8BDD28501BB23575008BB393 /* calendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = calendarViewController.m; sourceTree = "<group>"; };
+		8BDD28511BB23575008BB393 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		8BDD28521BB23575008BB393 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		8BDD28531BB23575008BB393 /* dayListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dayListViewController.h; sourceTree = "<group>"; };
+		8BDD28541BB23575008BB393 /* dayListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dayListViewController.m; sourceTree = "<group>"; };
+		8BDD28551BB23575008BB393 /* HMImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMImageModel.h; sourceTree = "<group>"; };
+		8BDD28561BB23575008BB393 /* HMImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMImageModel.m; sourceTree = "<group>"; };
+		8BDD28571BB23575008BB393 /* introduceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = introduceViewController.h; sourceTree = "<group>"; };
+		8BDD28581BB23575008BB393 /* introduceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = introduceViewController.m; sourceTree = "<group>"; };
+		8BDD28591BB23575008BB393 /* issueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = issueViewController.h; sourceTree = "<group>"; };
+		8BDD285A1BB23575008BB393 /* issueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = issueViewController.m; sourceTree = "<group>"; };
+		8BDD285B1BB23575008BB393 /* leftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = leftViewController.h; sourceTree = "<group>"; };
+		8BDD285C1BB23575008BB393 /* leftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = leftViewController.m; sourceTree = "<group>"; };
+		8BDD285D1BB23575008BB393 /* logInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logInViewController.h; sourceTree = "<group>"; };
+		8BDD285E1BB23575008BB393 /* logInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = logInViewController.m; sourceTree = "<group>"; };
+		8BDD285F1BB23575008BB393 /* myAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myAccountViewController.h; sourceTree = "<group>"; };
+		8BDD28601BB23575008BB393 /* myAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myAccountViewController.m; sourceTree = "<group>"; };
+		8BDD28611BB23575008BB393 /* navigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = navigationController.h; sourceTree = "<group>"; };
+		8BDD28621BB23575008BB393 /* navigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = navigationController.m; sourceTree = "<group>"; };
+		8BDD28631BB23575008BB393 /* personalDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = personalDataViewController.h; sourceTree = "<group>"; };
+		8BDD28641BB23575008BB393 /* personalDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = personalDataViewController.m; sourceTree = "<group>"; };
+		8BDD28651BB23575008BB393 /* pickDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pickDateViewController.h; sourceTree = "<group>"; };
+		8BDD28661BB23575008BB393 /* pickDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pickDateViewController.m; sourceTree = "<group>"; };
+		8BDD28671BB23575008BB393 /* registerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registerViewController.h; sourceTree = "<group>"; };
+		8BDD28681BB23575008BB393 /* registerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = registerViewController.m; sourceTree = "<group>"; };
+		8BDD28691BB23575008BB393 /* setDayListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = setDayListViewController.h; sourceTree = "<group>"; };
+		8BDD286A1BB23575008BB393 /* setDayListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = setDayListViewController.m; sourceTree = "<group>"; };
+		8BDD286B1BB23575008BB393 /* settingUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingUpViewController.h; sourceTree = "<group>"; };
+		8BDD286C1BB23575008BB393 /* settingUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settingUpViewController.m; sourceTree = "<group>"; };
+		8BDD286D1BB23575008BB393 /* SplashscreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashscreenViewController.h; sourceTree = "<group>"; };
+		8BDD286E1BB23575008BB393 /* SplashscreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashscreenViewController.m; sourceTree = "<group>"; };
+		8BDD286F1BB23575008BB393 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		8BDD28701BB23575008BB393 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		8BDD28711BB23575008BB393 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		8BDD28721BB23575008BB393 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		8BDD28731BB23575008BB393 /* UIView+FrameExpand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameExpand.h"; sourceTree = "<group>"; };
+		8BDD28741BB23575008BB393 /* UIView+FrameExpand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameExpand.m"; sourceTree = "<group>"; };
+		8BDD28751BB23575008BB393 /* weekDaysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = weekDaysViewController.h; sourceTree = "<group>"; };
+		8BDD28761BB23575008BB393 /* weekDaysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = weekDaysViewController.m; sourceTree = "<group>"; };
+		8BDD28781BB23575008BB393 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		8BDD28791BB23575008BB393 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		8BDD287A1BB23575008BB393 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		8BDD287B1BB23575008BB393 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		8BDD287C1BB23575008BB393 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		8BDD287D1BB23575008BB393 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8BDD287E1BB23575008BB393 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		8BDD287F1BB23575008BB393 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		8BDD28A31BB2381E008BB393 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		8BDD28A41BB2381E008BB393 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		8BDD28A71BB2382D008BB393 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		8BDD28A91BB2383F008BB393 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		8BDD28AB1BB2384C008BB393 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B2A3C3751BB128A6009E205D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		B2A3C38E1BB12BC1009E205D /* SplashscreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashscreenViewController.h; sourceTree = "<group>"; };
-		B2A3C38F1BB12BC1009E205D /* SplashscreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashscreenViewController.m; sourceTree = "<group>"; };
-		B2A3C3911BB12C46009E205D /* WZFlashButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WZFlashButton.h; path = OneDay/WZFlashButton.h; sourceTree = SOURCE_ROOT; };
-		B2A3C3981BB12DA9009E205D /* WZFlashButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZFlashButton.m; path = OneDay/WZFlashButton.m; sourceTree = SOURCE_ROOT; };
-		B2A3C39A1BB12E1D009E205D /* HMImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMImageModel.h; sourceTree = "<group>"; };
-		B2A3C39B1BB12E1D009E205D /* HMImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMImageModel.m; sourceTree = "<group>"; };
-		B2A3C39C1BB12E1D009E205D /* UIView+FrameExpand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameExpand.h"; sourceTree = "<group>"; };
-		B2A3C39D1BB12E1D009E205D /* UIView+FrameExpand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameExpand.m"; sourceTree = "<group>"; };
-		B2A3C3A61BB13546009E205D /* storageMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = storageMgr.h; path = OneDay/storageMgr.h; sourceTree = SOURCE_ROOT; };
-		B2A3C3A71BB13546009E205D /* storageMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = storageMgr.m; path = OneDay/storageMgr.m; sourceTree = SOURCE_ROOT; };
-		B2A3C3A81BB13546009E205D /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utilities.h; path = OneDay/Utilities.h; sourceTree = SOURCE_ROOT; };
-		B2A3C3A91BB13546009E205D /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utilities.m; path = OneDay/Utilities.m; sourceTree = SOURCE_ROOT; };
-		B2A3C3AC1BB13566009E205D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = OneDay/Constants.h; sourceTree = SOURCE_ROOT; };
-		B2A3C3C11BB1485E009E205D /* ECPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECPercentDrivenInteractiveTransition.h; path = OneDay/ECSlidingViewController/ECPercentDrivenInteractiveTransition.h; sourceTree = SOURCE_ROOT; };
-		B2A3C3C21BB1485E009E205D /* ECPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECPercentDrivenInteractiveTransition.m; path = OneDay/ECSlidingViewController/ECPercentDrivenInteractiveTransition.m; sourceTree = SOURCE_ROOT; };
-		B2A3C3C31BB1485E009E205D /* ECSlidingAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECSlidingAnimationController.h; path = OneDay/ECSlidingViewController/ECSlidingAnimationController.h; sourceTree = SOURCE_ROOT; };
-		B2A3C3C41BB1485E009E205D /* ECSlidingAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECSlidingAnimationController.m; path = OneDay/ECSlidingViewController/ECSlidingAnimationController.m; sourceTree = SOURCE_ROOT; };
-		B2A3C3C51BB1485E009E205D /* ECSlidingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECSlidingConstants.h; path = OneDay/ECSlidingViewController/ECSlidingConstants.h; sourceTree = SOURCE_ROOT; };
-		B2A3C3C61BB1485E009E205D /* ECSlidingInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECSlidingInteractiveTransition.h; path = OneDay/ECSlidingViewController/ECSlidingInteractiveTransition.h; sourceTree = SOURCE_ROOT; };
-		B2A3C3C71BB1485E009E205D /* ECSlidingInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECSlidingInteractiveTransition.m; path = OneDay/ECSlidingViewController/ECSlidingInteractiveTransition.m; sourceTree = SOURCE_ROOT; };
-		B2A3C3C81BB1485E009E205D /* ECSlidingSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECSlidingSegue.h; path = OneDay/ECSlidingViewController/ECSlidingSegue.h; sourceTree = SOURCE_ROOT; };
-		B2A3C3C91BB1485E009E205D /* ECSlidingSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECSlidingSegue.m; path = OneDay/ECSlidingViewController/ECSlidingSegue.m; sourceTree = SOURCE_ROOT; };
-		B2A3C3CA1BB1485E009E205D /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECSlidingViewController.h; path = OneDay/ECSlidingViewController/ECSlidingViewController.h; sourceTree = SOURCE_ROOT; };
-		B2A3C3CB1BB1485E009E205D /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECSlidingViewController.m; path = OneDay/ECSlidingViewController/ECSlidingViewController.m; sourceTree = SOURCE_ROOT; };
-		B2A3C3CC1BB1485E009E205D /* UIViewController+ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+ECSlidingViewController.h"; path = "OneDay/ECSlidingViewController/UIViewController+ECSlidingViewController.h"; sourceTree = SOURCE_ROOT; };
-		B2A3C3CD1BB1485E009E205D /* UIViewController+ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+ECSlidingViewController.m"; path = "OneDay/ECSlidingViewController/UIViewController+ECSlidingViewController.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,11 +156,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				880DDA9F1BB0EF510018C555 /* Bolts.framework in Frameworks */,
-				880DDAA01BB0EF510018C555 /* Parse.framework in Frameworks */,
-				880DDA9C1BB0EE7A0018C555 /* libsqlite3.dylib in Frameworks */,
-				880DDA9A1BB0EE6C0018C555 /* SystemConfiguration.framework in Frameworks */,
-				880DDA981BB0EE5E0018C555 /* AudioToolbox.framework in Frameworks */,
+				8BDD28AC1BB2384C008BB393 /* SystemConfiguration.framework in Frameworks */,
+				8BDD28AA1BB2383F008BB393 /* AudioToolbox.framework in Frameworks */,
+				8BDD28A81BB2382D008BB393 /* libsqlite3.dylib in Frameworks */,
+				8BDD28A51BB2381E008BB393 /* Bolts.framework in Frameworks */,
+				8BDD28A61BB2381E008BB393 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,121 +174,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8B6D79961BAF917C0082DFF3 /* 3rd */ = {
-			isa = PBXGroup;
-			children = (
-				B2A3C3981BB12DA9009E205D /* WZFlashButton.m */,
-				B2A3C3911BB12C46009E205D /* WZFlashButton.h */,
-				B2A3C3761BB12948009E205D /* ECSlidingViewController */,
-			);
-			path = 3rd;
-			sourceTree = "<group>";
-		};
-		8B6D79971BAF917C0082DFF3 /* Constans */ = {
-			isa = PBXGroup;
-			children = (
-				B2A3C3AC1BB13566009E205D /* Constants.h */,
-			);
-			path = Constans;
-			sourceTree = "<group>";
-		};
-		8B6D79991BAF917C0082DFF3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				8B95AC651BAC233A001D54E2 /* OneDay.xcdatamodeld */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		8B6D799A1BAF917C0082DFF3 /* Untlity */ = {
-			isa = PBXGroup;
-			children = (
-				B2A3C3A61BB13546009E205D /* storageMgr.h */,
-				B2A3C3A71BB13546009E205D /* storageMgr.m */,
-				B2A3C3A81BB13546009E205D /* Utilities.h */,
-				B2A3C3A91BB13546009E205D /* Utilities.m */,
-			);
-			path = Untlity;
-			sourceTree = "<group>";
-		};
-		8B6D799B1BAF917C0082DFF3 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				8B95AC6B1BAC233A001D54E2 /* Main.storyboard */,
-				8B95AC701BAC233A001D54E2 /* LaunchScreen.xib */,
-				8B95AC6E1BAC233A001D54E2 /* Images.xcassets */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		8B6D79CA1BAFF7110082DFF3 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				B2A3C38D1BB12B02009E205D /* Splashscreen */,
-				8B6D79FB1BB0366B0082DFF3 /* logIn */,
-				8B6D79FC1BB036840082DFF3 /* leftSetting */,
-				8B6D79FD1BB036940082DFF3 /* tabView */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		8B6D79FB1BB0366B0082DFF3 /* logIn */ = {
-			isa = PBXGroup;
-			children = (
-				8B6D79CF1BAFF7110082DFF3 /* introduceViewController.h */,
-				8B6D79D01BAFF7110082DFF3 /* introduceViewController.m */,
-				8B6D79D51BAFF7110082DFF3 /* logInViewController.h */,
-				8B6D79D61BAFF7110082DFF3 /* logInViewController.m */,
-				8B6D79D71BAFF7110082DFF3 /* registerViewController.h */,
-				8B6D79D81BAFF7110082DFF3 /* registerViewController.m */,
-				8B6D79D91BAFF7110082DFF3 /* setDayListViewController.h */,
-				8B6D79DA1BAFF7110082DFF3 /* setDayListViewController.m */,
-			);
-			name = logIn;
-			sourceTree = "<group>";
-		};
-		8B6D79FC1BB036840082DFF3 /* leftSetting */ = {
-			isa = PBXGroup;
-			children = (
-				8B6D79D31BAFF7110082DFF3 /* leftViewController.h */,
-				8B6D79D41BAFF7110082DFF3 /* leftViewController.m */,
-				8B6D79EC1BB0341A0082DFF3 /* settingUpViewController.h */,
-				8B6D79ED1BB0341A0082DFF3 /* settingUpViewController.m */,
-				8B6D79EF1BB034800082DFF3 /* myAccountViewController.h */,
-				8B6D79F01BB034800082DFF3 /* myAccountViewController.m */,
-				8B6D79F21BB034EE0082DFF3 /* personalDataViewController.h */,
-				8B6D79F31BB034EE0082DFF3 /* personalDataViewController.m */,
-				8B6D79F51BB035BE0082DFF3 /* TableViewCell.h */,
-				8B6D79F61BB035BE0082DFF3 /* TableViewCell.m */,
-				8B6D79F81BB0363B0082DFF3 /* CollectionViewCell.h */,
-				8B6D79F91BB0363B0082DFF3 /* CollectionViewCell.m */,
-			);
-			name = leftSetting;
-			sourceTree = "<group>";
-		};
-		8B6D79FD1BB036940082DFF3 /* tabView */ = {
-			isa = PBXGroup;
-			children = (
-				8B6D79DB1BAFF7110082DFF3 /* TabBarController.h */,
-				8B6D79DC1BAFF7110082DFF3 /* TabBarController.m */,
-				8B6D79DD1BAFF7110082DFF3 /* weekDaysViewController.h */,
-				8B6D79DE1BAFF7110082DFF3 /* weekDaysViewController.m */,
-				8B6D79CB1BAFF7110082DFF3 /* calendarViewController.h */,
-				8B6D79CC1BAFF7110082DFF3 /* calendarViewController.m */,
-				8B6D79CD1BAFF7110082DFF3 /* dayListViewController.h */,
-				8B6D79CE1BAFF7110082DFF3 /* dayListViewController.m */,
-				8B6D79D11BAFF7110082DFF3 /* issueViewController.h */,
-				8B6D79D21BAFF7110082DFF3 /* issueViewController.m */,
-				8B6D79E91BB033AD0082DFF3 /* pickDateViewController.h */,
-				8B6D79EA1BB033AD0082DFF3 /* pickDateViewController.m */,
-			);
-			name = tabView;
-			sourceTree = "<group>";
-		};
 		8B95AC521BAC2339001D54E2 = {
 			isa = PBXGroup;
 			children = (
-				B2A3C3C01BB135E2009E205D /* framework */,
 				8B95AC5D1BAC233A001D54E2 /* OneDay */,
 				8B95AC7A1BAC233A001D54E2 /* OneDayTests */,
 				8B95AC5C1BAC233A001D54E2 /* Products */,
@@ -294,12 +195,13 @@
 		8B95AC5D1BAC233A001D54E2 /* OneDay */ = {
 			isa = PBXGroup;
 			children = (
-				8B6D79991BAF917C0082DFF3 /* Model */,
-				8B6D799B1BAF917C0082DFF3 /* View */,
-				8B6D79CA1BAFF7110082DFF3 /* Controller */,
-				8B6D79971BAF917C0082DFF3 /* Constans */,
-				8B6D799A1BAF917C0082DFF3 /* Untlity */,
-				8B6D79961BAF917C0082DFF3 /* 3rd */,
+				8BDD28A21BB23694008BB393 /* FrameWork */,
+				8BDD282E1BB234AA008BB393 /* Model */,
+				8BDD28771BB23575008BB393 /* View */,
+				8BDD284E1BB23575008BB393 /* Controller */,
+				8BDD28151BB234AA008BB393 /* 3rd */,
+				8BDD28261BB234AA008BB393 /* Constans */,
+				8BDD28311BB234AA008BB393 /* Untlity */,
 				8B95AC5E1BAC233A001D54E2 /* Supporting Files */,
 			);
 			path = OneDay;
@@ -334,50 +236,175 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B2A3C3761BB12948009E205D /* ECSlidingViewController */ = {
+		8BDD28151BB234AA008BB393 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
-				B2A3C3C11BB1485E009E205D /* ECPercentDrivenInteractiveTransition.h */,
-				B2A3C3C21BB1485E009E205D /* ECPercentDrivenInteractiveTransition.m */,
-				B2A3C3C31BB1485E009E205D /* ECSlidingAnimationController.h */,
-				B2A3C3C41BB1485E009E205D /* ECSlidingAnimationController.m */,
-				B2A3C3C51BB1485E009E205D /* ECSlidingConstants.h */,
-				B2A3C3C61BB1485E009E205D /* ECSlidingInteractiveTransition.h */,
-				B2A3C3C71BB1485E009E205D /* ECSlidingInteractiveTransition.m */,
-				B2A3C3C81BB1485E009E205D /* ECSlidingSegue.h */,
-				B2A3C3C91BB1485E009E205D /* ECSlidingSegue.m */,
-				B2A3C3CA1BB1485E009E205D /* ECSlidingViewController.h */,
-				B2A3C3CB1BB1485E009E205D /* ECSlidingViewController.m */,
-				B2A3C3CC1BB1485E009E205D /* UIViewController+ECSlidingViewController.h */,
-				B2A3C3CD1BB1485E009E205D /* UIViewController+ECSlidingViewController.m */,
+				8BDD28161BB234AA008BB393 /* ECSlidingViewController */,
+				8BDD28241BB234AA008BB393 /* WZFlashButton.h */,
+				8BDD28251BB234AA008BB393 /* WZFlashButton.m */,
 			);
-			name = ECSlidingViewController;
+			path = 3rd;
 			sourceTree = "<group>";
 		};
-		B2A3C38D1BB12B02009E205D /* Splashscreen */ = {
+		8BDD28161BB234AA008BB393 /* ECSlidingViewController */ = {
 			isa = PBXGroup;
 			children = (
-				B2A3C39A1BB12E1D009E205D /* HMImageModel.h */,
-				B2A3C39B1BB12E1D009E205D /* HMImageModel.m */,
-				B2A3C39C1BB12E1D009E205D /* UIView+FrameExpand.h */,
-				B2A3C39D1BB12E1D009E205D /* UIView+FrameExpand.m */,
-				B2A3C38E1BB12BC1009E205D /* SplashscreenViewController.h */,
-				B2A3C38F1BB12BC1009E205D /* SplashscreenViewController.m */,
+				8BDD28171BB234AA008BB393 /* ECPercentDrivenInteractiveTransition.h */,
+				8BDD28181BB234AA008BB393 /* ECPercentDrivenInteractiveTransition.m */,
+				8BDD28191BB234AA008BB393 /* ECSlidingAnimationController.h */,
+				8BDD281A1BB234AA008BB393 /* ECSlidingAnimationController.m */,
+				8BDD281B1BB234AA008BB393 /* ECSlidingConstants.h */,
+				8BDD281C1BB234AA008BB393 /* ECSlidingInteractiveTransition.h */,
+				8BDD281D1BB234AA008BB393 /* ECSlidingInteractiveTransition.m */,
+				8BDD281E1BB234AA008BB393 /* ECSlidingSegue.h */,
+				8BDD281F1BB234AA008BB393 /* ECSlidingSegue.m */,
+				8BDD28201BB234AA008BB393 /* ECSlidingViewController.h */,
+				8BDD28211BB234AA008BB393 /* ECSlidingViewController.m */,
+				8BDD28221BB234AA008BB393 /* UIViewController+ECSlidingViewController.h */,
+				8BDD28231BB234AA008BB393 /* UIViewController+ECSlidingViewController.m */,
+			);
+			path = ECSlidingViewController;
+			sourceTree = "<group>";
+		};
+		8BDD28261BB234AA008BB393 /* Constans */ = {
+			isa = PBXGroup;
+			children = (
+				8BDD28271BB234AA008BB393 /* Constants.h */,
+			);
+			path = Constans;
+			sourceTree = "<group>";
+		};
+		8BDD282E1BB234AA008BB393 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8BDD282F1BB234AA008BB393 /* OneDay.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8BDD28311BB234AA008BB393 /* Untlity */ = {
+			isa = PBXGroup;
+			children = (
+				8BDD28321BB234AA008BB393 /* storageMgr.h */,
+				8BDD28331BB234AA008BB393 /* storageMgr.m */,
+				8BDD28341BB234AA008BB393 /* Utilities.h */,
+				8BDD28351BB234AA008BB393 /* Utilities.m */,
+			);
+			path = Untlity;
+			sourceTree = "<group>";
+		};
+		8BDD284E1BB23575008BB393 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8BDD28B11BB23A64008BB393 /* cellAndNavigation */,
+				8BDD28B01BB23A18008BB393 /* tabView */,
+				8BDD28AF1BB239B9008BB393 /* leftSetting */,
+				8BDD28AE1BB23977008BB393 /* logIn */,
+				8BDD28AD1BB2392D008BB393 /* Splashscreen */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8BDD28771BB23575008BB393 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8BDD287F1BB23575008BB393 /* Main.storyboard */,
+				8BDD287E1BB23575008BB393 /* LaunchScreen.xib */,
+				8BDD287D1BB23575008BB393 /* Images.xcassets */,
+				8BDD28781BB23575008BB393 /* 1.png */,
+				8BDD28791BB23575008BB393 /* 2.png */,
+				8BDD287A1BB23575008BB393 /* 3.png */,
+				8BDD287B1BB23575008BB393 /* 4.png */,
+				8BDD287C1BB23575008BB393 /* 5.png */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8BDD28A21BB23694008BB393 /* FrameWork */ = {
+			isa = PBXGroup;
+			children = (
+				8BDD28AB1BB2384C008BB393 /* SystemConfiguration.framework */,
+				8BDD28A91BB2383F008BB393 /* AudioToolbox.framework */,
+				8BDD28A71BB2382D008BB393 /* libsqlite3.dylib */,
+				8BDD28A31BB2381E008BB393 /* Bolts.framework */,
+				8BDD28A41BB2381E008BB393 /* Parse.framework */,
+			);
+			name = FrameWork;
+			sourceTree = "<group>";
+		};
+		8BDD28AD1BB2392D008BB393 /* Splashscreen */ = {
+			isa = PBXGroup;
+			children = (
+				8BDD286D1BB23575008BB393 /* SplashscreenViewController.h */,
+				8BDD286E1BB23575008BB393 /* SplashscreenViewController.m */,
+				8BDD28731BB23575008BB393 /* UIView+FrameExpand.h */,
+				8BDD28741BB23575008BB393 /* UIView+FrameExpand.m */,
+				8BDD28551BB23575008BB393 /* HMImageModel.h */,
+				8BDD28561BB23575008BB393 /* HMImageModel.m */,
 			);
 			name = Splashscreen;
 			sourceTree = "<group>";
 		};
-		B2A3C3C01BB135E2009E205D /* framework */ = {
+		8BDD28AE1BB23977008BB393 /* logIn */ = {
 			isa = PBXGroup;
 			children = (
-				880DDA9B1BB0EE7A0018C555 /* libsqlite3.dylib */,
-				880DDA9D1BB0EF510018C555 /* Bolts.framework */,
-				880DDA9E1BB0EF510018C555 /* Parse.framework */,
-				880DDA991BB0EE6C0018C555 /* SystemConfiguration.framework */,
-				880DDA971BB0EE5E0018C555 /* AudioToolbox.framework */,
+				8BDD28571BB23575008BB393 /* introduceViewController.h */,
+				8BDD28581BB23575008BB393 /* introduceViewController.m */,
+				8BDD285D1BB23575008BB393 /* logInViewController.h */,
+				8BDD285E1BB23575008BB393 /* logInViewController.m */,
+				8BDD28671BB23575008BB393 /* registerViewController.h */,
+				8BDD28681BB23575008BB393 /* registerViewController.m */,
+				8BDD28691BB23575008BB393 /* setDayListViewController.h */,
+				8BDD286A1BB23575008BB393 /* setDayListViewController.m */,
 			);
-			name = framework;
-			path = OneDay;
+			name = logIn;
+			sourceTree = "<group>";
+		};
+		8BDD28AF1BB239B9008BB393 /* leftSetting */ = {
+			isa = PBXGroup;
+			children = (
+				8BDD285B1BB23575008BB393 /* leftViewController.h */,
+				8BDD285C1BB23575008BB393 /* leftViewController.m */,
+				8BDD285F1BB23575008BB393 /* myAccountViewController.h */,
+				8BDD28601BB23575008BB393 /* myAccountViewController.m */,
+				8BDD28631BB23575008BB393 /* personalDataViewController.h */,
+				8BDD28641BB23575008BB393 /* personalDataViewController.m */,
+				8BDD286B1BB23575008BB393 /* settingUpViewController.h */,
+				8BDD286C1BB23575008BB393 /* settingUpViewController.m */,
+			);
+			name = leftSetting;
+			sourceTree = "<group>";
+		};
+		8BDD28B01BB23A18008BB393 /* tabView */ = {
+			isa = PBXGroup;
+			children = (
+				8BDD284F1BB23575008BB393 /* calendarViewController.h */,
+				8BDD28501BB23575008BB393 /* calendarViewController.m */,
+				8BDD28531BB23575008BB393 /* dayListViewController.h */,
+				8BDD28541BB23575008BB393 /* dayListViewController.m */,
+				8BDD28591BB23575008BB393 /* issueViewController.h */,
+				8BDD285A1BB23575008BB393 /* issueViewController.m */,
+				8BDD28651BB23575008BB393 /* pickDateViewController.h */,
+				8BDD28661BB23575008BB393 /* pickDateViewController.m */,
+				8BDD286F1BB23575008BB393 /* TabBarController.h */,
+				8BDD28701BB23575008BB393 /* TabBarController.m */,
+				8BDD28751BB23575008BB393 /* weekDaysViewController.h */,
+				8BDD28761BB23575008BB393 /* weekDaysViewController.m */,
+			);
+			name = tabView;
+			sourceTree = "<group>";
+		};
+		8BDD28B11BB23A64008BB393 /* cellAndNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				8BDD28511BB23575008BB393 /* CollectionViewCell.h */,
+				8BDD28521BB23575008BB393 /* CollectionViewCell.m */,
+				8BDD28611BB23575008BB393 /* navigationController.h */,
+				8BDD28621BB23575008BB393 /* navigationController.m */,
+				8BDD28711BB23575008BB393 /* TableViewCell.h */,
+				8BDD28721BB23575008BB393 /* TableViewCell.m */,
+			);
+			name = cellAndNavigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,9 +487,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B95AC6D1BAC233A001D54E2 /* Main.storyboard in Resources */,
-				8B95AC721BAC233A001D54E2 /* LaunchScreen.xib in Resources */,
-				8B95AC6F1BAC233A001D54E2 /* Images.xcassets in Resources */,
+				8BDD28971BB23575008BB393 /* 4.png in Resources */,
+				8BDD28981BB23575008BB393 /* 5.png in Resources */,
+				8BDD28961BB23575008BB393 /* 3.png in Resources */,
+				8BDD289B1BB23575008BB393 /* Main.storyboard in Resources */,
+				8BDD289A1BB23575008BB393 /* LaunchScreen.xib in Resources */,
+				8BDD28991BB23575008BB393 /* Images.xcassets in Resources */,
+				8BDD28951BB23575008BB393 /* 2.png in Resources */,
+				8BDD28941BB23575008BB393 /* 1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,37 +512,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B6D79DF1BAFF7110082DFF3 /* calendarViewController.m in Sources */,
-				B2A3C3901BB12BC1009E205D /* SplashscreenViewController.m in Sources */,
-				8B6D79F41BB034EE0082DFF3 /* personalDataViewController.m in Sources */,
-				B2A3C3D11BB1485E009E205D /* ECSlidingSegue.m in Sources */,
-				B2A3C39E1BB12E1D009E205D /* HMImageModel.m in Sources */,
-				B2A3C3991BB12DA9009E205D /* WZFlashButton.m in Sources */,
-				8B6D79EB1BB033AD0082DFF3 /* pickDateViewController.m in Sources */,
-				8B6D79E31BAFF7110082DFF3 /* leftViewController.m in Sources */,
-				8B6D79EE1BB0341A0082DFF3 /* settingUpViewController.m in Sources */,
+				8BDD288D1BB23575008BB393 /* setDayListViewController.m in Sources */,
+				8BDD288F1BB23575008BB393 /* SplashscreenViewController.m in Sources */,
+				8BDD283E1BB234AA008BB393 /* ECSlidingInteractiveTransition.m in Sources */,
 				8B95AC641BAC233A001D54E2 /* AppDelegate.m in Sources */,
-				8B6D79FA1BB0363B0082DFF3 /* CollectionViewCell.m in Sources */,
-				B2A3C3D21BB1485E009E205D /* ECSlidingViewController.m in Sources */,
-				8B6D79E51BAFF7110082DFF3 /* registerViewController.m in Sources */,
-				8B6D79F11BB034800082DFF3 /* myAccountViewController.m in Sources */,
-				8B95AC671BAC233A001D54E2 /* OneDay.xcdatamodeld in Sources */,
-				B2A3C3CF1BB1485E009E205D /* ECSlidingAnimationController.m in Sources */,
-				B2A3C3AB1BB13546009E205D /* Utilities.m in Sources */,
-				B2A3C39F1BB12E1D009E205D /* UIView+FrameExpand.m in Sources */,
-				8B6D79E81BAFF7110082DFF3 /* weekDaysViewController.m in Sources */,
-				8B6D79E01BAFF7110082DFF3 /* dayListViewController.m in Sources */,
-				B2A3C3CE1BB1485E009E205D /* ECPercentDrivenInteractiveTransition.m in Sources */,
-				B2A3C3AA1BB13546009E205D /* storageMgr.m in Sources */,
-				8B6D79E11BAFF7110082DFF3 /* introduceViewController.m in Sources */,
-				8B6D79E61BAFF7110082DFF3 /* setDayListViewController.m in Sources */,
-				B2A3C3D31BB1485E009E205D /* UIViewController+ECSlidingViewController.m in Sources */,
-				8B6D79F71BB035BE0082DFF3 /* TableViewCell.m in Sources */,
-				8B6D79E21BAFF7110082DFF3 /* issueViewController.m in Sources */,
-				B2A3C3D01BB1485E009E205D /* ECSlidingInteractiveTransition.m in Sources */,
-				8B6D79E71BAFF7110082DFF3 /* TabBarController.m in Sources */,
-				8B6D79E41BAFF7110082DFF3 /* logInViewController.m in Sources */,
+				8BDD28841BB23575008BB393 /* introduceViewController.m in Sources */,
+				8BDD288A1BB23575008BB393 /* personalDataViewController.m in Sources */,
+				8BDD28831BB23575008BB393 /* HMImageModel.m in Sources */,
+				8BDD28871BB23575008BB393 /* logInViewController.m in Sources */,
+				8BDD28471BB234AA008BB393 /* storageMgr.m in Sources */,
+				8BDD28821BB23575008BB393 /* dayListViewController.m in Sources */,
+				8BDD28901BB23575008BB393 /* TabBarController.m in Sources */,
+				8BDD288E1BB23575008BB393 /* settingUpViewController.m in Sources */,
+				8BDD28401BB234AA008BB393 /* ECSlidingViewController.m in Sources */,
+				8BDD28911BB23575008BB393 /* TableViewCell.m in Sources */,
+				8BDD28861BB23575008BB393 /* leftViewController.m in Sources */,
+				8BDD28931BB23575008BB393 /* weekDaysViewController.m in Sources */,
+				8BDD283F1BB234AA008BB393 /* ECSlidingSegue.m in Sources */,
 				8B95AC611BAC233A001D54E2 /* main.m in Sources */,
+				8BDD28921BB23575008BB393 /* UIView+FrameExpand.m in Sources */,
+				8BDD28461BB234AA008BB393 /* OneDay.xcdatamodeld in Sources */,
+				8BDD288C1BB23575008BB393 /* registerViewController.m in Sources */,
+				8BDD283C1BB234AA008BB393 /* ECPercentDrivenInteractiveTransition.m in Sources */,
+				8BDD28881BB23575008BB393 /* myAccountViewController.m in Sources */,
+				8BDD28411BB234AA008BB393 /* UIViewController+ECSlidingViewController.m in Sources */,
+				8BDD28891BB23575008BB393 /* navigationController.m in Sources */,
+				8BDD28421BB234AA008BB393 /* WZFlashButton.m in Sources */,
+				8BDD28481BB234AA008BB393 /* Utilities.m in Sources */,
+				8BDD28851BB23575008BB393 /* issueViewController.m in Sources */,
+				8BDD28801BB23575008BB393 /* calendarViewController.m in Sources */,
+				8BDD28811BB23575008BB393 /* CollectionViewCell.m in Sources */,
+				8BDD283D1BB234AA008BB393 /* ECSlidingAnimationController.m in Sources */,
+				8BDD288B1BB23575008BB393 /* pickDateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,27 +564,6 @@
 			targetProxy = 8B95AC781BAC233A001D54E2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		8B95AC6B1BAC233A001D54E2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8B95AC6C1BAC233A001D54E2 /* Base */,
-			);
-			name = Main.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		8B95AC701BAC233A001D54E2 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8B95AC711BAC233A001D54E2 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			path = ..;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8B95AC7F1BAC233A001D54E2 /* Debug */ = {
@@ -643,6 +655,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/OneDay/Framework",
+					"$(PROJECT_DIR)/OneDay",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = OneDay/PrefixHeader.pch;
@@ -659,6 +673,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/OneDay/Framework",
+					"$(PROJECT_DIR)/OneDay",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = OneDay/PrefixHeader.pch;
@@ -735,14 +751,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		8B95AC651BAC233A001D54E2 /* OneDay.xcdatamodeld */ = {
+		8BDD282F1BB234AA008BB393 /* OneDay.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				8B95AC661BAC233A001D54E2 /* OneDay.xcdatamodel */,
+				8BDD28301BB234AA008BB393 /* OneDay.xcdatamodel */,
 			);
-			currentVersion = 8B95AC661BAC233A001D54E2 /* OneDay.xcdatamodel */;
-			name = OneDay.xcdatamodeld;
-			path = ../OneDay.xcdatamodeld;
+			currentVersion = 8BDD28301BB234AA008BB393 /* OneDay.xcdatamodel */;
+			path = OneDay.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
