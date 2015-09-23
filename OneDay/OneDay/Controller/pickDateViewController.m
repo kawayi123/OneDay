@@ -34,4 +34,30 @@
 }
 */
 
+- (IBAction)beginAction:(UIButton *)sender {
+    
+    _pickAlterView.hidden = NO;
+    
+}
+
+- (IBAction)remindAction:(UIButton *)sender {
+    
+    _pickAlterView.hidden = NO;
+}
+
+- (IBAction)cancelAction:(UIBarButtonItem *)sender {
+    
+    _pickAlterView.hidden = YES;
+    
+}
+
+- (IBAction)confirmAction:(UIBarButtonItem *)sender {
+    
+    _pickAlterView.hidden = YES;
+    NSDate *select = [_Datepicker date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy年MM月dd日 HH:mm"];
+    NSString *dateAndTime =  [dateFormatter stringFromDate:select];
+    _beginBtn.titleLabel.text = dateAndTime;
+}
 @end
