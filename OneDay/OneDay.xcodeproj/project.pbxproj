@@ -378,18 +378,18 @@
 		8BDD28B01BB23A18008BB393 /* tabView */ = {
 			isa = PBXGroup;
 			children = (
+				8BDD286F1BB23575008BB393 /* TabBarController.h */,
+				8BDD28701BB23575008BB393 /* TabBarController.m */,
 				8BDD284F1BB23575008BB393 /* calendarViewController.h */,
 				8BDD28501BB23575008BB393 /* calendarViewController.m */,
 				8BDD28531BB23575008BB393 /* dayListViewController.h */,
 				8BDD28541BB23575008BB393 /* dayListViewController.m */,
 				8BDD28591BB23575008BB393 /* issueViewController.h */,
 				8BDD285A1BB23575008BB393 /* issueViewController.m */,
-				8BDD28651BB23575008BB393 /* pickDateViewController.h */,
-				8BDD28661BB23575008BB393 /* pickDateViewController.m */,
-				8BDD286F1BB23575008BB393 /* TabBarController.h */,
-				8BDD28701BB23575008BB393 /* TabBarController.m */,
 				8BDD28751BB23575008BB393 /* weekDaysViewController.h */,
 				8BDD28761BB23575008BB393 /* weekDaysViewController.m */,
+				8BDD28651BB23575008BB393 /* pickDateViewController.h */,
+				8BDD28661BB23575008BB393 /* pickDateViewController.m */,
 			);
 			name = tabView;
 			sourceTree = "<group>";

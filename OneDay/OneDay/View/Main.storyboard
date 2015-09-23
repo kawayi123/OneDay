@@ -348,7 +348,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="星期" id="LLq-xx-V2U">
                         <barButtonItem key="leftBarButtonItem" systemItem="compose" id="1Bg-SG-wcH"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zc8-Ah-QuC"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zc8-Ah-QuC">
+                            <connections>
+                                <segue destination="8Yh-U2-uET" kind="show" id="99X-76-fpP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
@@ -386,7 +390,7 @@
         <!--添加-->
         <scene sceneID="LJW-sd-D8C">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="8Yh-U2-uET" customClass="pickDateViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pick" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8Yh-U2-uET" customClass="pickDateViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RAD-jV-QYh"/>
                         <viewControllerLayoutGuide type="bottom" id="Emh-mA-Yhe"/>
@@ -423,10 +427,13 @@
                                     <constraint firstAttribute="height" constant="30" id="j3b-qR-MX1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                <state key="normal" title="2015年10月1号">
+                                <state key="normal" title="2015年10月1号                                            ">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="beginAction:" destination="8Yh-U2-uET" eventType="touchUpInside" id="O2c-Re-a9e"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2M8-cV-1wO">
                                 <rect key="frame" x="11" y="351" width="343" height="30"/>
@@ -436,10 +443,13 @@
                                     <constraint firstAttribute="height" constant="30" id="OWC-1b-2rN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                <state key="normal" title="2015年9月30号">
+                                <state key="normal" title="2015年9月30号                          ">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="remindAction:" destination="8Yh-U2-uET" eventType="touchUpInside" id="7Es-hj-xED"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日程时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBn-mP-vg3">
                                 <rect key="frame" x="153" y="194" width="68" height="21"/>
@@ -494,7 +504,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1u-nb-SzO">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1u-nb-SzO">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYo-Yi-FFu">
@@ -531,9 +541,17 @@
                                         <rect key="frame" x="46" y="249" width="283" height="44"/>
                                         <items>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="GUg-EW-Aef"/>
-                                            <barButtonItem title="取      消" id="eL3-ce-T08"/>
+                                            <barButtonItem title="取      消" id="eL3-ce-T08">
+                                                <connections>
+                                                    <action selector="cancelAction:" destination="8Yh-U2-uET" id="lJn-Mg-EYF"/>
+                                                </connections>
+                                            </barButtonItem>
                                             <barButtonItem width="78" style="plain" systemItem="fixedSpace" id="Aqs-fD-opB"/>
-                                            <barButtonItem title="确     定" id="BXF-0Y-nrd"/>
+                                            <barButtonItem title="确     定" id="BXF-0Y-nrd">
+                                                <connections>
+                                                    <action selector="confirmAction:" destination="8Yh-U2-uET" id="V3T-ME-fjR"/>
+                                                </connections>
+                                            </barButtonItem>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="UvS-nD-wTD"/>
                                         </items>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -635,10 +653,16 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="Datepicker" destination="6x4-q5-oSV" id="zmL-JT-0Rd"/>
+                        <outlet property="beginBtn" destination="M8G-Pn-InD" id="fyL-l2-Ra0"/>
+                        <outlet property="pickAlterView" destination="F1u-nb-SzO" id="3Rt-zb-OHf"/>
+                        <outlet property="remindBtn" destination="2M8-cV-1wO" id="gWc-l4-ceN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJE-pa-F4c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2634.5" y="2620.5"/>
+            <point key="canvasLocation" x="2628.5" y="1841.5"/>
         </scene>
         <!--DayList-->
         <scene sceneID="pv9-db-FfL">
@@ -684,24 +708,21 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Dz-VZ-2RV" id="hPY-V9-9fX">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LxQ-Fc-Cug">
-                                                    <rect key="frame" x="8" y="11" width="58" height="58"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="日程事件" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0A-jI-1br">
-                                                    <rect key="frame" x="81" y="11" width="140" height="21"/>
+                                                    <rect key="frame" x="8" y="19" width="140" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="开始时间：开始时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAk-Bs-hBV">
-                                                    <rect key="frame" x="81" y="48" width="140" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="人等" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zV-33-TyA">
                                                     <rect key="frame" x="249" y="48" width="118" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="开始时间：开始时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAk-Bs-hBV">
+                                                    <rect key="frame" x="8" y="47" width="140" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -721,7 +742,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="日程列表" id="4Rx-lZ-YX9">
                         <barButtonItem key="leftBarButtonItem" systemItem="compose" id="VIR-H7-hAv"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7eT-bN-qW2"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7eT-bN-qW2">
+                            <connections>
+                                <segue destination="8Yh-U2-uET" kind="show" id="Xtl-CT-X5j"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
@@ -783,7 +808,6 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" red="1" green="0.99607843139999996" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="4C7-bV-KM8" firstAttribute="top" secondItem="R7F-Zk-SE7" secondAttribute="top" constant="21" id="Bid-BX-Awu"/>
                                         <constraint firstItem="qeA-2N-iUE" firstAttribute="top" secondItem="R7F-Zk-SE7" secondAttribute="top" constant="8" id="JsW-6N-lPq"/>
@@ -808,7 +832,7 @@
                                             </state>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" red="1" green="0.99607843139999996" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="1" green="0.92345482800000001" blue="0.77249271900000005" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="QVZ-In-m3R" secondAttribute="bottom" constant="8" id="Dxf-ku-xL8"/>
                                         <constraint firstItem="QVZ-In-m3R" firstAttribute="top" secondItem="Rrc-tg-Jfl" secondAttribute="top" constant="8" id="TfV-EH-idD"/>
@@ -827,7 +851,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.99607843139999996" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.92345482800000001" blue="0.77249271900000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="bx8-of-nRj" secondAttribute="trailing" constant="-16" id="1de-WZ-UYl"/>
                             <constraint firstItem="bx8-of-nRj" firstAttribute="leading" secondItem="Iyg-lx-I0O" secondAttribute="leadingMargin" constant="-16" id="4TI-jy-n9j"/>
@@ -919,7 +943,7 @@
                                 <color key="onTintColor" red="1" green="0.58647905219999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.92345482797247258" blue="0.77249271902741112" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="设置" id="u3V-Tc-zU5"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -1034,7 +1058,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.92345482800000001" blue="0.77249271900000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="KXQ-Re-UIu" firstAttribute="centerX" secondItem="c0o-12-a6I" secondAttribute="centerX" id="1Ie-4y-33M"/>
                             <constraint firstItem="oUI-uZ-F12" firstAttribute="leading" secondItem="xpf-QM-x92" secondAttribute="leadingMargin" constant="12" id="2C0-iS-7jx"/>
@@ -1112,7 +1136,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.92345482800000001" blue="0.77249271900000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="联系我们" id="EpT-hB-Ybn"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -1353,7 +1377,7 @@
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.92345482800000001" blue="0.77249271900000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="我的账号" id="tkf-e4-WSn"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -1586,4 +1610,7 @@
         <image name="up" width="29" height="29"/>
         <image name="week" width="29" height="29"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Xtl-CT-X5j"/>
+    </inferredMetricsTieBreakers>
 </document>
