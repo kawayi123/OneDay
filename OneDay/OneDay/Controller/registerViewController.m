@@ -52,7 +52,9 @@
     NSString *phoneNUmber=_phonenum.text;
     NSString *Personalsignature=_Personalitysignature.text;
     NSString *confirmPwd = _confrimpwd.text;
-    if ([username isEqualToString:@""]||[email isEqualToString:@""]||[password isEqualToString:@""]||[confirmPwd isEqualToString:@""]||[nickName isEqualToString:@""]||[phoneNUmber isEqualToString:@""]||[Personalsignature isEqualToString:@""]) {
+    if ([username isEqualToString:@""]||[email isEqualToString:@""]||[password isEqualToString:@""]||[confirmPwd isEqualToString:@""]||[nickName isEqualToString:@""]||[phoneNUmber isEqualToString:@""]
+        //||[Personalsignature isEqualToString:@""]
+        ) {
         [Utilities popUpAlertViewWithMsg:@"请填写所有信息" andTitle:nil];
         return;
     }if (![password isEqualToString:confirmPwd]) {
