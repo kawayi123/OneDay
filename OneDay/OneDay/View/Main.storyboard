@@ -70,16 +70,22 @@
                                     <action selector="forgetpwd:forEvent:" destination="2m1-o6-5aw" eventType="touchUpInside" id="9m7-PZ-Ye0"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hEz-zg-Kde">
-                                <rect key="frame" x="310" y="234" width="51" height="31"/>
-                                <color key="onTintColor" red="1" green="0.58647905220006591" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tfp-eu-Veh">
                                 <rect key="frame" x="99" y="234" width="51" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="mfo-Ph-Bdb"/>
                                 </constraints>
                                 <color key="onTintColor" red="1" green="0.58647905219999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="rememberPwdAction:" destination="2m1-o6-5aw" eventType="valueChanged" id="9tZ-Lj-TVO"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hEz-zg-Kde">
+                                <rect key="frame" x="310" y="234" width="51" height="31"/>
+                                <color key="onTintColor" red="1" green="0.58647905220006591" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="displayPwdAction:" destination="2m1-o6-5aw" eventType="valueChanged" id="U8Z-AS-W3A"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="显示密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O06-Cb-fsk">
                                 <rect key="frame" x="234" y="239" width="68" height="21"/>
@@ -726,7 +732,7 @@
         <!--leftView-->
         <scene sceneID="wjd-VB-xUq">
             <objects>
-                <viewController storyboardIdentifier="left" title="leftView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pIc-ik-KnP" customClass="leftViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="l" title="leftView" id="pIc-ik-KnP" customClass="leftViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nk3-sd-u5O"/>
                         <viewControllerLayoutGuide type="bottom" id="7px-5r-X46"/>
@@ -861,7 +867,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="My6-D0-MDI">
-                                <rect key="frame" x="16" y="154" width="343" height="45"/>
+                                <rect key="frame" x="16" y="154" width="255" height="45"/>
                                 <color key="backgroundColor" red="1" green="0.70627464669999995" blue="0.31095897719999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="qqq12345">
@@ -885,15 +891,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RSk-xc-Fg5">
-                                <rect key="frame" x="285" y="253" width="51" height="31"/>
+                                <rect key="frame" x="222" y="253" width="51" height="31"/>
                                 <color key="onTintColor" red="1" green="0.58647905219999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TJz-Os-aXv">
-                                <rect key="frame" x="285" y="320" width="51" height="31"/>
-                                <color key="onTintColor" red="1" green="0.58647905219999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OcF-3A-w3K">
-                                <rect key="frame" x="285" y="384" width="51" height="31"/>
+                                <rect key="frame" x="222" y="318" width="51" height="31"/>
                                 <color key="onTintColor" red="1" green="0.58647905219999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MH-Xe-QoR">
@@ -912,6 +914,10 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OcF-3A-w3K">
+                                <rect key="frame" x="222" y="384" width="51" height="31"/>
+                                <color key="onTintColor" red="1" green="0.58647905219999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1557,7 +1563,8 @@
         <!--Navigation Controller-->
         <scene sceneID="qci-YF-o3g">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C5K-z2-LNO" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C05-yv-gig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="left" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="C5K-z2-LNO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="owX-Cf-0yb">
@@ -1569,7 +1576,6 @@
                         <segue destination="pIc-ik-KnP" kind="relationship" relationship="rootViewController" id="jol-Lt-cI8"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C05-yv-gig" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1435.5" y="373.5"/>
         </scene>

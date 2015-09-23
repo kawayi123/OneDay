@@ -15,5 +15,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *Rememberpwd;
 @property(strong,nonatomic)ECSlidingViewController *slidingViewController;
 @property(assign,nonatomic)ECSlidingViewControllerOperation operation;
+- (IBAction)rememberPwdAction:(UISwitch *)sender;
+- (IBAction)displayPwdAction:(UISwitch *)sender;
 
 @end

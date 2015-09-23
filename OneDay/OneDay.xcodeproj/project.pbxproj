@@ -296,10 +296,10 @@
 		8BDD284E1BB23575008BB393 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8BDD28AE1BB23977008BB393 /* logIn */,
 				8BDD28B11BB23A64008BB393 /* cellAndNavigation */,
 				8BDD28B01BB23A18008BB393 /* tabView */,
 				8BDD28AF1BB239B9008BB393 /* leftSetting */,
-				8BDD28AE1BB23977008BB393 /* logIn */,
 				8BDD28AD1BB2392D008BB393 /* Splashscreen */,
 			);
 			path = Controller;
