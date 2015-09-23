@@ -7,14 +7,19 @@
 //
 
 #import <CoreData/CoreData.h>
+#import "leftViewController.h"
+#import "TabBarController.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,UIViewControllerAnimatedTransitioning, ECSlidingViewControllerDelegate, ECSlidingViewControllerLayout>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *
+persistentStoreCoordinator;
+@property(strong,nonatomic)ECSlidingViewController *slidingViewController;
+@property(assign,nonatomic)ECSlidingViewControllerOperation operation;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
