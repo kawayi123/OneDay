@@ -499,6 +499,16 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYo-Yi-FFu">
                                         <rect key="frame" x="46" y="52" width="283" height="241"/>
+                                        <subviews>
+                                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="6x4-q5-oSV">
+                                                <rect key="frame" x="0.0" y="40" width="283" height="162"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="tintColor" red="1" green="0.58647905219999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <date key="date" timeIntervalSinceReferenceDate="464524188.70627701">
+                                                    <!--2015-09-21 10:29:48 +0000-->
+                                                </date>
+                                            </datePicker>
+                                        </subviews>
                                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -506,14 +516,6 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="6x4-q5-oSV">
-                                        <rect key="frame" x="46" y="89" width="283" height="162"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="tintColor" red="1" green="0.58647905219999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="464524188.70627701">
-                                            <!--2015-09-21 10:29:48 +0000-->
-                                        </date>
-                                    </datePicker>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Yb5-ZA-zhV">
                                         <rect key="frame" x="126" y="57" width="133" height="29"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -547,25 +549,17 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="6x4-q5-oSV" firstAttribute="top" secondItem="Yb5-ZA-zhV" secondAttribute="bottom" constant="4" id="0NB-de-DQ3"/>
                                     <constraint firstItem="Yb5-ZA-zhV" firstAttribute="top" secondItem="F1u-nb-SzO" secondAttribute="top" constant="57" id="2e7-K9-7Lu"/>
                                     <constraint firstAttribute="trailing" secondItem="Z4j-Ej-Mj7" secondAttribute="trailing" constant="46" id="3nO-iY-BYm"/>
                                     <constraint firstAttribute="bottom" secondItem="WYo-Yi-FFu" secondAttribute="bottom" constant="310" id="52Y-nP-SOS"/>
                                     <constraint firstItem="Yb5-ZA-zhV" firstAttribute="leading" secondItem="F1u-nb-SzO" secondAttribute="leading" constant="126" id="9hb-7J-bzJ"/>
                                     <constraint firstAttribute="bottom" secondItem="Z4j-Ej-Mj7" secondAttribute="bottom" constant="310" id="G7a-B3-wwU"/>
-                                    <constraint firstItem="6x4-q5-oSV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="F1u-nb-SzO" secondAttribute="leading" constant="46" id="K96-wy-JZd"/>
-                                    <constraint firstAttribute="trailing" secondItem="6x4-q5-oSV" secondAttribute="trailing" constant="46" id="KfM-tS-i9P"/>
                                     <constraint firstItem="Yb5-ZA-zhV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="F1u-nb-SzO" secondAttribute="top" constant="51" id="N9d-fN-TaT"/>
                                     <constraint firstItem="Z4j-Ej-Mj7" firstAttribute="centerX" secondItem="F1u-nb-SzO" secondAttribute="centerX" id="S2j-XN-Rgv"/>
-                                    <constraint firstItem="6x4-q5-oSV" firstAttribute="trailing" secondItem="Z4j-Ej-Mj7" secondAttribute="trailing" id="Tc1-pA-MNE"/>
                                     <constraint firstAttribute="trailing" secondItem="Yb5-ZA-zhV" secondAttribute="trailing" constant="116" id="WQQ-5R-2av"/>
                                     <constraint firstItem="Z4j-Ej-Mj7" firstAttribute="top" secondItem="F1u-nb-SzO" secondAttribute="top" constant="249" id="bod-wK-qDP"/>
-                                    <constraint firstItem="6x4-q5-oSV" firstAttribute="leading" secondItem="F1u-nb-SzO" secondAttribute="leading" constant="46" id="cpN-5z-1fJ"/>
-                                    <constraint firstItem="6x4-q5-oSV" firstAttribute="leading" secondItem="Z4j-Ej-Mj7" secondAttribute="leading" id="fyd-2C-iGG"/>
                                     <constraint firstItem="WYo-Yi-FFu" firstAttribute="top" secondItem="F1u-nb-SzO" secondAttribute="top" constant="52" id="ggj-Vt-7jT"/>
                                     <constraint firstItem="Z4j-Ej-Mj7" firstAttribute="leading" secondItem="F1u-nb-SzO" secondAttribute="leading" constant="46" id="koL-Ai-TwQ"/>
-                                    <constraint firstItem="6x4-q5-oSV" firstAttribute="top" secondItem="Yb5-ZA-zhV" secondAttribute="bottom" constant="4" id="ohG-Yr-qIL"/>
-                                    <constraint firstItem="Z4j-Ej-Mj7" firstAttribute="top" secondItem="6x4-q5-oSV" secondAttribute="bottom" constant="-2" id="ole-JI-ztT"/>
                                     <constraint firstItem="WYo-Yi-FFu" firstAttribute="leading" secondItem="F1u-nb-SzO" secondAttribute="leading" constant="46" id="oxW-Gt-8rq"/>
                                     <constraint firstAttribute="trailing" secondItem="WYo-Yi-FFu" secondAttribute="trailing" constant="46" id="w0L-vK-rEG"/>
                                     <constraint firstItem="Yb5-ZA-zhV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="F1u-nb-SzO" secondAttribute="leading" constant="126" id="zOx-ci-2FX"/>
