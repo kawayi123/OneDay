@@ -46,7 +46,11 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>A8E6B89408C599EEF2EBE3F01D382CC221996EFA</string>
 			<key>IDESourceControlWCCName</key>
+<<<<<<< HEAD
+			<string>github</string>
+=======
 			<string>2</string>
+>>>>>>> 901f9dda1dc4aabe3637033ebdb66f03b51c109f
 		</dict>
 	</array>
 </dict>
