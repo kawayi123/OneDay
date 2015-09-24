@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface leftViewController : UIViewController
-
+@property(weak,nonatomic)IBOutlet UIButton *btn;
 @end

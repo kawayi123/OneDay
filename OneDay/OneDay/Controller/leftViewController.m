@@ -9,6 +9,7 @@
 #import "leftViewController.h"
 
 @interface leftViewController ()
+- (IBAction)loginAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
 @end
 
@@ -16,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _btn.enabled=YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +35,8 @@
 }
 */
 
+- (IBAction)loginAction:(UIButton *)sender forEvent:(UIEvent *)event
+{
+    
+}
 @end
