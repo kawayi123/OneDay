@@ -161,7 +161,13 @@
     _phoneNum.text = User[@"PhoneNum"];
     _peoSignTF.text = User[@"PeoSignature"];
     
-    
-    
+    [User[@"HeadImg"] getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:photoData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                _headImage.image = image;
+            });
+        }
+    }];
 }
 @end

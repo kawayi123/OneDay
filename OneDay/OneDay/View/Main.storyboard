@@ -920,7 +920,10 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="IndividualitySignature" destination="cZI-hW-aZg" id="JPU-IA-jYT"/>
                         <outlet property="btn" destination="Kxf-6p-ecz" id="kKX-bO-20O"/>
+                        <outlet property="headImg" destination="qeA-2N-iUE" id="WlT-py-zoS"/>
+                        <outlet property="nickName" destination="4C7-bV-KM8" id="VV9-SN-0jT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zmW-rJ-3cd" userLabel="First Responder" sceneMemberID="firstResponder"/>

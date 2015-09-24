@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _btn.enabled=YES;
+    [self loadingData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,4 +50,21 @@
 //    [self presentViewController:nc animated:YES completion:nil];
 //    _btn.enabled=YES;
 }
+
+- (void)loadingData{
+    
+    PFUser *User = [PFUser currentUser];
+    _nickName.text = User[@"NickName"];
+    _IndividualitySignature.text = User[@"PeoSignature"];
+    
+    [User[@"HeadImg"] getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:photoData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                _headImg.image = image;
+            });
+        }
+    }];
+}
+
 @end

@@ -10,4 +10,8 @@
 
 @interface leftViewController : UIViewController
 @property(weak,nonatomic)IBOutlet UIButton *btn;
+@property (weak, nonatomic) IBOutlet UIImageView *headImg;
+@property (weak, nonatomic) IBOutlet UILabel *nickName;
+@property (weak, nonatomic) IBOutlet UILabel *IndividualitySignature;
+
 @end
