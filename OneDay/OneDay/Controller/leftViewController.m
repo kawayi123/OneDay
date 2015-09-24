@@ -25,7 +25,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    PFUser *currentUser=[PFUser currentUser];
+    if (!currentUser) {
+        _btn.enabled=YES;
+    }else{
+        _btn.enabled=NO;
+    }
+}
 /*
 #pragma mark - Navigation
 
