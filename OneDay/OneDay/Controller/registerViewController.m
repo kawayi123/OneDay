@@ -10,6 +10,7 @@
 
 @interface registerViewController ()
 - (IBAction)signupAction:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)cancelAction:(UIBarButtonItem *)sender;
 
 @end
 
@@ -95,5 +96,8 @@
              [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
          }
      }];
+}
+
+- (IBAction)cancelAction:(UIBarButtonItem *)sender {
 }
 @end

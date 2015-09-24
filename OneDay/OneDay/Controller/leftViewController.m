@@ -37,6 +37,7 @@
 
 - (IBAction)loginAction:(UIButton *)sender forEvent:(UIEvent *)event
 {
+    _btn.enabled=NO;
     
 }
 @end

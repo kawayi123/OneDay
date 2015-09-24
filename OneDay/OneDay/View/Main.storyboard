@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="INI-wf-Ys5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="INI-wf-Ys5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -165,7 +165,13 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="登陆" id="SRK-Ok-Qmi"/>
+                    <navigationItem key="navigationItem" title="登陆" id="SRK-Ok-Qmi">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="NvV-KR-Ekx">
+                            <connections>
+                                <action selector="returnAction:" destination="2m1-o6-5aw" id="CMS-4y-HJw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="Rememberpwd" destination="tfp-eu-Veh" id="ija-2I-jTo"/>
@@ -176,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZl-Y2-Era" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951.5" y="192.5"/>
+            <point key="canvasLocation" x="-218.5" y="164.5"/>
         </scene>
         <!--register-->
         <scene sceneID="OWS-dx-FBM">
@@ -317,7 +323,13 @@
                             <constraint firstItem="iVu-cA-lhh" firstAttribute="width" secondItem="PgU-zP-JgZ" secondAttribute="width" id="zcP-CO-7iV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="注册" id="PiW-gd-3jl"/>
+                    <navigationItem key="navigationItem" title="注册" id="PiW-gd-3jl">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="DHS-of-Z0a">
+                            <connections>
+                                <action selector="cancelAction:" destination="pWI-b9-2tc" id="983-pp-9yi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="EnterpwdAction" destination="OBP-LL-A60" id="WUB-T9-fBd"/>
@@ -331,7 +343,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drB-FF-o8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1538.5" y="192.5"/>
+            <point key="canvasLocation" x="292.5" y="174.5"/>
         </scene>
         <!--weekDays-->
         <scene sceneID="6qo-Db-lU5">
@@ -818,7 +830,7 @@
                                             </state>
                                             <connections>
                                                 <action selector="loginAction:forEvent:" destination="pIc-ik-KnP" eventType="touchUpInside" id="bLR-9z-pYQ"/>
-                                                <segue destination="2N6-c0-ht1" kind="show" id="gtn-Oa-Ovj"/>
+                                                <segue destination="AbK-GA-YN8" kind="show" identifier="show" id="qI8-IS-R39"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyp-SG-Xyr">
@@ -902,7 +914,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zmW-rJ-3cd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1121.5" y="1057.5"/>
+            <point key="canvasLocation" x="-1335.5" y="1003.5"/>
         </scene>
         <!--settingUp-->
         <scene sceneID="D8a-O8-bEQ">
@@ -1432,7 +1444,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oev-wF-WaJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2082.5" y="192.5"/>
+            <point key="canvasLocation" x="840.5" y="188.5"/>
         </scene>
         <!--我的账号-->
         <scene sceneID="53Z-nt-iAH">
@@ -1684,6 +1696,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AbK-GA-YN8" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="u02-ta-wHB"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mMr-aD-f75">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1696,7 +1709,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfm-Eb-xQ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="392.5" y="192.5"/>
+            <point key="canvasLocation" x="-831.5" y="174.5"/>
         </scene>
         <!--introduce-->
         <scene sceneID="Nk3-37-jyq">
@@ -1715,7 +1728,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHX-kT-UsM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-129.5" y="192.5"/>
+            <point key="canvasLocation" x="-1341.5" y="188.5"/>
         </scene>
         <!--发布-->
         <scene sceneID="8QZ-vq-28z">
@@ -1755,7 +1768,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpX-SW-dSe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-646.5" y="1056.5"/>
+            <point key="canvasLocation" x="-801.5" y="1003.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6tF-8K-icG">
