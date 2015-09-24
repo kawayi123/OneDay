@@ -38,6 +38,7 @@
 
 - (IBAction)loginAction:(UIButton *)sender forEvent:(UIEvent *)event
 {
+
     //_btn.enabled=NO;
 //    logInViewController *change = [self.storyboard instantiateViewControllerWithIdentifier:@"show"];
 //    //初始化导航控制器
