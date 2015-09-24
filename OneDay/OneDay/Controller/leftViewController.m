@@ -7,7 +7,7 @@
 //
 
 #import "leftViewController.h"
-
+#import "logInViewController.h"
 @interface leftViewController ()
 - (IBAction)loginAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
@@ -37,7 +37,16 @@
 
 - (IBAction)loginAction:(UIButton *)sender forEvent:(UIEvent *)event
 {
-    _btn.enabled=NO;
-    
+    //_btn.enabled=NO;
+//    logInViewController *change = [self.storyboard instantiateViewControllerWithIdentifier:@"show"];
+//    //初始化导航控制器
+//    UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:change];
+//    //动画效果
+//    nc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+//    //导航条隐藏掉
+//    nc.navigationBarHidden = YES;
+//    //类似那个箭头 跳转到第二个界面
+//    [self presentViewController:nc animated:YES completion:nil];
+//    _btn.enabled=YES;
 }
 @end

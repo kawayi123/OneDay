@@ -9,6 +9,7 @@
 #import "personalDataViewController.h"
 
 @interface personalDataViewController ()
+- (IBAction)saveAction:(UIBarButtonItem *)sender;
 
 @end
 
@@ -37,5 +38,7 @@
 - (IBAction)backAction:(UIBarButtonItem *)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)saveAction:(UIBarButtonItem *)sender {
 }
 @end
