@@ -10,4 +10,6 @@
 
 @interface personalDataViewController : UIViewController
 
+- (IBAction)backAction:(UIBarButtonItem *)sender;
+
 @end
