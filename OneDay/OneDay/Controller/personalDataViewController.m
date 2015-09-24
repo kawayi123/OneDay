@@ -153,14 +153,14 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)loadingData{
-    
+    //在界面中显示用户信息。
     PFUser *User = [PFUser currentUser];
     _nickName.text = User[@"NickName"];
     _userName.text = User.username;
     _emailTF.text = User.email;
     _phoneNum.text = User[@"PhoneNum"];
     _peoSignTF.text = User[@"PeoSignature"];
-    
+    //将数据转换成二进制数据流进而转换成界面用户头像。
     [User[@"HeadImg"] getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
         if (!error) {
             UIImage *image = [UIImage imageWithData:photoData];

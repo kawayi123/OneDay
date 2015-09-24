@@ -7,6 +7,7 @@
 //
 
 #import "settingUpViewController.h"
+#import "myAccountViewController.h"
 
 @interface settingUpViewController ()
 
@@ -17,6 +18,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    PFUser *currentUser=[PFUser currentUser];
+    if (currentUser) {
+        NSString *username = currentUser.username;
+        _myAccountBtn.titleLabel.text = username;
+        NSLog(@"%@",_myAccountBtn.titleLabel.text);
+        NSLog(@"%@",username);
+        _myAccountBtn.enabled = YES;
+    }else{
+       _myAccountBtn.titleLabel.text = @"请先登陆账号";
+       _myAccountBtn.enabled = NO;
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,5 +50,26 @@
 - (IBAction)backAction:(UIBarButtonItem *)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)myAccount:(UIButton *)sender {
+    
+    PFUser *currentUser=[PFUser currentUser];
+    if (currentUser) {
+        
+//        myAccountViewController *account = [self.storyboard instantiateViewControllerWithIdentifier:@"account"];
+//        //初始化导航控制器
+//        UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:account];
+//        //动画效果
+//        nc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+//        //导航条隐藏掉
+//        nc.navigationBarHidden = YES;
+//        //类似那个箭头 跳转到第二个界面
+//        [self presentViewController:nc animated:NO completion:nil];
+        
+        
+    }else{
+        [Utilities popUpAlertViewWithMsg:@"账号信息需要登陆后才能查看呦~" andTitle:@"贴心小提示"];
+    }
 }
 @end

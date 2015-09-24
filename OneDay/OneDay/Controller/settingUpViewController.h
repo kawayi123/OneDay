@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface settingUpViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *myAccountBtn;
+
 - (IBAction)backAction:(UIBarButtonItem *)sender;
+- (IBAction)myAccount:(UIButton *)sender;
 
 @end

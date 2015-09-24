@@ -8,13 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface logInViewController : UIViewController<UIViewControllerAnimatedTransitioning, ECSlidingViewControllerDelegate, ECSlidingViewControllerLayout>
+@interface logInViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *usernameTF;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTF;
 @property (weak, nonatomic) IBOutlet UISwitch *displaypwd;
 @property (weak, nonatomic) IBOutlet UISwitch *Rememberpwd;
-@property(strong,nonatomic)ECSlidingViewController *slidingViewController;
-@property(assign,nonatomic)ECSlidingViewControllerOperation operation;
+
 - (IBAction)rememberPwdAction:(UISwitch *)sender;
 - (IBAction)displayPwdAction:(UISwitch *)sender;
 

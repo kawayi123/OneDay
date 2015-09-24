@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface myAccountViewController : UIViewController
+@interface myAccountViewController : UIViewController<UIViewControllerAnimatedTransitioning, ECSlidingViewControllerDelegate, ECSlidingViewControllerLayout>
+@property(strong,nonatomic)ECSlidingViewController *slidingViewController;
+- (IBAction)backAction:(UIBarButtonItem *)sender;
 
 @end

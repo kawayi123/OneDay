@@ -8,6 +8,7 @@
 
 #import "leftViewController.h"
 #import "logInViewController.h"
+#import "personalDataViewController.h"
 @interface leftViewController ()
 - (IBAction)loginAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
@@ -18,19 +19,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _btn.enabled=YES;
-    [self loadingData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     PFUser *currentUser=[PFUser currentUser];
     if (!currentUser) {
+        [self pToLogin];
         _btn.enabled=YES;
     }else{
+        [self loadingData];
         _btn.enabled=NO;
     }
 }
@@ -75,5 +77,30 @@
         }
     }];
 }
+- (void)pToLogin{
+    
+    _nickName.text = @"请登录";
+    _IndividualitySignature.text = @"";
+    _headImg.image = [UIImage imageNamed:@"dragon"];
+}
 
+- (IBAction)perAction:(UIButton *)sender {
+    
+    PFUser *currentUser=[PFUser currentUser];
+    if (currentUser) {
+        
+        personalDataViewController *person = [self.storyboard instantiateViewControllerWithIdentifier:@"person"];
+        //初始化导航控制器
+        UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:person];
+        //动画效果
+        nc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        //导航条隐藏掉
+        nc.navigationBarHidden = NO;
+        //类似那个箭头 跳转到第二个界面
+        [self presentViewController:nc animated:YES completion:nil];
+        
+    }else{
+        [Utilities popUpAlertViewWithMsg:@"个人信息需要登陆后才能查看呦~" andTitle:@"贴心小提示"];
+    }
+}
 @end
