@@ -23,7 +23,16 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+//下面两段代码二级页面不在能进行左滑操作
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"enablePanGes" object:self];
+}
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"disablePanGes" object:self];
+}
 /*
 #pragma mark - Navigation
 
