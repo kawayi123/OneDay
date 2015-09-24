@@ -9,6 +9,7 @@
 #import "myAccountViewController.h"
 
 @interface myAccountViewController ()
+- (IBAction)logoutAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
 @end
 
@@ -34,4 +35,8 @@
 }
 */
 
+- (IBAction)logoutAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    [PFUser logOut];//退出parse
+    [self dismissViewControllerAnimated:YES completion:nil];//根据model的跳转
+}
 @end
