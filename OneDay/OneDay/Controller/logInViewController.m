@@ -14,7 +14,6 @@
 
 - (IBAction)forgetpwd:(UIButton *)sender forEvent:(UIEvent *)event;
 - (IBAction)signupAction:(UIButton *)sender forEvent:(UIEvent *)event;
-- (IBAction)returnAction:(UIBarButtonItem *)sender;
 
 @end
 
@@ -54,6 +53,11 @@
         _passwordTF.secureTextEntry = YES;
     }
 
+}
+
+- (IBAction)backAction:(UIBarButtonItem *)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)viewDidAppear:(BOOL)animated{
     
@@ -164,8 +168,7 @@
     
 }
 
-- (IBAction)returnAction:(UIBarButtonItem *)sender {
-}
+
 
 - (void)enablePanGesOnSliding {
     _slidingViewController.panGesture.enabled = YES;

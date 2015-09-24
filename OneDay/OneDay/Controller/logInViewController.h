@@ -18,4 +18,6 @@
 - (IBAction)rememberPwdAction:(UISwitch *)sender;
 - (IBAction)displayPwdAction:(UISwitch *)sender;
 
+- (IBAction)backAction:(UIBarButtonItem *)sender;
+
 @end
