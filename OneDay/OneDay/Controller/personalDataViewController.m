@@ -21,6 +21,7 @@
     if ([[[storageMgr singletonStorageMgr]objectForKey:@"signup"] integerValue] == 1) {
         [[storageMgr singletonStorageMgr]removeObjectForKey:@"signup"];
     }
+    [self loadingData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,7 +74,7 @@
         return;
     }
     //PFObject *item = [PFObject objectWithClassName:@"User"];
-    PFUser *item = [PFUser user];
+    PFUser *item = [PFUser currentUser];
     item[@"NickName"] = nickname;
     //item[@"username"] = username;
     item[@"PeoSignature"] = peosign;
@@ -150,5 +151,17 @@
     UIImage *image = [info valueForKey:UIImagePickerControllerEditedImage];
     _headImage.image = image;
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)loadingData{
+    
+    PFUser *User = [PFUser currentUser];
+    _nickName.text = User[@"NickName"];
+    _userName.text = User.username;
+    _emailTF.text = User.email;
+    _phoneNum.text = User[@"PhoneNum"];
+    _peoSignTF.text = User[@"PeoSignature"];
+    
+    
+    
 }
 @end
