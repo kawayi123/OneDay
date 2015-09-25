@@ -62,5 +62,16 @@
     _beginBtn.titleLabel.text = dateAndTime;
 }
 - (IBAction)saveAction:(UIBarButtonItem *)sender {
+    NSDate *now = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSUInteger unitFlags =  NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    NSDateComponents *dateComponent = [calendar components:unitFlags fromDate:now];
+    hour = [dateComponent hour];
+    minute = [dateComponent minute];
+    second = [dateComponent second];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    NSLog(@"%ld时%ld分%ld秒", hour,minute,second);
+
 }
 @end

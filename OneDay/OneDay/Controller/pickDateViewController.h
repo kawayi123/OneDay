@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface pickDateViewController : UIViewController
-
+{
+    NSInteger hour;
+    NSInteger minute;
+    NSInteger second;
+}
 @property (weak, nonatomic) IBOutlet UIView *pickAlterView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *Datepicker;
 @property (weak, nonatomic) IBOutlet UIButton *beginBtn;
