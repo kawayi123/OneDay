@@ -43,8 +43,7 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-
+//注册
 - (IBAction)signupAction:(UIButton *)sender forEvent:(UIEvent *)event {
     NSString *username = _usernameTF.text;
     NSString *password = _EnterpwdAction.text;

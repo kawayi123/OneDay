@@ -86,13 +86,14 @@
 }
 */
 
-
+//重设密码
 - (IBAction)forgetpwd:(UIButton *)sender forEvent:(UIEvent *)event {
     
     [PFUser requestPasswordResetForEmailInBackground:@"932220954@qq.com"];
     [Utilities popUpAlertViewWithMsg:@"密码重置信息已发送至您的邮箱，请修改后在登陆！" andTitle:nil];
     
 }
+//登陆
 - (IBAction)signupAction:(UIButton *)sender forEvent:(UIEvent *)event {
     
     NSString *username = _usernameTF.text;
