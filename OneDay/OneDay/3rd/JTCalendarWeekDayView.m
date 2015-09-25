@@ -56,6 +56,7 @@
 
 - (void)reload
 {
+    NSArray *week = [[NSArray alloc] initWithObjects:@"星期日",@"星期一",@"星期二",@"星期三",@"星期四",@"星期五",@"星期六", nil];
     NSAssert(_manager != nil, @"manager cannot be nil");
     
     NSDateFormatter *dateFormatter = [_manager.dateHelper createDateFormatter];
@@ -93,9 +94,12 @@
         }
     }
     
-    for(int i = 0; i < NUMBER_OF_DAY_BY_WEEK; ++i){
+    for(int i = 0; i < week.count; ++i){
         UILabel *label =  _dayViews[i];
-        label.text = days[i];
+        label.text = week[i];
+        label.textColor = [UIColor colorWithRed:152./256. green:147./256. blue:157./256. alpha:1.];
+        label.font = [UIFont systemFontOfSize:11];
+
     }
 }
 

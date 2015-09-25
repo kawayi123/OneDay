@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="INI-wf-Ys5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="INI-wf-Ys5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -352,15 +352,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Gu-Xv-T7d" customClass="JTCalendarMenuView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="39"/>
-                                <color key="backgroundColor" red="0.99764969576069806" green="1" blue="0.086440946244322081" alpha="0.17999999999999999" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="64" width="343" height="39"/>
+                                <color key="backgroundColor" red="1" green="0.99607843139999996" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="y9n-lQ-RQn"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Soe-xB-Dwf" customClass="JTHorizontalCalendarView">
-                                <rect key="frame" x="0.0" y="104" width="375" height="68"/>
-                                <color key="backgroundColor" red="1" green="0.97101214770439681" blue="0.088740490765361169" alpha="0.17999999999999999" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="104" width="343" height="68"/>
+                                <color key="backgroundColor" red="1" green="0.99607843139999996" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="qBq-nj-eKJ"/>
                                 </constraints>
@@ -368,11 +368,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99607843139999996" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Soe-xB-Dwf" secondAttribute="trailing" id="1Je-Ha-xuC"/>
-                            <constraint firstItem="9Gu-Xv-T7d" firstAttribute="leading" secondItem="jka-zw-gcW" secondAttribute="leading" id="AT9-IV-p7X"/>
+                            <constraint firstAttribute="trailing" secondItem="Soe-xB-Dwf" secondAttribute="trailing" constant="16" id="1Je-Ha-xuC"/>
+                            <constraint firstItem="9Gu-Xv-T7d" firstAttribute="leading" secondItem="jka-zw-gcW" secondAttribute="leading" constant="16" id="AT9-IV-p7X"/>
                             <constraint firstItem="9Gu-Xv-T7d" firstAttribute="top" secondItem="Yd1-dQ-evY" secondAttribute="bottom" id="C6q-R2-ibb"/>
-                            <constraint firstItem="Soe-xB-Dwf" firstAttribute="leading" secondItem="jka-zw-gcW" secondAttribute="leading" id="SEl-Te-GxN"/>
-                            <constraint firstAttribute="trailing" secondItem="9Gu-Xv-T7d" secondAttribute="trailing" id="U8u-2P-G0C"/>
+                            <constraint firstItem="Soe-xB-Dwf" firstAttribute="leading" secondItem="jka-zw-gcW" secondAttribute="leading" constant="16" id="SEl-Te-GxN"/>
+                            <constraint firstAttribute="trailing" secondItem="9Gu-Xv-T7d" secondAttribute="trailing" constant="16" id="U8u-2P-G0C"/>
                             <constraint firstItem="Soe-xB-Dwf" firstAttribute="top" secondItem="9Gu-Xv-T7d" secondAttribute="bottom" constant="1" id="ens-io-zA1"/>
                         </constraints>
                     </view>
@@ -408,28 +408,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jh7-aU-y2r" customClass="JTCalendarMenuView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="100"/>
-                                <color key="backgroundColor" red="1" green="0.95710255402349875" blue="0.11142512339320476" alpha="0.059999999999999998" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="64" width="343" height="65"/>
+                                <color key="backgroundColor" red="1" green="0.99607843139999996" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="LQF-pN-K9o"/>
+                                    <constraint firstAttribute="height" constant="65" id="LQF-pN-K9o"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNL-Q1-MFi" customClass="JTHorizontalCalendarView">
-                                <rect key="frame" x="0.0" y="164" width="375" height="454"/>
-                                <color key="backgroundColor" red="0.97873560990279773" green="1" blue="0.092904645815405251" alpha="0.059999999999999998" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="137" width="343" height="481"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="454" id="tUK-4t-Pmb"/>
+                                    <constraint firstAttribute="height" constant="481" id="tUK-4t-Pmb"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99607843139999996" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="UNL-Q1-MFi" secondAttribute="trailing" id="9ov-TD-lPM"/>
+                            <constraint firstAttribute="trailing" secondItem="UNL-Q1-MFi" secondAttribute="trailing" constant="16" id="9ov-TD-lPM"/>
                             <constraint firstItem="Jh7-aU-y2r" firstAttribute="top" secondItem="vUm-Mr-2Zk" secondAttribute="bottom" id="QDI-i1-KUF"/>
-                            <constraint firstAttribute="trailing" secondItem="Jh7-aU-y2r" secondAttribute="trailing" id="Xno-hQ-lit"/>
+                            <constraint firstAttribute="trailing" secondItem="Jh7-aU-y2r" secondAttribute="trailing" constant="16" id="Xno-hQ-lit"/>
                             <constraint firstItem="pw2-5u-Pdb" firstAttribute="top" secondItem="UNL-Q1-MFi" secondAttribute="bottom" id="ZgN-TU-zUT"/>
-                            <constraint firstItem="Jh7-aU-y2r" firstAttribute="leading" secondItem="tef-Uz-wrW" secondAttribute="leading" id="bCo-0j-oWx"/>
-                            <constraint firstItem="UNL-Q1-MFi" firstAttribute="leading" secondItem="tef-Uz-wrW" secondAttribute="leading" id="oag-Fz-DWt"/>
+                            <constraint firstItem="Jh7-aU-y2r" firstAttribute="leading" secondItem="tef-Uz-wrW" secondAttribute="leading" constant="16" id="bCo-0j-oWx"/>
+                            <constraint firstItem="UNL-Q1-MFi" firstAttribute="leading" secondItem="tef-Uz-wrW" secondAttribute="leading" constant="16" id="oag-Fz-DWt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="日历" id="pgl-Ni-hRR">
@@ -1907,6 +1907,6 @@
         <image name="week" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="99X-76-fpP"/>
+        <segue reference="DKp-L3-y9l"/>
     </inferredMetricsTieBreakers>
 </document>
