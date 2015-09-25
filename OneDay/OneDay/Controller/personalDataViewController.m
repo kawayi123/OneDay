@@ -69,7 +69,9 @@
         [Utilities popUpAlertViewWithMsg:@"请选择一张照片" andTitle:nil];
         return;
     }
-    if ([nickname isEqualToString:@""] || [peosign isEqualToString:@""]|| [email isEqualToString:@""]|| [phonenum isEqualToString:@""]) {
+    if ([nickname isEqualToString:@""] ||
+        //[peosign isEqualToString:@""]||
+        [email isEqualToString:@""]|| [phonenum isEqualToString:@""]) {
         [Utilities popUpAlertViewWithMsg:@"请填写所有信息" andTitle:nil];
         return;
     }
