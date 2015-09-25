@@ -9,6 +9,7 @@
 #import "pickDateViewController.h"
 
 @interface pickDateViewController ()
+- (IBAction)saveAction:(UIBarButtonItem *)sender;
 
 @end
 
@@ -59,5 +60,7 @@
     [dateFormatter setDateFormat:@"yyyy年MM月dd日 HH:mm"];
     NSString *dateAndTime =  [dateFormatter stringFromDate:select];
     _beginBtn.titleLabel.text = dateAndTime;
+}
+- (IBAction)saveAction:(UIBarButtonItem *)sender {
 }
 @end
