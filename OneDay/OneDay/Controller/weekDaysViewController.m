@@ -167,7 +167,7 @@
     static NSDateFormatter *dateFormatter;
     if(!dateFormatter){
         dateFormatter = [NSDateFormatter new];
-        dateFormatter.dateFormat = @"dd-MM-yyyy";
+        dateFormatter.dateFormat = @"yyyy年-M月-dd日";
     }
     
     return dateFormatter;

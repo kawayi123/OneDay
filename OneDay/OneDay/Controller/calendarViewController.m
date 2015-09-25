@@ -133,7 +133,7 @@
     static NSDateFormatter *dateFormatter;
     if(!dateFormatter){
         dateFormatter = [NSDateFormatter new];
-        dateFormatter.dateFormat = @"MMMM yyyy";
+        dateFormatter.dateFormat = @"yyyy年-M月";
         
         dateFormatter.locale = _calendarManager.dateHelper.calendar.locale;
         dateFormatter.timeZone = _calendarManager.dateHelper.calendar.timeZone;
@@ -174,7 +174,7 @@
     static NSDateFormatter *dateFormatter;
     if(!dateFormatter){
         dateFormatter = [NSDateFormatter new];
-        dateFormatter.dateFormat = @"dd-MMMM-yyyy";
+        dateFormatter.dateFormat = @"yyyy年-M月-dd日";
     }
     
     return dateFormatter;
