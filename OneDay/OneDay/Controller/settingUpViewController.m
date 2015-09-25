@@ -40,6 +40,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if ([[[storageMgr singletonStorageMgr] objectForKey:@"logout"] integerValue] == 1) {
+        [[storageMgr singletonStorageMgr] removeObjectForKey:@"logout"];
+        [self dismissViewControllerAnimated:NO completion:nil];
+    }
+}
+
 /*
 #pragma mark - Navigation
 
@@ -60,15 +69,15 @@
     PFUser *currentUser=[PFUser currentUser];
     if (currentUser) {
         
-//        myAccountViewController *account = [self.storyboard instantiateViewControllerWithIdentifier:@"account"];
-//        //初始化导航控制器
-//        UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:account];
-//        //动画效果
-//        nc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-//        //导航条隐藏掉
-//        nc.navigationBarHidden = YES;
-//        //类似那个箭头 跳转到第二个界面
-//        [self presentViewController:nc animated:NO completion:nil];
+        myAccountViewController *account = [self.storyboard instantiateViewControllerWithIdentifier:@"account"];
+        //初始化导航控制器
+        UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:account];
+        //动画效果
+        nc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        //导航条隐藏掉
+        nc.navigationBarHidden = NO;
+        //类似那个箭头 跳转到第二个界面
+        [self presentViewController:nc animated:YES completion:nil];
         
         
     }else{

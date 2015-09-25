@@ -7,6 +7,7 @@
 //
 
 #import "myAccountViewController.h"
+#import "dayListViewController.h"
 
 @interface myAccountViewController ()
 - (IBAction)logoutAction:(UIButton *)sender forEvent:(UIEvent *)event;
@@ -37,16 +38,7 @@
 
 - (IBAction)logoutAction:(UIButton *)sender forEvent:(UIEvent *)event {
     [PFUser logOut];//退出parse
-//    dayListViewController *day = [self.storyboard instantiateViewControllerWithIdentifier:@"day"];
-//    //初始化导航控制器
-//    navigationController *nc = [[navigationController alloc]initWithRootViewController:day];
-//    //动画效果
-//    nc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-//    //导航条隐藏掉
-//    nc.navigationBarHidden = YES;
-//    //类似那个箭头 跳转到第二个界面
-    //[self presentViewController:nc animated:YES completion:nil];
-    
+    [[storageMgr singletonStorageMgr] addKeyAndValue:@"logout" And:@1];
     [self dismissViewControllerAnimated:YES completion:nil];
 
 }

@@ -92,17 +92,7 @@
         [aiv stopAnimating];
         _btn.enabled=YES;
         if (succeeded) {
-           // [[NSNotificationCenter defaultCenter] performSelectorOnMainThread:@selector(postNotification:) withObject:[NSNotification notificationWithName:@"refreshMine" object:self] waitUntilDone:YES];
-           // [Utilities setUserDefaults:@"HeadImg" content:photoFile];
-//            [Utilities setUserDefaults:@"NickName" content:nickname];
-//            [Utilities setUserDefaults:@"username" content:username];
-//            [Utilities setUserDefaults:@"PeoSignature" content:peosign];
-//            [Utilities setUserDefaults:@"email" content:email];
-//            [Utilities setUserDefaults:@"PhoneNum" content:phonenum];
-//            NSString *nickname=_nickName.text;
-//            NSLog(@"%@",nickname);
-//            _nickName.text=nickname;
-            [self.navigationController popViewControllerAnimated:YES];//结合线程触发通知，通过通知更新列表，上传成功后返回上页
+              [self.navigationController popViewControllerAnimated:YES];//结合线程触发通知，通过通知更新列表，上传成功后返回上页
             
         }else if (error.code == 101) {
             [Utilities popUpAlertViewWithMsg:@"你的信息有误" andTitle:nil];
@@ -112,7 +102,6 @@
         else {
             [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
         }
-        // _beginBtn.titleLabel.text = dateAndTime;
     }];
 }
 //设置imagePickerController的UIActionSheet的事件
