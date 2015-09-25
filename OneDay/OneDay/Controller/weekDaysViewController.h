@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface weekDaysViewController : UIViewController
+@interface weekDaysViewController : UIViewController<JTCalendarDelegate>
+@property (weak, nonatomic) IBOutlet JTCalendarMenuView *calendarMenuView;
+@property (weak, nonatomic) IBOutlet JTHorizontalCalendarView *calendarContentView;
 
+@property (strong, nonatomic) JTCalendarManager *calendarManager;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *calendarContentViewHeight;
 @end
