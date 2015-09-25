@@ -123,7 +123,7 @@
     UILabel *label = [UILabel new];
     
     label.textAlignment = NSTextAlignmentCenter;
-    label.font = [UIFont fontWithName:@"Helvetica" size:16];
+    label.font = [UIFont fontWithName:@"Helvetica" size:18];
     
     return label;
 }
@@ -148,7 +148,7 @@
     
     for(UILabel *label in view.dayViews){
         label.textColor = [UIColor blackColor];
-        label.font = [UIFont fontWithName:@"Helvetica" size:14];
+        label.font = [UIFont fontWithName:@"Helvetica" size:15];
     }//Avenir-Light
     
     return view;
@@ -158,7 +158,7 @@
 {
     JTCalendarDayView *view = [JTCalendarDayView new];
     
-    view.textLabel.font = [UIFont fontWithName:@"Helvetica" size:13];
+    view.textLabel.font = [UIFont fontWithName:@"Helvetica" size:17.5];
     
     view.circleRatio = .8;
     view.dotRatio = 1. / .9;

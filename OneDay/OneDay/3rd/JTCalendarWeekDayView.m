@@ -98,7 +98,7 @@
         UILabel *label =  _dayViews[i];
         label.text = week[i];
         label.textColor = [UIColor colorWithRed:152./256. green:147./256. blue:157./256. alpha:1.];
-        label.font = [UIFont systemFontOfSize:11];
+        label.font = [UIFont systemFontOfSize:13.5];
 
     }
 }

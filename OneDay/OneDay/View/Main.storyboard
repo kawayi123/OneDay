@@ -40,7 +40,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="看不到我~看不到我~看不到我~" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ee2-va-hOq">
                                 <rect key="frame" x="92" y="179" width="267" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="2m1-o6-5aw" id="lSG-as-Ozs"/>
                                 </connections>
