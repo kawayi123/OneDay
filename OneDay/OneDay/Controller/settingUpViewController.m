@@ -18,20 +18,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self btns];
+
+}
+-(void)btns
+{
     PFUser *currentUser=[PFUser currentUser];
     if (currentUser) {
         NSString *username = currentUser.username;
-        _myAccountBtn.titleLabel.text = username;
-        NSLog(@"%@",_myAccountBtn.titleLabel.text);
-        NSLog(@"%@",username);
+        PFUser *currentUser=[PFUser currentUser];
+        currentUser[@"username"] = username;
+        [_myAccountBtn setTitle:currentUser.username forState:UIControlStateNormal];
         _myAccountBtn.enabled = YES;
     }else{
-       _myAccountBtn.titleLabel.text = @"请先登陆账号";
-       _myAccountBtn.enabled = NO;
+        [_myAccountBtn setTitle:@"请先登陆账号" forState:UIControlStateNormal];
+        _myAccountBtn.enabled = NO;
     }
-
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
