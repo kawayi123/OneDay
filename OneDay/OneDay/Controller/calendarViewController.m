@@ -221,4 +221,8 @@
 }
 */
 
+- (IBAction)menuAction:(UIBarButtonItem *)sender {
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"leftSwitch" object:self];
+}
 @end

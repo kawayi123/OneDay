@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="INI-wf-Ys5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="INI-wf-Ys5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -377,7 +377,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="星期" id="LLq-xx-V2U">
-                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="1Bg-SG-wcH"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="1Bg-SG-wcH">
+                            <connections>
+                                <action selector="menuAction:" destination="7Nv-KC-MLc" id="Xhk-Vg-uWJ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zc8-Ah-QuC">
                             <connections>
                                 <segue destination="8Yh-U2-uET" kind="show" id="99X-76-fpP"/>
@@ -393,7 +397,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ap-3X-Xcz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1574.5" y="2033.5"/>
+            <point key="canvasLocation" x="1564.5" y="2025.5"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="iEU-si-pt1">
@@ -433,7 +437,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="日历" id="pgl-Ni-hRR">
-                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="3jZ-mO-rhV"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="3jZ-mO-rhV">
+                            <connections>
+                                <action selector="menuAction:" destination="E1E-el-SJP" id="aM1-KF-h4f"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="IBd-g7-e5X">
                             <connections>
                                 <segue destination="8Yh-U2-uET" kind="show" id="DKp-L3-y9l"/>
@@ -719,7 +727,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJE-pa-F4c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2090.5" y="2011.5"/>
+            <point key="canvasLocation" x="2090.5" y="2025.5"/>
         </scene>
         <!--DayList-->
         <scene sceneID="pv9-db-FfL">
@@ -817,7 +825,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="日程列表" id="4Rx-lZ-YX9">
-                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="VIR-H7-hAv"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="VIR-H7-hAv">
+                            <connections>
+                                <action selector="menuAction:" destination="IZs-8R-6iB" id="mXL-SE-9w5"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="7eT-bN-qW2">
                             <connections>
                                 <segue destination="8Yh-U2-uET" kind="show" id="Xtl-CT-X5j"/>
@@ -1688,7 +1700,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bit-by-zg9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1494.5" y="1056.5"/>
+            <point key="canvasLocation" x="1564.5" y="1057.5"/>
         </scene>
         <!--星期-->
         <scene sceneID="CZX-7K-WMe">
@@ -1800,7 +1812,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="发布" id="HNY-lq-cYd">
-                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="HPf-ze-fog"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="HPf-ze-fog">
+                            <connections>
+                                <action selector="menuAction:" destination="d5W-h8-Z1Z" id="7HR-Uu-L5A"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ua7-Hg-ARW"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -1818,7 +1834,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1628.5" y="3728.5"/>
+            <point key="canvasLocation" x="1564.5" y="3720.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="go0-ME-YlE">
@@ -1907,6 +1923,6 @@
         <image name="week" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="99X-76-fpP"/>
+        <segue reference="DKp-L3-y9l"/>
     </inferredMetricsTieBreakers>
 </document>

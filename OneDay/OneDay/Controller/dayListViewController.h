@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface dayListViewController : UIViewController
+- (IBAction)menuAction:(UIBarButtonItem *)sender;
 
 @end

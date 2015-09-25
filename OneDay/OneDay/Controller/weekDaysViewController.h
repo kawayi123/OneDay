@@ -15,4 +15,7 @@
 @property (strong, nonatomic) JTCalendarManager *calendarManager;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *calendarContentViewHeight;
+
+- (IBAction)menuAction:(UIBarButtonItem *)sender;
+
 @end

@@ -10,4 +10,6 @@
 
 @interface issueViewController : UIViewController
 
+- (IBAction)menuAction:(UIBarButtonItem *)sender;
+
 @end
