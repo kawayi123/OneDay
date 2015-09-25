@@ -39,7 +39,7 @@
 - (IBAction)logoutAction:(UIButton *)sender forEvent:(UIEvent *)event {
     [PFUser logOut];//退出parse
     [[storageMgr singletonStorageMgr] addKeyAndValue:@"logout" And:@1];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:NO completion:nil];
 
 }
 - (IBAction)backAction:(UIBarButtonItem *)sender {
