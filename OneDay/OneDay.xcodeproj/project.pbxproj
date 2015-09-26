@@ -40,7 +40,6 @@
 		8BDD288E1BB23575008BB393 /* settingUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD286C1BB23575008BB393 /* settingUpViewController.m */; };
 		8BDD288F1BB23575008BB393 /* SplashscreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD286E1BB23575008BB393 /* SplashscreenViewController.m */; };
 		8BDD28901BB23575008BB393 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28701BB23575008BB393 /* TabBarController.m */; };
-		8BDD28911BB23575008BB393 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28721BB23575008BB393 /* TableViewCell.m */; };
 		8BDD28921BB23575008BB393 /* UIView+FrameExpand.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28741BB23575008BB393 /* UIView+FrameExpand.m */; };
 		8BDD28931BB23575008BB393 /* weekDaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28761BB23575008BB393 /* weekDaysViewController.m */; };
 		8BDD28961BB23575008BB393 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD287A1BB23575008BB393 /* 3.png */; };
@@ -144,8 +143,6 @@
 		8BDD286E1BB23575008BB393 /* SplashscreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashscreenViewController.m; sourceTree = "<group>"; };
 		8BDD286F1BB23575008BB393 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		8BDD28701BB23575008BB393 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
-		8BDD28711BB23575008BB393 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
-		8BDD28721BB23575008BB393 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		8BDD28731BB23575008BB393 /* UIView+FrameExpand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FrameExpand.h"; sourceTree = "<group>"; };
 		8BDD28741BB23575008BB393 /* UIView+FrameExpand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FrameExpand.m"; sourceTree = "<group>"; };
 		8BDD28751BB23575008BB393 /* weekDaysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = weekDaysViewController.h; sourceTree = "<group>"; };
@@ -449,8 +446,6 @@
 			children = (
 				8BDD28511BB23575008BB393 /* CollectionViewCell.h */,
 				8BDD28521BB23575008BB393 /* CollectionViewCell.m */,
-				8BDD28711BB23575008BB393 /* TableViewCell.h */,
-				8BDD28721BB23575008BB393 /* TableViewCell.m */,
 			);
 			name = cellAndNavigation;
 			sourceTree = "<group>";
@@ -636,7 +631,6 @@
 				8BDD28901BB23575008BB393 /* TabBarController.m in Sources */,
 				8BDD288E1BB23575008BB393 /* settingUpViewController.m in Sources */,
 				8BDD28401BB234AA008BB393 /* ECSlidingViewController.m in Sources */,
-				8BDD28911BB23575008BB393 /* TableViewCell.m in Sources */,
 				B2F129801BB4EB0A0041EBE6 /* JTDateHelper.m in Sources */,
 				8BDD28861BB23575008BB393 /* leftViewController.m in Sources */,
 				B2F129861BB4EB210041EBE6 /* JTCalendarScrollManager.m in Sources */,

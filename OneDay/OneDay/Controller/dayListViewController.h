@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface dayListViewController : UIViewController
+@interface dayListViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)menuAction:(UIBarButtonItem *)sender;
+@property (strong, nonatomic)NSArray *objectsForShow;
 @property (strong, nonatomic) PFObject *item;
 @end
