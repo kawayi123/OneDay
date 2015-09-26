@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="INI-wf-Ys5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="INI-wf-Ys5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -489,6 +489,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8Yh-U2-uET" id="pX2-Fi-k0C"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oSI-KS-zbv">
                                 <rect key="frame" x="11" y="279" width="343" height="30"/>
@@ -501,6 +504,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8Yh-U2-uET" id="0zH-Kh-wjL"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8G-Pn-InD">
                                 <rect key="frame" x="11" y="199" width="343" height="30"/>
@@ -578,6 +584,9 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8Yh-U2-uET" id="nuS-YV-Msc"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="备注：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNc-OL-Olr">
                                 <rect key="frame" x="11" y="489" width="51" height="21"/>
@@ -596,6 +605,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8Yh-U2-uET" id="RoL-4p-Oz8"/>
+                                </connections>
                             </textView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1u-nb-SzO">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
@@ -603,7 +615,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYo-Yi-FFu">
                                         <rect key="frame" x="46" y="52" width="283" height="241"/>
                                         <subviews>
-                                            <datePicker hidden="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="6x4-q5-oSV">
+                                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="6x4-q5-oSV">
                                                 <rect key="frame" x="0.0" y="40" width="283" height="162"/>
                                                 <date key="date" timeIntervalSinceReferenceDate="464524188.70627701">
                                                     <!--2015-09-21 10:29:48 +0000-->
@@ -756,9 +768,13 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="Datepicker" destination="6x4-q5-oSV" id="zmL-JT-0Rd"/>
-                        <outlet property="beginBtn" destination="M8G-Pn-InD" id="fyL-l2-Ra0"/>
+                        <outlet property="activityTime" destination="oSI-KS-zbv" id="d5c-AG-yA6"/>
+                        <outlet property="contentTF" destination="aqb-xs-Lwd" id="Js1-Ne-dNS"/>
                         <outlet property="pickAlterView" destination="F1u-nb-SzO" id="3Rt-zb-OHf"/>
+                        <outlet property="placeTF" destination="Ylb-Q3-RJw" id="E9p-Rx-OQA"/>
                         <outlet property="remindBtn" destination="2M8-cV-1wO" id="gWc-l4-ceN"/>
+                        <outlet property="schName" destination="bcV-20-v6s" id="wea-ff-mo4"/>
+                        <outlet property="schTime" destination="M8G-Pn-InD" id="rgj-dd-Em8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJE-pa-F4c" userLabel="First Responder" sceneMemberID="firstResponder"/>

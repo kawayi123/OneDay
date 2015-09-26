@@ -14,10 +14,17 @@
     NSInteger minute;
     NSInteger second;
 }
+@property (weak, nonatomic) IBOutlet UIButton *remindBtn;
+@property (weak, nonatomic) IBOutlet UIButton *schTime;
+@property (weak, nonatomic) IBOutlet UITextField *schName;
+@property (weak, nonatomic) IBOutlet UITextField *activityTime;
+@property (weak, nonatomic) IBOutlet UITextField *placeTF;
+@property (weak, nonatomic) IBOutlet UITextView *contentTF;
+
 @property (weak, nonatomic) IBOutlet UIView *pickAlterView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *Datepicker;
-@property (weak, nonatomic) IBOutlet UIButton *beginBtn;
-@property (weak, nonatomic) IBOutlet UIButton *remindBtn;
+
+
 
 
 - (IBAction)beginAction:(UIButton *)sender;
