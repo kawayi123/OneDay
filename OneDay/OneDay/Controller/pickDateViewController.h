@@ -38,6 +38,6 @@
 
 - (IBAction)remCancel:(UIBarButtonItem *)sender;
 - (IBAction)remConfirm:(UIBarButtonItem *)sender;
-
+@property (strong, nonatomic)NSArray *objectsForShow;
 
 @end

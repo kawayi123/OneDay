@@ -10,5 +10,5 @@
 
 @interface dayListViewController : UIViewController
 - (IBAction)menuAction:(UIBarButtonItem *)sender;
-
+@property (strong, nonatomic) PFObject *item;
 @end
