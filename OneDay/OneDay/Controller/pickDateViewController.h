@@ -23,6 +23,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *pickAlterView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *Datepicker;
+@property (weak, nonatomic) IBOutlet UIToolbar *remindToolBar;
+@property (weak, nonatomic) IBOutlet UIToolbar *beginToolBar;
 
 
 
@@ -33,5 +35,9 @@
 - (IBAction)cancelAction:(UIBarButtonItem *)sender;
 
 - (IBAction)confirmAction:(UIBarButtonItem *)sender;
+
+- (IBAction)remCancel:(UIBarButtonItem *)sender;
+- (IBAction)remConfirm:(UIBarButtonItem *)sender;
+
 
 @end

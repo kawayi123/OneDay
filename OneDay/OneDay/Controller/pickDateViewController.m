@@ -38,12 +38,16 @@
 - (IBAction)beginAction:(UIButton *)sender {
     
     _pickAlterView.hidden = NO;
+    _beginToolBar.hidden = NO;
+    _remindToolBar.hidden = YES;
     
 }
 
 - (IBAction)remindAction:(UIButton *)sender {
     
     _pickAlterView.hidden = NO;
+    _beginToolBar.hidden = YES;
+    _remindToolBar.hidden = NO;
     /*NSDate *select = [_datePicker date];
      NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
      [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
@@ -83,6 +87,22 @@
     [dateFormatter setDateFormat:@"yyyy年MM月dd日 HH:mm"];
     NSString *dateAndTime =  [dateFormatter stringFromDate:select];
     _schTime.titleLabel.text = dateAndTime;
+}
+
+- (IBAction)remCancel:(UIBarButtonItem *)sender {
+    
+    _pickAlterView.hidden = YES;
+}
+
+- (IBAction)remConfirm:(UIBarButtonItem *)sender {
+    
+    _pickAlterView.hidden = YES;
+    NSDate *select = [_Datepicker date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy年MM月dd日 HH:mm"];
+    NSString *dateAndTime =  [dateFormatter stringFromDate:select];
+    _remindBtn.titleLabel.text = dateAndTime;
+
 }
 - (IBAction)saveAction:(UIBarButtonItem *)sender {
      NSString *schname=_schName.text;

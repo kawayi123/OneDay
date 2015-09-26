@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="INI-wf-Ys5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="INI-wf-Ys5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -644,19 +644,44 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z4j-Ej-Mj7">
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="umJ-lz-znb" userLabel="Toolbar1">
+                                        <rect key="frame" x="46" y="249" width="283" height="44"/>
+                                        <items>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="152-r4-oVv"/>
+                                            <barButtonItem title="取      消" id="O6h-F7-Io3">
+                                                <connections>
+                                                    <action selector="cancelAction:" destination="8Yh-U2-uET" id="yNQ-Aa-DvU"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem width="78" style="plain" systemItem="fixedSpace" id="Cnc-xK-W49"/>
+                                            <barButtonItem title="确     定" id="3Yl-Ox-nom">
+                                                <connections>
+                                                    <action selector="confirmAction:" destination="8Yh-U2-uET" id="Fec-2j-fUS"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="nTQ-M9-kcH"/>
+                                        </items>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="barTintColor" red="1" green="0.58647905219999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </toolbar>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z4j-Ej-Mj7" userLabel="Toolbar2">
                                         <rect key="frame" x="46" y="249" width="283" height="44"/>
                                         <items>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="GUg-EW-Aef"/>
                                             <barButtonItem title="取      消" id="eL3-ce-T08">
                                                 <connections>
-                                                    <action selector="cancelAction:" destination="8Yh-U2-uET" id="lJn-Mg-EYF"/>
+                                                    <action selector="remCancel:" destination="8Yh-U2-uET" id="gDo-Re-iU1"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem width="78" style="plain" systemItem="fixedSpace" id="Aqs-fD-opB"/>
                                             <barButtonItem title="确     定" id="BXF-0Y-nrd">
                                                 <connections>
-                                                    <action selector="confirmAction:" destination="8Yh-U2-uET" id="V3T-ME-fjR"/>
+                                                    <action selector="remConfirm:" destination="8Yh-U2-uET" id="tjw-Mu-iEb"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="UvS-nD-wTD"/>
@@ -673,14 +698,9 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="603" id="2e1-Gn-Zuo"/>
-                                    <constraint firstAttribute="trailing" secondItem="Z4j-Ej-Mj7" secondAttribute="trailing" constant="46" id="3nO-iY-BYm"/>
                                     <constraint firstAttribute="bottom" secondItem="WYo-Yi-FFu" secondAttribute="bottom" constant="310" id="52Y-nP-SOS"/>
-                                    <constraint firstAttribute="bottom" secondItem="Z4j-Ej-Mj7" secondAttribute="bottom" constant="310" id="G7a-B3-wwU"/>
-                                    <constraint firstItem="Z4j-Ej-Mj7" firstAttribute="centerX" secondItem="F1u-nb-SzO" secondAttribute="centerX" id="S2j-XN-Rgv"/>
-                                    <constraint firstItem="Z4j-Ej-Mj7" firstAttribute="top" secondItem="F1u-nb-SzO" secondAttribute="top" constant="249" id="bod-wK-qDP"/>
                                     <constraint firstAttribute="width" constant="375" id="eRB-9s-a6s"/>
                                     <constraint firstItem="WYo-Yi-FFu" firstAttribute="top" secondItem="F1u-nb-SzO" secondAttribute="top" constant="52" id="ggj-Vt-7jT"/>
-                                    <constraint firstItem="Z4j-Ej-Mj7" firstAttribute="leading" secondItem="F1u-nb-SzO" secondAttribute="leading" constant="46" id="koL-Ai-TwQ"/>
                                     <constraint firstItem="WYo-Yi-FFu" firstAttribute="leading" secondItem="F1u-nb-SzO" secondAttribute="leading" constant="46" id="oxW-Gt-8rq"/>
                                     <constraint firstAttribute="trailing" secondItem="WYo-Yi-FFu" secondAttribute="trailing" constant="46" id="w0L-vK-rEG"/>
                                 </constraints>
@@ -769,10 +789,12 @@
                     <connections>
                         <outlet property="Datepicker" destination="6x4-q5-oSV" id="zmL-JT-0Rd"/>
                         <outlet property="activityTime" destination="oSI-KS-zbv" id="d5c-AG-yA6"/>
+                        <outlet property="beginToolBar" destination="umJ-lz-znb" id="PFG-nX-dx5"/>
                         <outlet property="contentTF" destination="aqb-xs-Lwd" id="Js1-Ne-dNS"/>
                         <outlet property="pickAlterView" destination="F1u-nb-SzO" id="3Rt-zb-OHf"/>
                         <outlet property="placeTF" destination="Ylb-Q3-RJw" id="E9p-Rx-OQA"/>
                         <outlet property="remindBtn" destination="2M8-cV-1wO" id="gWc-l4-ceN"/>
+                        <outlet property="remindToolBar" destination="Z4j-Ej-Mj7" id="GUK-b0-L1D"/>
                         <outlet property="schName" destination="bcV-20-v6s" id="wea-ff-mo4"/>
                         <outlet property="schTime" destination="M8G-Pn-InD" id="rgj-dd-Em8"/>
                     </connections>
