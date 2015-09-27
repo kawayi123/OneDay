@@ -16,7 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *calendarContentViewHeight;
 @property (strong, nonatomic) PFObject *item;
-@property (strong, nonatomic) UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)menuAction:(UIBarButtonItem *)sender;
 
 @end
