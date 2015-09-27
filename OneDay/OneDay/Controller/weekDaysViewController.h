@@ -8,14 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface weekDaysViewController : UIViewController<JTCalendarDelegate>
+@interface weekDaysViewController : UIViewController<JTCalendarDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet JTCalendarMenuView *calendarMenuView;
 @property (weak, nonatomic) IBOutlet JTHorizontalCalendarView *calendarContentView;
 
 @property (strong, nonatomic) JTCalendarManager *calendarManager;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *calendarContentViewHeight;
-
+@property (strong, nonatomic) PFObject *item;
+@property (strong, nonatomic) UITableView *tableView;
 - (IBAction)menuAction:(UIBarButtonItem *)sender;
 
 @end

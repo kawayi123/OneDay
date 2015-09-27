@@ -27,6 +27,8 @@
     [self calends];
     _calendarManager.settings.weekModeEnabled = !_calendarManager.settings.weekModeEnabled;
     [_calendarManager reload];
+    _tableView.delegate=self;
+    _tableView.dataSource=self;
     
     CGFloat newHeight = 300;
     if(_calendarManager.settings.weekModeEnabled){
@@ -203,8 +205,33 @@
         [_eventsByDate[key] addObject:randomDate];
     }
 }
-
-/*
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    weekDaysViewController *detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"ssss"];
+//    [self.navigationController pushViewController:detailViewController animated:YES];
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    return _objectsForShow.count;
+    return 1;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+//    PFUser *currentuser=[PFUser currentUser];
+//    if (currentuser) {
+//        NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];//实例化一个NSDateFormatter对象
+//        [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];//设定时间格式
+//        NSString *dateString = [dateFormat stringFromDate:object[@"StartTime"]]; //求出当天的时间字符串，当更改时间格式时，时间字符串也能随之改变
+//        cell.textLabel.text =object[@"Schedulename"];
+//        cell.detailTextLabel.text = dateString;
+    
+//    }else{
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请你登录在查看日程！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
+//        [alert show];
+//    }
+    return cell;
+}/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
