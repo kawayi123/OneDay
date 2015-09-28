@@ -9,6 +9,7 @@
 #import "dayListViewController.h"
 #import "weekDaysViewController.h"
 #import "logInViewController.h"
+#import "TableViewCell.h"
 @interface dayListViewController ()
 
 @end
@@ -76,14 +77,14 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     PFUser *currentuser=[PFUser currentUser];
     if (currentuser) {
         NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];//实例化一个NSDateFormatter对象
         [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];//设定时间格式
         NSString *dateString = [dateFormat stringFromDate:object[@"StartTime"]]; //求出当天的时间字符串，当更改时间格式时，时间字符串也能随之改变
-        cell.textLabel.text =object[@"Schedulename"];
-        cell.detailTextLabel.text = dateString;
+        cell.calendarName.text =object[@"Schedulename"];
+        cell.beginTime.text = dateString;
     }
   return cell;
 }

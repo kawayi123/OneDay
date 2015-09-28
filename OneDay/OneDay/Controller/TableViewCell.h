@@ -10,4 +10,8 @@
 
 @interface TableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *calendarName;
+@property (weak, nonatomic) IBOutlet UILabel *beginTime;
+@property (weak, nonatomic) IBOutlet UILabel *issuer;
+
 @end
