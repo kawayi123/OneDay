@@ -62,6 +62,7 @@
         naviVC.navigationBarHidden = NO;
         
         [self presentViewController:naviVC animated:YES completion:nil];
+
      }
 }
 - (void)loadingData{
