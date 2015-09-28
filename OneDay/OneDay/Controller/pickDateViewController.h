@@ -16,6 +16,7 @@
 }
 @property (weak, nonatomic) IBOutlet UIButton *remindBtn;
 @property (weak, nonatomic) IBOutlet UIButton *schTime;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *savebtn;
 @property (weak, nonatomic) IBOutlet UITextField *schName;
 @property (weak, nonatomic) IBOutlet UITextField *activityTime;
 @property (weak, nonatomic) IBOutlet UITextField *placeTF;

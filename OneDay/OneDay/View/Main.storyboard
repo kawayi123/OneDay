@@ -839,6 +839,7 @@
                         <outlet property="placeTF" destination="Ylb-Q3-RJw" id="E9p-Rx-OQA"/>
                         <outlet property="remindBtn" destination="2M8-cV-1wO" id="gWc-l4-ceN"/>
                         <outlet property="remindToolBar" destination="Z4j-Ej-Mj7" id="GUK-b0-L1D"/>
+                        <outlet property="savebtn" destination="PFg-xS-uAr" id="rSu-co-zSt"/>
                         <outlet property="schName" destination="bcV-20-v6s" id="wea-ff-mo4"/>
                         <outlet property="schTime" destination="M8G-Pn-InD" id="rgj-dd-Em8"/>
                     </connections>
@@ -870,8 +871,8 @@
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Vbz-My-dax">
                                             <rect key="frame" x="87" y="3" width="200" height="29"/>
                                             <segments>
-                                                <segment title="First"/>
-                                                <segment title="Second"/>
+                                                <segment title="看自己"/>
+                                                <segment title="看他人"/>
                                             </segments>
                                             <color key="tintColor" red="1" green="0.58647905219999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </segmentedControl>

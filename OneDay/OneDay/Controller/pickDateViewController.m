@@ -72,6 +72,7 @@
 }
 
 - (IBAction)saveAction:(UIBarButtonItem *)sender {
+    _savebtn.enabled = NO;
     PFUser *currentUser = [PFUser currentUser];//获取当前用户的实例
     if (currentUser) {
        
