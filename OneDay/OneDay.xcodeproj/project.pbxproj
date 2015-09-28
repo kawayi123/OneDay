@@ -10,6 +10,7 @@
 		889D6E5A1BB24639001C4244 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 889D6E591BB24639001C4244 /* 1.png */; };
 		889D6E5E1BB2741D001C4244 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 889D6E5D1BB2741D001C4244 /* 5.png */; };
 		889D6E601BB27460001C4244 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 889D6E5F1BB27460001C4244 /* 2.png */; };
+		8B3D6E121BB8D6000090D3EB /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D6E111BB8D6000090D3EB /* ChangePasswordViewController.m */; };
 		8B95AC611BAC233A001D54E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B95AC601BAC233A001D54E2 /* main.m */; };
 		8B95AC641BAC233A001D54E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B95AC631BAC233A001D54E2 /* AppDelegate.m */; };
 		8B95AC7E1BAC233A001D54E2 /* OneDayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B95AC7D1BAC233A001D54E2 /* OneDayTests.m */; };
@@ -81,6 +82,8 @@
 		889D6E591BB24639001C4244 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		889D6E5D1BB2741D001C4244 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
 		889D6E5F1BB27460001C4244 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		8B3D6E101BB8D6000090D3EB /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
+		8B3D6E111BB8D6000090D3EB /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
 		8B95AC5B1BAC233A001D54E2 /* OneDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B95AC5F1BAC233A001D54E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B95AC601BAC233A001D54E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -419,6 +422,8 @@
 				8BDD28641BB23575008BB393 /* personalDataViewController.m */,
 				8BDD286B1BB23575008BB393 /* settingUpViewController.h */,
 				8BDD286C1BB23575008BB393 /* settingUpViewController.m */,
+				8B3D6E101BB8D6000090D3EB /* ChangePasswordViewController.h */,
+				8B3D6E111BB8D6000090D3EB /* ChangePasswordViewController.m */,
 			);
 			name = leftSetting;
 			sourceTree = "<group>";
@@ -663,6 +668,7 @@
 				8BDD28811BB23575008BB393 /* CollectionViewCell.m in Sources */,
 				8BDD283D1BB234AA008BB393 /* ECSlidingAnimationController.m in Sources */,
 				8BDD288B1BB23575008BB393 /* pickDateViewController.m in Sources */,
+				8B3D6E121BB8D6000090D3EB /* ChangePasswordViewController.m in Sources */,
 				B2F1299D1BB4EB430041EBE6 /* JTCalendarPageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

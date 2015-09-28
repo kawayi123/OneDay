@@ -1507,7 +1507,7 @@
         <!--修改密码-->
         <scene sceneID="47p-vW-vEp">
             <objects>
-                <viewController id="wnA-kN-41t" sceneMemberID="viewController">
+                <viewController id="wnA-kN-41t" customClass="ChangePasswordViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wrF-jQ-2pb"/>
                         <viewControllerLayoutGuide type="bottom" id="Nne-VL-c8g"/>
@@ -1553,9 +1553,18 @@
                         <color key="backgroundColor" red="0.99607843137254903" green="0.89803921568627454" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="修改密码" id="Xsz-kH-Mbm">
-                        <barButtonItem key="rightBarButtonItem" title="确认" id="Feh-Mn-87K"/>
+                        <barButtonItem key="rightBarButtonItem" title="确认" id="Feh-Mn-87K">
+                            <connections>
+                                <action selector="changeAction:" destination="wnA-kN-41t" id="7ri-zT-NkL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="aginPassWord" destination="MhX-Kr-cNX" id="EWy-HI-vPN"/>
+                        <outlet property="oldPassWord" destination="8qu-I5-1wZ" id="dOS-HQ-TkX"/>
+                        <outlet property="passWord" destination="4bP-US-Bt5" id="RvM-Yf-W6F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgS-8q-esu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2088,7 +2097,7 @@
         <image name="week" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xtl-CT-X5j"/>
         <segue reference="lo0-Ia-PUo"/>
+        <segue reference="99X-76-fpP"/>
     </inferredMetricsTieBreakers>
 </document>
