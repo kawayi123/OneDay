@@ -64,6 +64,7 @@
 		B2F1299F1BB4EB430041EBE6 /* JTCalendarWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F129961BB4EB430041EBE6 /* JTCalendarWeekView.m */; };
 		B2F129A01BB4EB430041EBE6 /* JTHorizontalCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F129981BB4EB430041EBE6 /* JTHorizontalCalendarView.m */; };
 		B2F129A11BB4EB430041EBE6 /* JTVerticalCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F1299A1BB4EB430041EBE6 /* JTVerticalCalendarView.m */; };
+		B2F56D901BB8C19900ECD248 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F56D8F1BB8C19900ECD248 /* TableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +191,8 @@
 		B2F129981BB4EB430041EBE6 /* JTHorizontalCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTHorizontalCalendarView.m; sourceTree = "<group>"; };
 		B2F129991BB4EB430041EBE6 /* JTVerticalCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTVerticalCalendarView.h; sourceTree = "<group>"; };
 		B2F1299A1BB4EB430041EBE6 /* JTVerticalCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTVerticalCalendarView.m; sourceTree = "<group>"; };
+		B2F56D8E1BB8C19900ECD248 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		B2F56D8F1BB8C19900ECD248 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -446,6 +449,8 @@
 			children = (
 				8BDD28511BB23575008BB393 /* CollectionViewCell.h */,
 				8BDD28521BB23575008BB393 /* CollectionViewCell.m */,
+				B2F56D8E1BB8C19900ECD248 /* TableViewCell.h */,
+				B2F56D8F1BB8C19900ECD248 /* TableViewCell.m */,
 			);
 			name = cellAndNavigation;
 			sourceTree = "<group>";
@@ -624,6 +629,7 @@
 				8BDD28841BB23575008BB393 /* introduceViewController.m in Sources */,
 				8BDD288A1BB23575008BB393 /* personalDataViewController.m in Sources */,
 				B2F1297E1BB4EB0A0041EBE6 /* JTCalendarManager.m in Sources */,
+				B2F56D901BB8C19900ECD248 /* TableViewCell.m in Sources */,
 				8BDD28831BB23575008BB393 /* HMImageModel.m in Sources */,
 				8BDD28871BB23575008BB393 /* logInViewController.m in Sources */,
 				8BDD28471BB234AA008BB393 /* storageMgr.m in Sources */,
