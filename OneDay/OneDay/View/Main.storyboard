@@ -1054,21 +1054,7 @@
                                 <view key="tableFooterView" contentMode="scaleToFill" id="Rrc-tg-Jfl">
                                     <rect key="frame" x="0.0" y="246" width="375" height="57"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVZ-In-m3R">
-                                            <rect key="frame" x="8" y="8" width="263" height="41"/>
-                                            <state key="normal" title="显示所有日程">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
-                                    </subviews>
                                     <color key="backgroundColor" red="1" green="0.92345482800000001" blue="0.77249271900000005" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="QVZ-In-m3R" secondAttribute="bottom" constant="8" id="Dxf-ku-xL8"/>
-                                        <constraint firstItem="QVZ-In-m3R" firstAttribute="top" secondItem="Rrc-tg-Jfl" secondAttribute="top" constant="8" id="TfV-EH-idD"/>
-                                        <constraint firstItem="QVZ-In-m3R" firstAttribute="leading" secondItem="Rrc-tg-Jfl" secondAttribute="leading" constant="8" id="aoD-c7-7LO"/>
-                                        <constraint firstAttribute="trailing" secondItem="QVZ-In-m3R" secondAttribute="trailing" constant="104" id="owp-pD-JaR"/>
-                                    </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="k0l-jR-VLn">
