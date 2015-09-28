@@ -18,21 +18,41 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self requestData];
+    [self segmentAction];
     [self uiConfiguration];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (void)requestData{
+- (void)segmentAction
+{
+    NSInteger index = self.segmented.selectedSegmentIndex;
+    switch (index) {
+        case 0: {
+            [self requestDataForMe];
+        }
+            break;
+        case 1: {
+            [self requestDataForAnother];
+        }
+            break;
+        default:
+            break;
+    }
+    [self.tableView reloadData];
+}
+- (void)requestDataForAnother{
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Schedule"];
-    [query selectKeys:@[@"Schedulename",@"StartTime"]];
-    
-    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+    PFUser *currentUser = [PFUser currentUser];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"Publisher != %@", currentUser];
+
+    PFQuery *query = [PFQuery queryWithClassName:@"Schedule" predicate:predicate];
+    [query selectKeys:@[@"Schedulename",@"StartTime",@"Publisher"]];
+    [query includeKey:@"Publisher"];
+    //UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
-        [aiv stopAnimating];
+        //[aiv stopAnimating];
         //[rc endRefreshing];
         if (!error) {
             _objectsForShow = returnedObjects;
@@ -43,6 +63,29 @@
         }
     }];
 }
+- (void)requestDataForMe{
+    
+    PFUser *currentUser = [PFUser currentUser];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"Publisher == %@", currentUser];
+
+    PFQuery *query = [PFQuery queryWithClassName:@"Schedule" predicate:predicate];
+    [query selectKeys:@[@"Schedulename",@"StartTime",@"Publisher"]];
+    [query includeKey:@"Publisher"];
+    
+    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
+        [aiv stopAnimating];
+        //[rc endRefreshing];
+        if (!error) {
+            _objectsForShow = returnedObjects;
+            NSLog(@"-----%@",_objectsForShow);
+            [_tableView reloadData];
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+}
+
 -(void)uiConfiguration
 {
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];//在可以滚动视图中添加RefreshControl下拉即可刷新视图
@@ -60,7 +103,7 @@
     _tableView.tableFooterView=[[UIView alloc]init];
 }
 - (void)refreshData:(UIRefreshControl *)rc {
-    [self requestData];
+    [self segmentAction];
     [_tableView reloadData];//重新加载数据
     [self performSelector:@selector(endRefreshing:) withObject:rc afterDelay:1.f];//让方法延迟1秒,在执行endRefreshing方法
 }
@@ -78,14 +121,19 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
+
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];//实例化一个NSDateFormatter对象
     PFUser *currentuser=[PFUser currentUser];
+    PFUser *activity = object[@"Publisher"];
     if (currentuser) {
-        NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];//实例化一个NSDateFormatter对象
         [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];//设定时间格式
         NSString *dateString = [dateFormat stringFromDate:object[@"StartTime"]]; //求出当天的时间字符串，当更改时间格式时，时间字符串也能随之改变
+        NSLog(@"!!!%@",activity[@"NickName"]);
+        NSString *act = [NSString stringWithFormat:@"发布人:%@",activity[@"NickName"]];
         cell.calendarName.text =object[@"Schedulename"];
         cell.beginTime.text = dateString;
+        cell.issuer.text = act;
     }
   return cell;
 }

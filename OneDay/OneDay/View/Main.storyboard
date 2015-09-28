@@ -949,6 +949,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="segmented" destination="Vbz-My-dax" id="soS-1Q-2Qw"/>
                         <outlet property="tableView" destination="tyR-bZ-UvL" id="bj2-UO-nPv"/>
                     </connections>
                 </viewController>
