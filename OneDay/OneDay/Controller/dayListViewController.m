@@ -32,6 +32,7 @@
     UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
         [aiv stopAnimating];
+        //[rc endRefreshing];
         if (!error) {
             _objectsForShow = returnedObjects;
             NSLog(@"%@",_objectsForShow);
@@ -58,7 +59,7 @@
     _tableView.tableFooterView=[[UIView alloc]init];
 }
 - (void)refreshData:(UIRefreshControl *)rc {
-    
+    [self requestData];
     [_tableView reloadData];//重新加载数据
     [self performSelector:@selector(endRefreshing:) withObject:rc afterDelay:1.f];//让方法延迟1秒,在执行endRefreshing方法
 }
