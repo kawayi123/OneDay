@@ -108,10 +108,11 @@
             }
             
         }];
-    } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请你登录在添加日程！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
-        [alert show];
     }
+//    else {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请你登录在添加日程！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
+//        [alert show];
+//    }
 }
 
  #pragma mark - Navigation
