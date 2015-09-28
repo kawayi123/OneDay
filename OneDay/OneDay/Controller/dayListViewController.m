@@ -85,13 +85,6 @@
         cell.textLabel.text =object[@"Schedulename"];
         cell.detailTextLabel.text = dateString;
     }
-//    }else{
-//        logInViewController *tabVC = [Utilities getStoryboardInstanceByIdentity:@"abc"];
-//        UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:tabVC];
-//        naviVC.navigationBarHidden = NO;
-//        
-//        [self presentViewController:naviVC animated:YES completion:nil];
-//    }
   return cell;
 }
 
