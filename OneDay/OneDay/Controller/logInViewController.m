@@ -22,8 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    if (![[Utilities getUserDefaults:@"userName"] isKindOfClass:[NSNull class]]) {
-        _usernameTF.text = [Utilities getUserDefaults:@"userName"];
+    if (![[Utilities getUserDefaults:@"username"] isKindOfClass:[NSNull class]]) {
+        _usernameTF.text = [Utilities getUserDefaults:@"username"];
     } //记住用户名
     
 }
@@ -31,8 +31,8 @@
 - (IBAction)rememberPwdAction:(UISwitch *)sender {
     
     if (_Rememberpwd) {
-        if (![[Utilities getUserDefaults:@"passWord"] isKindOfClass:[NSNull class]]) {
-            _passwordTF.text = [Utilities getUserDefaults:@"passWord"];
+        if (![[Utilities getUserDefaults:@"password"] isKindOfClass:[NSNull class]]) {
+            _passwordTF.text = [Utilities getUserDefaults:@"password"];
         }
     }
     else {
