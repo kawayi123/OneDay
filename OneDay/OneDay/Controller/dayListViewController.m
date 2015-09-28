@@ -67,12 +67,12 @@
 - (void)endRefreshing:(UIRefreshControl *)rc {
     [rc endRefreshing];
 }
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        weekDaysViewController *detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"ssss"];
-       [self.navigationController pushViewController:detailViewController animated:YES];
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        weekDaysViewController *detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"ssss"];
+//       [self.navigationController pushViewController:detailViewController animated:YES];
+//}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _objectsForShow.count;
 }
