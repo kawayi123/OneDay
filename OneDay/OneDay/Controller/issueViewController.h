@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface issueViewController : UIViewController
-
+@interface issueViewController : UIViewController<UISearchBarDelegate,UISearchDisplayDelegate,UISearchResultsUpdating,UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (strong, nonatomic) UISearchBar *searchBar;
 - (IBAction)menuAction:(UIBarButtonItem *)sender;
 
 @end
