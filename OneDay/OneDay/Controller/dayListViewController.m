@@ -84,14 +84,14 @@
         NSString *dateString = [dateFormat stringFromDate:object[@"StartTime"]]; //求出当天的时间字符串，当更改时间格式时，时间字符串也能随之改变
         cell.textLabel.text =object[@"Schedulename"];
         cell.detailTextLabel.text = dateString;
-        
-    }else{
-        logInViewController *tabVC = [Utilities getStoryboardInstanceByIdentity:@"abc"];
-        UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:tabVC];
-        naviVC.navigationBarHidden = NO;
-        
-        [self presentViewController:naviVC animated:YES completion:nil];
     }
+//    }else{
+//        logInViewController *tabVC = [Utilities getStoryboardInstanceByIdentity:@"abc"];
+//        UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:tabVC];
+//        naviVC.navigationBarHidden = NO;
+//        
+//        [self presentViewController:naviVC animated:YES completion:nil];
+//    }
   return cell;
 }
 

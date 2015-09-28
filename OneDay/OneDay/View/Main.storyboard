@@ -2028,7 +2028,7 @@
         <image name="week" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Xtl-CT-X5j"/>
         <segue reference="lo0-Ia-PUo"/>
-        <segue reference="99X-76-fpP"/>
     </inferredMetricsTieBreakers>
 </document>
