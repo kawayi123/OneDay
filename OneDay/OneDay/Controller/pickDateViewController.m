@@ -18,13 +18,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self loadInButtonTime];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void)loadInButtonTime{
+    NSDate *  senddate=[NSDate date];
+    NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
+    [dateformatter setDateFormat:@"yyyy年MM月dd日 HH:mm"];
+    
+    NSString *  locationString=[dateformatter stringFromDate:senddate];
+    [_schTime setTitle:locationString forState:UIControlStateNormal];
+    [_remindBtn setTitle:locationString forState:UIControlStateNormal];
+    NSLog(@"locationString:%@",locationString);
+}
 - (IBAction)beginAction:(UIButton *)sender {
     
     _pickAlterView.hidden = NO;
@@ -84,12 +94,16 @@
         NSDateFormatter *df = [[NSDateFormatter alloc] init];
         [df setDateFormat:@"yyyy年MM月dd日 HH:mm"];
         NSDate *remind =  [df dateFromString:_remindBtn.titleLabel.text];//获取提醒时间
+        NSString *s =  _schTime.titleLabel.text;
+        NSString *r =  _remindBtn.titleLabel.text;
+        NSLog(@"%@,%@",s,r);
         NSString *place=_placeTF.text;//获取地点
         NSString *content=_contentTF.text;//获取日程内容
         if ([avtivityoften isEqualToString:@""] || [place isEqualToString:@""]|| [content isEqualToString:@""]) {
             [Utilities popUpAlertViewWithMsg:@"请填写所有信息" andTitle:nil];
             return;
         }
+        
         PFObject *item = [PFObject objectWithClassName:@"Schedule"];
         item[@"Publisher"] = currentUser;
         item[@"Schedulename"]=schname;

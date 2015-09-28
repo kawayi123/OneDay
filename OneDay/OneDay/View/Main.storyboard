@@ -441,7 +441,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ap-3X-Xcz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1564.5" y="2025.5"/>
+            <point key="canvasLocation" x="2130.5" y="1857.5"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="iEU-si-pt1">
@@ -500,7 +500,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="709-Hz-01I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1564.5" y="2842.5"/>
+            <point key="canvasLocation" x="2130.5" y="2674.5"/>
         </scene>
         <!--添加-->
         <scene sceneID="LJW-sd-D8C">
@@ -559,10 +559,10 @@
                                     <constraint firstAttribute="width" constant="343" id="X5y-Vf-toi"/>
                                     <constraint firstAttribute="height" constant="30" id="j3b-qR-MX1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                <state key="normal" title="2015年10月1号                                            ">
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="                                                    ">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="beginAction:" destination="8Yh-U2-uET" eventType="touchUpInside" id="O2c-Re-a9e"/>
@@ -575,10 +575,10 @@
                                     <constraint firstAttribute="width" constant="343" id="58q-SW-6hL"/>
                                     <constraint firstAttribute="height" constant="30" id="OWC-1b-2rN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                <state key="normal" title="2015年9月30号                          ">
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="                                                    ">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="remindAction:" destination="8Yh-U2-uET" eventType="touchUpInside" id="7Es-hj-xED"/>
@@ -846,7 +846,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iJE-pa-F4c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2090.5" y="2025.5"/>
+            <point key="canvasLocation" x="2656.5" y="1857.5"/>
         </scene>
         <!--DayList-->
         <scene sceneID="pv9-db-FfL">
@@ -886,7 +886,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="54" id="9cd-hy-ABD" customClass="TableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="54" id="9cd-hy-ABD" customClass="TableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9cd-hy-ABD" id="4j1-ML-heF">
@@ -895,19 +895,19 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLS-m2-gHs">
                                                     <rect key="frame" x="8" y="8" width="334" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6c-iS-IqT">
                                                     <rect key="frame" x="8" y="32" width="169" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGb-7p-qlS">
-                                                    <rect key="frame" x="249" y="31" width="85" height="21"/>
+                                                    <rect key="frame" x="282" y="31" width="85" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -917,7 +917,6 @@
                                             <outlet property="beginTime" destination="R6c-iS-IqT" id="FqH-Zj-gEf"/>
                                             <outlet property="calendarName" destination="KLS-m2-gHs" id="ivF-ZN-tcE"/>
                                             <outlet property="issuer" destination="vGb-7p-qlS" id="neQ-ij-gTa"/>
-                                            <segue destination="7Nv-KC-MLc" kind="show" identifier="show" trigger="accessoryAction" id="lo0-Ia-PUo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1889,7 +1888,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d96-fh-S8G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1003.5" y="2025.5"/>
+            <point key="canvasLocation" x="1569.5" y="1857.5"/>
         </scene>
         <!--日历-->
         <scene sceneID="IJB-jN-WTz">
@@ -1908,7 +1907,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zmf-tS-PWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="998.5" y="2836.5"/>
+            <point key="canvasLocation" x="1564.5" y="2668.5"/>
         </scene>
         <!--issue-->
         <scene sceneID="jBw-fy-2ZQ">
@@ -2004,7 +2003,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1564.5" y="3720.5"/>
+            <point key="canvasLocation" x="2130.5" y="3552.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="go0-ME-YlE">
@@ -2062,7 +2061,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JKe-O0-ho5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1003.5" y="3720.5"/>
+            <point key="canvasLocation" x="1569.5" y="3552.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="48R-EX-S3a">
@@ -2093,7 +2092,6 @@
         <image name="week" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lo0-Ia-PUo"/>
-        <segue reference="Xtl-CT-X5j"/>
+        <segue reference="DKp-L3-y9l"/>
     </inferredMetricsTieBreakers>
 </document>
