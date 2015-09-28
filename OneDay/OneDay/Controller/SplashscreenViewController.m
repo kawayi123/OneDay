@@ -33,10 +33,14 @@
     btn.backgroundColor = [UIColor colorWithRed:50.0f/255.0f green:35.0f/255.0f blue:0.5f alpha:1.0f];
     
     [btn setText:@"进入体验" withTextColor:nil];
-  btn.clickBlock = ^(void) {
+    btn.clickBlock = ^(void) {
        TabBarController *tabVC=[Utilities getStoryboardInstanceByIdentity:@"tab"];//获得Storyboardid的实例
-       [self presentViewController:tabVC animated:YES completion:nil];
+       //[self presentViewController:tabVC animated:YES completion:nil];
+        //[self presentViewController:tabVC animated:YES completion:nil];
+        //[self dismissViewControllerAnimated:YES completion:nil];
       // [self performSegueWithIdentifier:@"tab" sender:self];
+        //[self.navigationController popToViewController:tabVC animated:YES];
+        [self.navigationController pushViewController:tabVC animated:YES];
     };
     [self.view addSubview:btn];
     

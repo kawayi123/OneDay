@@ -18,16 +18,41 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Parse setApplicationId:@"IizzWHGnp1XR9BhnuMt1R5gazKGCcRxD0QkDZB4L" clientKey:@"jdx4c0W8IAGc03iHIyyVz7DPIxWgXava5O6GToxM"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"everLaunched"]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"everLaunched"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
+    }
+    else{
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"firstLaunch"];
+    }
+
     [self popUpHomePage];
     return YES;
 }
+- (UIViewController *)po{
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]) {
+        // 这里判断是否第一次
+        
+        SplashscreenViewController *sp = [Utilities getStoryboardInstanceByIdentity:@"splash"];
+        return sp;
+    }
+    else{
+        TabBarController *sp = [Utilities getStoryboardInstanceByIdentity:@"tab"];
+        return sp;
+    }
+    
+}
 - (void)popUpHomePage{
     //找寻ID为tab的TabViewController，创建实例
-    TabBarController *tab = [Utilities getStoryboardInstanceByIdentity:@"tab"];
-    //创建视图控制器
-    UINavigationController* naviVC = [[UINavigationController alloc] initWithRootViewController:tab];
-    //讲视图控制器的上的bar设置为隐藏
+//    SplashscreenViewController *sp = [Utilities getStoryboardInstanceByIdentity:@"splash"];
+//
+    //TabBarController *tab = [Utilities getStoryboardInstanceByIdentity:@"tab"];
+//  创建视图控制器
+    UINavigationController* naviVC = [[UINavigationController alloc] initWithRootViewController:[self po]];
+//  讲视图控制器的上的bar设置为隐藏
     naviVC.navigationBarHidden = YES;
+    
     _slidingViewController = [ECSlidingViewController slidingWithTopViewController:naviVC];//初始化ECSlidingViewController并且设置它的topView（中间页面）
     _slidingViewController.delegate = self;
     
