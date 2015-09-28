@@ -53,18 +53,6 @@
 {
 
 }
-
-- (IBAction)showAction:(UIButton *)sender forEvent:(UIEvent *)event {
-    PFUser *currentUser=[PFUser currentUser];
-    if (currentUser) {
-        dayListViewController *tabVC = [Utilities getStoryboardInstanceByIdentity:@"day"];
-        UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:tabVC];
-        naviVC.navigationBarHidden = NO;
-        
-        [self presentViewController:naviVC animated:YES completion:nil];
-
-     }
-}
 - (void)loadingData{
     
     PFUser *User = [PFUser currentUser];

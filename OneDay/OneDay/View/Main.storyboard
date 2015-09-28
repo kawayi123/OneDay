@@ -8,7 +8,7 @@
         <!--logIn-->
         <scene sceneID="eVi-PY-Hge">
             <objects>
-                <viewController title="logIn" id="2m1-o6-5aw" customClass="logInViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="abc" title="logIn" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2m1-o6-5aw" customClass="logInViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aCo-sO-Gtv"/>
                         <viewControllerLayoutGuide type="bottom" id="K5d-RC-4fB"/>
@@ -1060,9 +1060,6 @@
                                             <state key="normal" title="显示所有日程">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <connections>
-                                                <action selector="showAction:forEvent:" destination="pIc-ik-KnP" eventType="touchUpInside" id="f14-1E-3xH"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" red="1" green="0.92345482800000001" blue="0.77249271900000005" alpha="1" colorSpace="calibratedRGB"/>

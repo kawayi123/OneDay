@@ -8,6 +8,7 @@
 
 #import "dayListViewController.h"
 #import "weekDaysViewController.h"
+#import "logInViewController.h"
 @interface dayListViewController ()
 
 @end
@@ -85,8 +86,11 @@
         cell.detailTextLabel.text = dateString;
         
     }else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请你登录在查看日程！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
-        [alert show];
+        logInViewController *tabVC = [Utilities getStoryboardInstanceByIdentity:@"abc"];
+        UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:tabVC];
+        naviVC.navigationBarHidden = NO;
+        
+        [self presentViewController:naviVC animated:YES completion:nil];
     }
   return cell;
 }
