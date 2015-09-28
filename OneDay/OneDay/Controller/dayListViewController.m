@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self segmentAction];
+    [self.segmented addTarget:self action:@selector(segmentAction) forControlEvents:UIControlEventValueChanged];
     [self uiConfiguration];
 }
 - (void)didReceiveMemoryWarning {
@@ -72,9 +72,9 @@
     [query selectKeys:@[@"Schedulename",@"StartTime",@"Publisher"]];
     [query includeKey:@"Publisher"];
     
-    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+    //UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
-        [aiv stopAnimating];
+        //[aiv stopAnimating];
         //[rc endRefreshing];
         if (!error) {
             _objectsForShow = returnedObjects;

@@ -101,6 +101,7 @@
         NSString *content=_contentTF.text;//获取日程内容
         if ([avtivityoften isEqualToString:@""] || [place isEqualToString:@""]|| [content isEqualToString:@""]) {
             [Utilities popUpAlertViewWithMsg:@"请填写所有信息" andTitle:nil];
+            _savebtn.enabled = YES;
             return;
         }
         
