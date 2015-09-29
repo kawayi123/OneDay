@@ -90,6 +90,58 @@
     }];
     
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];;
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"你确定加此人为好友"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
+    [alert show];
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        
+        PFObject *item = [PFObject objectWithClassName:@"friends"];
+        PFUser *currentUser = [PFUser currentUser];
+        item[@"owner"] = currentUser;
+        item[@"friendUser"] = currentUser;
+        UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+        [item saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            [aiv stopAnimating];
+            if (succeeded) {
+                if (state==YES) {
+                    
+                    //                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"你是否同意添加此人为好友？"] delegate:self cancelButtonTitle:@"拒绝" otherButtonTitles:@"同意",nil];
+                    //                    [alert show];
+                    //                     if (buttonIndex == 1) {
+                    //                         PFObject *item = [PFObject objectWithClassName:@"friends"];
+                    //                         PFUser *curr=[PFUser currentUser];
+                    //                         item[@"owner"]=curr;
+                    //                         item[@"friendUser"] = curr;
+                    //                         item[@"State"] = curr;
+                    //                         UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+                    //                         [item saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    //                             [aiv stopAnimating];
+                    //                             if (succeeded) {
+                    //                                 [self.navigationController popViewControllerAnimated:YES];
+                    //                             }
+                    //                         }];
+                    
+                }
+                // }else{
+                
+                //   }
+                //[self.navigationController popViewControllerAnimated:YES];
+                //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(NotifyFriendsSliding) name:@"NotifyFriends" object:nil];
+            }else if (error.code == 101) {
+                [Utilities popUpAlertViewWithMsg:@"你的信息有误" andTitle:nil];
+            } else if (error.code == 100) {
+                [Utilities popUpAlertViewWithMsg:@"网络不给力，请稍后再试" andTitle:nil];
+            }
+            else {
+                [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
+            }
+        }];
+        
+    }
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

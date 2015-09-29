@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface issueViewController : UIViewController<UISearchBarDelegate,UISearchDisplayDelegate,UISearchResultsUpdating,UITableViewDelegate,UITableViewDataSource>
+{
+    Boolean state;
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (strong, nonatomic) UISearchBar *searchBar;
 - (IBAction)menuAction:(UIBarButtonItem *)sender;
