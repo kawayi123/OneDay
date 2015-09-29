@@ -8,9 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		889D6E5A1BB24639001C4244 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 889D6E591BB24639001C4244 /* 1.png */; };
-		889D6E5E1BB2741D001C4244 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 889D6E5D1BB2741D001C4244 /* 5.png */; };
+		889D6E5E1BB2741D001C4244 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 889D6E5D1BB2741D001C4244 /* 4.png */; };
 		889D6E601BB27460001C4244 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 889D6E5F1BB27460001C4244 /* 2.png */; };
 		8B3D6E121BB8D6000090D3EB /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D6E111BB8D6000090D3EB /* ChangePasswordViewController.m */; };
+		8B7D102C1BBA2EA700F6C977 /* UIImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7D10241BBA2EA700F6C977 /* UIImageButton.m */; };
+		8B7D102D1BBA2EA700F6C977 /* UIView+ZTExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7D10261BBA2EA700F6C977 /* UIView+ZTExtension.m */; };
+		8B7D102E1BBA2EA700F6C977 /* UIView+ZTQuickControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7D10281BBA2EA700F6C977 /* UIView+ZTQuickControl.m */; };
+		8B7D102F1BBA2EA700F6C977 /* ZTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7D102A1BBA2EA700F6C977 /* ZTButton.m */; };
+		8B7D10331BBA31E100F6C977 /* ZJLoopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B7D10321BBA31E100F6C977 /* ZJLoopScrollView.m */; };
+		8B7D10371BBA5F7500F6C977 /* newWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7D10361BBA5F7500F6C977 /* newWorld.png */; };
 		8B95AC611BAC233A001D54E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B95AC601BAC233A001D54E2 /* main.m */; };
 		8B95AC641BAC233A001D54E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B95AC631BAC233A001D54E2 /* AppDelegate.m */; };
 		8B95AC7E1BAC233A001D54E2 /* OneDayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B95AC7D1BAC233A001D54E2 /* OneDayTests.m */; };
@@ -44,7 +50,7 @@
 		8BDD28921BB23575008BB393 /* UIView+FrameExpand.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28741BB23575008BB393 /* UIView+FrameExpand.m */; };
 		8BDD28931BB23575008BB393 /* weekDaysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28761BB23575008BB393 /* weekDaysViewController.m */; };
 		8BDD28961BB23575008BB393 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD287A1BB23575008BB393 /* 3.png */; };
-		8BDD28971BB23575008BB393 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD287B1BB23575008BB393 /* 4.png */; };
+		8BDD28971BB23575008BB393 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD287B1BB23575008BB393 /* 5.png */; };
 		8BDD28991BB23575008BB393 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD287D1BB23575008BB393 /* Images.xcassets */; };
 		8BDD289A1BB23575008BB393 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD287E1BB23575008BB393 /* LaunchScreen.xib */; };
 		8BDD289B1BB23575008BB393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDD287F1BB23575008BB393 /* Main.storyboard */; };
@@ -80,10 +86,22 @@
 
 /* Begin PBXFileReference section */
 		889D6E591BB24639001C4244 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
-		889D6E5D1BB2741D001C4244 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		889D6E5D1BB2741D001C4244 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		889D6E5F1BB27460001C4244 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		8B3D6E101BB8D6000090D3EB /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
 		8B3D6E111BB8D6000090D3EB /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
+		8B7D10231BBA2EA700F6C977 /* UIImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageButton.h; sourceTree = "<group>"; };
+		8B7D10241BBA2EA700F6C977 /* UIImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageButton.m; sourceTree = "<group>"; };
+		8B7D10251BBA2EA700F6C977 /* UIView+ZTExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZTExtension.h"; sourceTree = "<group>"; };
+		8B7D10261BBA2EA700F6C977 /* UIView+ZTExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZTExtension.m"; sourceTree = "<group>"; };
+		8B7D10271BBA2EA700F6C977 /* UIView+ZTQuickControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZTQuickControl.h"; sourceTree = "<group>"; };
+		8B7D10281BBA2EA700F6C977 /* UIView+ZTQuickControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZTQuickControl.m"; sourceTree = "<group>"; };
+		8B7D10291BBA2EA700F6C977 /* ZTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTButton.h; sourceTree = "<group>"; };
+		8B7D102A1BBA2EA700F6C977 /* ZTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTButton.m; sourceTree = "<group>"; };
+		8B7D102B1BBA2EA700F6C977 /* ZTQuickControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTQuickControl.h; sourceTree = "<group>"; };
+		8B7D10311BBA31E100F6C977 /* ZJLoopScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJLoopScrollView.h; sourceTree = "<group>"; };
+		8B7D10321BBA31E100F6C977 /* ZJLoopScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJLoopScrollView.m; sourceTree = "<group>"; };
+		8B7D10361BBA5F7500F6C977 /* newWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newWorld.png; sourceTree = "<group>"; };
 		8B95AC5B1BAC233A001D54E2 /* OneDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B95AC5F1BAC233A001D54E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B95AC601BAC233A001D54E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -152,7 +170,7 @@
 		8BDD28751BB23575008BB393 /* weekDaysViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = weekDaysViewController.h; sourceTree = "<group>"; };
 		8BDD28761BB23575008BB393 /* weekDaysViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = weekDaysViewController.m; sourceTree = "<group>"; };
 		8BDD287A1BB23575008BB393 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
-		8BDD287B1BB23575008BB393 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		8BDD287B1BB23575008BB393 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
 		8BDD287D1BB23575008BB393 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8BDD287E1BB23575008BB393 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		8BDD287F1BB23575008BB393 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -221,6 +239,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B7D10221BBA2E9500F6C977 /* ZTQuickControl */ = {
+			isa = PBXGroup;
+			children = (
+				8B7D10231BBA2EA700F6C977 /* UIImageButton.h */,
+				8B7D10241BBA2EA700F6C977 /* UIImageButton.m */,
+				8B7D10251BBA2EA700F6C977 /* UIView+ZTExtension.h */,
+				8B7D10261BBA2EA700F6C977 /* UIView+ZTExtension.m */,
+				8B7D10271BBA2EA700F6C977 /* UIView+ZTQuickControl.h */,
+				8B7D10281BBA2EA700F6C977 /* UIView+ZTQuickControl.m */,
+				8B7D10291BBA2EA700F6C977 /* ZTButton.h */,
+				8B7D102A1BBA2EA700F6C977 /* ZTButton.m */,
+				8B7D102B1BBA2EA700F6C977 /* ZTQuickControl.h */,
+			);
+			name = ZTQuickControl;
+			sourceTree = "<group>";
+		};
+		8B7D10301BBA31CD00F6C977 /* ZJscrollView */ = {
+			isa = PBXGroup;
+			children = (
+				8B7D10311BBA31E100F6C977 /* ZJLoopScrollView.h */,
+				8B7D10321BBA31E100F6C977 /* ZJLoopScrollView.m */,
+			);
+			name = ZJscrollView;
+			sourceTree = "<group>";
+		};
 		8B95AC521BAC2339001D54E2 = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +395,8 @@
 				8BDD28B01BB23A18008BB393 /* tabView */,
 				8BDD28AF1BB239B9008BB393 /* leftSetting */,
 				8BDD28AD1BB2392D008BB393 /* Splashscreen */,
+				8B7D10301BBA31CD00F6C977 /* ZJscrollView */,
+				8B7D10221BBA2E9500F6C977 /* ZTQuickControl */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -365,8 +410,9 @@
 				889D6E591BB24639001C4244 /* 1.png */,
 				889D6E5F1BB27460001C4244 /* 2.png */,
 				8BDD287A1BB23575008BB393 /* 3.png */,
-				8BDD287B1BB23575008BB393 /* 4.png */,
-				889D6E5D1BB2741D001C4244 /* 5.png */,
+				889D6E5D1BB2741D001C4244 /* 4.png */,
+				8BDD287B1BB23575008BB393 /* 5.png */,
+				8B7D10361BBA5F7500F6C977 /* newWorld.png */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -600,13 +646,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BDD28971BB23575008BB393 /* 4.png in Resources */,
+				8BDD28971BB23575008BB393 /* 5.png in Resources */,
+				8B7D10371BBA5F7500F6C977 /* newWorld.png in Resources */,
 				889D6E5A1BB24639001C4244 /* 1.png in Resources */,
 				889D6E601BB27460001C4244 /* 2.png in Resources */,
 				8BDD28961BB23575008BB393 /* 3.png in Resources */,
 				8BDD289B1BB23575008BB393 /* Main.storyboard in Resources */,
 				8BDD289A1BB23575008BB393 /* LaunchScreen.xib in Resources */,
-				889D6E5E1BB2741D001C4244 /* 5.png in Resources */,
+				889D6E5E1BB2741D001C4244 /* 4.png in Resources */,
 				8BDD28991BB23575008BB393 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -627,10 +674,12 @@
 			files = (
 				8BDD288D1BB23575008BB393 /* setDayListViewController.m in Sources */,
 				8BDD288F1BB23575008BB393 /* SplashscreenViewController.m in Sources */,
+				8B7D102E1BBA2EA700F6C977 /* UIView+ZTQuickControl.m in Sources */,
 				8BDD283E1BB234AA008BB393 /* ECSlidingInteractiveTransition.m in Sources */,
 				8B95AC641BAC233A001D54E2 /* AppDelegate.m in Sources */,
 				B2F1299C1BB4EB430041EBE6 /* JTCalendarMenuView.m in Sources */,
 				B2F1299E1BB4EB430041EBE6 /* JTCalendarWeekDayView.m in Sources */,
+				8B7D102D1BBA2EA700F6C977 /* UIView+ZTExtension.m in Sources */,
 				8BDD28841BB23575008BB393 /* introduceViewController.m in Sources */,
 				8BDD288A1BB23575008BB393 /* personalDataViewController.m in Sources */,
 				B2F1297E1BB4EB0A0041EBE6 /* JTCalendarManager.m in Sources */,
@@ -649,7 +698,9 @@
 				8BDD28931BB23575008BB393 /* weekDaysViewController.m in Sources */,
 				B2F129A01BB4EB430041EBE6 /* JTHorizontalCalendarView.m in Sources */,
 				8BDD283F1BB234AA008BB393 /* ECSlidingSegue.m in Sources */,
+				8B7D102F1BBA2EA700F6C977 /* ZTButton.m in Sources */,
 				8B95AC611BAC233A001D54E2 /* main.m in Sources */,
+				8B7D102C1BBA2EA700F6C977 /* UIImageButton.m in Sources */,
 				8BDD28921BB23575008BB393 /* UIView+FrameExpand.m in Sources */,
 				8BDD28461BB234AA008BB393 /* OneDay.xcdatamodeld in Sources */,
 				8BDD288C1BB23575008BB393 /* registerViewController.m in Sources */,
@@ -658,6 +709,7 @@
 				8BDD28881BB23575008BB393 /* myAccountViewController.m in Sources */,
 				B2F1299B1BB4EB430041EBE6 /* JTCalendarDayView.m in Sources */,
 				8BDD28411BB234AA008BB393 /* UIViewController+ECSlidingViewController.m in Sources */,
+				8B7D10331BBA31E100F6C977 /* ZJLoopScrollView.m in Sources */,
 				8BDD28891BB23575008BB393 /* navigationController.m in Sources */,
 				8BDD28421BB234AA008BB393 /* WZFlashButton.m in Sources */,
 				8BDD28481BB234AA008BB393 /* Utilities.m in Sources */,

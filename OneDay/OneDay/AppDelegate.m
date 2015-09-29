@@ -29,27 +29,14 @@
     [self popUpHomePage];
     return YES;
 }
-- (UIViewController *)po{
-    
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]) {
-        // 这里判断是否第一次
-        
-        SplashscreenViewController *sp = [Utilities getStoryboardInstanceByIdentity:@"splash"];
-        return sp;
-    }
-    else{
-        TabBarController *sp = [Utilities getStoryboardInstanceByIdentity:@"tab"];
-        return sp;
-    }
-    
-}
+
 - (void)popUpHomePage{
     //找寻ID为tab的TabViewController，创建实例
 //    SplashscreenViewController *sp = [Utilities getStoryboardInstanceByIdentity:@"splash"];
 //
-    //TabBarController *tab = [Utilities getStoryboardInstanceByIdentity:@"tab"];
+    TabBarController *tab = [Utilities getStoryboardInstanceByIdentity:@"tab"];
 //  创建视图控制器
-    UINavigationController* naviVC = [[UINavigationController alloc] initWithRootViewController:[self po]];
+    UINavigationController* naviVC = [[UINavigationController alloc] initWithRootViewController:tab];
 //  讲视图控制器的上的bar设置为隐藏
     naviVC.navigationBarHidden = YES;
     

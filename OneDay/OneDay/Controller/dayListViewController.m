@@ -9,6 +9,7 @@
 #import "dayListViewController.h"
 #import "weekDaysViewController.h"
 #import "logInViewController.h"
+#import "introduceViewController.h"
 #import "TableViewCell.h"
 @interface dayListViewController ()
 
@@ -18,12 +19,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //[self po];
     [self.segmented addTarget:self action:@selector(segmentAction) forControlEvents:UIControlEventValueChanged];
     [self uiConfiguration];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)po{
+    introduceViewController *sp = [Utilities getStoryboardInstanceByIdentity:@"splash"];
+    //UINavigationController* naviVC = [[UINavigationController alloc] initWithRootViewController:sp];
+    [self presentViewController:sp animated:YES completion:nil];
+    //    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]) {
+    //        // 这里判断是否第一次
+    //
+    //        //SplashscreenViewController *sp = [Utilities getStoryboardInstanceByIdentity:@"splash"];
+    //        introduceViewController *sp = [Utilities getStoryboardInstanceByIdentity:@"splash"];
+    //        [self presentViewController:sp animated:YES completion:nil];
+    //    }
 }
 - (void)segmentAction
 {

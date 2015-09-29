@@ -9,7 +9,7 @@
 #import <CoreData/CoreData.h>
 #import "leftViewController.h"
 #import "TabBarController.h"
-#import "SplashscreenViewController.h"
+//#import "SplashscreenViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate,UIViewControllerAnimatedTransitioning, ECSlidingViewControllerDelegate, ECSlidingViewControllerLayout>
 

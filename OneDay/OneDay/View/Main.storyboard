@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SyP-M0-54a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -182,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZl-Y2-Era" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-138.5" y="252.5"/>
+            <point key="canvasLocation" x="673.5" y="252.5"/>
         </scene>
         <!--register-->
         <scene sceneID="OWS-dx-FBM">
@@ -337,7 +337,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drB-FF-o8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="402.5" y="252.5"/>
+            <point key="canvasLocation" x="1214.5" y="252.5"/>
         </scene>
         <!--weekDays-->
         <scene sceneID="6qo-Db-lU5">
@@ -1742,7 +1742,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oev-wF-WaJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.5" y="252.5"/>
+            <point key="canvasLocation" x="1740.5" y="252.5"/>
         </scene>
         <!--我的账号-->
         <scene sceneID="53Z-nt-iAH">
@@ -1985,12 +1985,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rfm-Eb-xQ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-667.5" y="252.5"/>
+            <point key="canvasLocation" x="144.5" y="252.5"/>
         </scene>
         <!--introduce-->
         <scene sceneID="Nk3-37-jyq">
             <objects>
-                <viewController storyboardIdentifier="splash" title="introduce" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SyP-M0-54a" customClass="SplashscreenViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="splash" title="introduce" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SyP-M0-54a" customClass="introduceViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r3t-M1-AX8"/>
                         <viewControllerLayoutGuide type="bottom" id="DO2-kq-1C4"/>
@@ -2000,11 +2000,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="6TM-2f-R8N"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHX-kT-UsM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1241.5" y="252.5"/>
+            <point key="canvasLocation" x="-429.5" y="252.5"/>
         </scene>
         <!--发布-->
         <scene sceneID="8QZ-vq-28z">
