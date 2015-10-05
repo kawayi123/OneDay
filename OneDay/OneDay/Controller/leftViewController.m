@@ -21,7 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _btn.enabled=YES;
+    _btn.hidden = NO;
+    _perBtn.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,10 +34,12 @@
     PFUser *currentUser=[PFUser currentUser];
     if (!currentUser) {
         [self pToLogin];
-        _btn.enabled=YES;
+        _btn.hidden = NO;
+        _perBtn.hidden = YES;
     }else{
         [self loadingData];
-        _btn.enabled=NO;
+        _btn.hidden = YES;
+        _perBtn.hidden = NO;
     }
 }
 /*
