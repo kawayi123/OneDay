@@ -110,9 +110,10 @@
         item[@"Schedulename"]=schname;
         item[@"StartTime"] = select;
         item[@"activityTime"] = avtivityoften;
-        item[@"ReminderTime"]=remind;
-        item[@"Place"]=place;
+        item[@"ReminderTime"] =remind;
+        item[@"Place"] =place;
         item[@"Event"] =content;
+        item[@"StartDate"] = [select dateAtStartOfDay];
         UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
         [item saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             [aiv stopAnimating];

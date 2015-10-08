@@ -15,10 +15,10 @@
 @property (strong, nonatomic) JTCalendarManager *calendarManager;
 @property (nonatomic, weak) IBOutlet JCTagListView *tagListView;
 @property (weak, nonatomic) IBOutlet UIView *tagView;
-@property (strong, nonatomic)NSArray *objectsForShow;
+@property (strong, nonatomic) NSArray *objectsForShow;
 @property (strong, nonatomic) NSMutableArray *rawArray;
 @property (strong, nonatomic) PFObject *item;
-@property (strong, nonatomic) NSDate *date;
+@property (strong, nonatomic) NSString *date;
 - (IBAction)ToView:(UIButton *)sender;
 - (IBAction)deleteTagCloud:(UIButton *)sender;
 - (IBAction)cancel:(UIButton *)sender;
