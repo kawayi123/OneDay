@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface leftViewController : UIViewController
+#import "TableViewCell.h"
+@interface leftViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,TableViewCellDelegate>
+{
+    Boolean state;
+    NSIndexPath *ip;
+}
+@property(strong,nonatomic)NSArray *objectsForShow;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(weak,nonatomic)IBOutlet UIButton *btn;
 @property (weak, nonatomic) IBOutlet UIButton *perBtn;
 
