@@ -1152,7 +1152,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="aa" selectionStyle="default" indentationWidth="10" rowHeight="51" id="k0l-jR-VLn" customClass="TableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="aa" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="51" id="k0l-jR-VLn" customClass="TableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k0l-jR-VLn" id="Xg5-hU-Vsm">
@@ -1193,6 +1193,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pIc-ik-KnP" id="ibI-jM-1hg"/>
+                                    <outlet property="delegate" destination="pIc-ik-KnP" id="10e-en-Snw"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.92345482800000001" blue="0.77249271900000005" alpha="1" colorSpace="calibratedRGB"/>

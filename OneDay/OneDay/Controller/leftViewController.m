@@ -78,11 +78,13 @@
 {
     return _objectsForShow.count;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
     PFObject *user = object[@"owner"];
+    NSLog(@"user = %@", user);
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.delegate=self;
     cell.indexPath=indexPath;
