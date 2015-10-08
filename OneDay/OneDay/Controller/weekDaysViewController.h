@@ -18,5 +18,6 @@
 @property (strong, nonatomic) PFObject *item;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 - (IBAction)menuAction:(UIBarButtonItem *)sender;
-
+@property(strong,nonatomic)NSMutableArray *rawArray;
+@property(strong,nonatomic)NSArray *objectsForShow;
 @end
