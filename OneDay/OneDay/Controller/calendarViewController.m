@@ -11,7 +11,6 @@
 @interface calendarViewController ()
 {
     NSMutableDictionary *_eventsByDate;
-    
     NSDate *_dateSelected;
 }
 
@@ -21,57 +20,54 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _rawArray = nil;
+    _rawArray = [NSMutableArray new];
+    _dateSelected = [[NSDate date] dateAtStartOfDay];
     [self calendars];
-    [self tagCloudView];
-    NSLog(@"%@",_rawArray);
-    
+    [self requestDataForMe];
 }
 - (void)tagCloudView{
-    
-    [self requestDataForMe];
+    [_rawArray removeAllObjects];
+    for (PFObject *obj in _objectsForShow) {
+        NSString *sn = obj[@"Schedulename"];
+        NSLog(@"%@", sn);
+        [_rawArray addObject:sn];
+    }
+    NSLog(@"_rawArray = %@", _rawArray);
+    [_tagListView.tags removeAllObjects];
+    [_tagListView.tags addObjectsFromArray:_rawArray];
     
     _tagListView.canSeletedTags = YES;
     _tagListView.tagColor = [UIColor orangeColor];
     _tagListView.tagCornerRadius = 5.0f;
-    
-    [_tagListView.tags addObjectsFromArray:@[@"聚会", @"去上海", @"去旅游", @"项目完成期限", @"找房子", @"回家"]];
-    
-    //[_tagListView.tags addObjectsFromArray:_objectsForShow];
-    //NSLog(@"%@",_objectsForShow);
-    for (NSArray *object in _objectsForShow) {
-        
-        NSDictionary *dictt = [NSDictionary dictionaryWithObjectsAndKeys: object[0], @"Schedulename", object[1], @"StartTime", nil];
-        
-        //NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: _objectsForShow[0], @"firstName", _objectsForShow[1], @"lastName", nil];
-        [_rawArray addObject:dictt];
-        NSLog(@"%@",_rawArray);
-    }
-    
-    [self.tagListView setCompletionBlockWithSeleted:^(NSInteger index) {
-        NSLog(@"______%ld______", (long)index);
-    }];
+    [self.tagListView.collectionView reloadData];
 }
 - (void)requestDataForMe{
     
     PFUser *currentUser = [PFUser currentUser];
+    NSLog(@"currentUser = %@", currentUser);
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"Publisher == %@", currentUser];
-    
+    NSLog(@"_dateSelected = %@", [_dateSelected description]);
     PFQuery *query = [PFQuery queryWithClassName:@"Schedule" predicate:predicate];
     //PFQuery *query = [PFQuery queryWithClassName:@"Schedule"];
+    [query whereKey:@"StartDate" equalTo:_dateSelected];
     [query selectKeys:@[@"Schedulename", @"StartTime"]];
     //[query includeKey:@"Publisher"];
     
-    //UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
-        //[aiv stopAnimating];
+        [aiv stopAnimating];
         //[rc endRefreshing];
         if (!error) {
             _objectsForShow = returnedObjects;
+            [self tagCloudView];
+            
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
 }
+
 - (void)calendar:(JTCalendarManager *)calendar prepareDayView:(JTCalendarDayView *)dayView
 {
     dayView.hidden = NO;
@@ -108,10 +104,9 @@
         dayView.dotView.hidden = YES;
     }
     //NSLog(@"%@",_dateSelected);
-    NSTimeInterval  interval =24*60*60*1; //1:天数
-    NSDate *tomorrow = [_dateSelected dateByAddingTimeInterval:interval];
-    _date = tomorrow;
-    tomorrow = nil;
+    //    NSTimeInterval  interval =24*60*60*1; //1:天数
+    //    NSDate *tomorrow = [_dateSelected dateByAddingTimeInterval:interval];
+    //tomorrow = nil;
 }
 -(void)calendars
 {
@@ -170,6 +165,13 @@
             [_calendarContentView loadPreviousPageWithAnimation];
         }
     }
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy年MM月dd日 HH:mm:ss"];
+    _date =  [dateFormatter stringFromDate:_dateSelected];
+    //NSLog(@"_date = %@", _date);
+    
+    [self requestDataForMe];
 }
 
 #pragma mark - Views customization
@@ -279,13 +281,17 @@
 
 - (IBAction)ToView:(UIButton *)sender {
     _tagView.hidden = NO;
-    
-    [self tagCloudView];
 }
 
 - (IBAction)deleteTagCloud:(UIButton *)sender {
+    NSLog(@"seletedTags = %@", self.tagListView.seletedTags);
+    [self.tagListView setCompletionBlockWithSeleted:^(NSInteger index) {
+        NSLog(@"______%ld______", (long)index);
+        //[self.tagListView.tags removeObjectsInArray:self.tagListView.seletedTags];
+        [self.tagListView.tags removeObjectsInArray:self.tagListView.seletedTags];
+    }];
     
-    [self.tagListView.tags removeObjectsInArray:self.tagListView.seletedTags];
+    NSLog(@"tags = %@", self.tagListView.tags);
     [self.tagListView.seletedTags removeAllObjects];
     
     [self.tagListView.collectionView reloadData];

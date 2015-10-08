@@ -15,5 +15,5 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (strong, nonatomic) UISearchBar *searchBar;
 - (IBAction)menuAction:(UIBarButtonItem *)sender;
-@property(strong,nonatomic)PFObject *item;
+
 @end

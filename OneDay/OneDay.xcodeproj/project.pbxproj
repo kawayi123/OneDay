@@ -62,6 +62,8 @@
 		8BDD28A81BB2382D008BB393 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BDD28A71BB2382D008BB393 /* libsqlite3.dylib */; };
 		8BDD28AA1BB2383F008BB393 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BDD28A91BB2383F008BB393 /* AudioToolbox.framework */; };
 		8BDD28AC1BB2384C008BB393 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BDD28AB1BB2384C008BB393 /* SystemConfiguration.framework */; };
+		8BE797EA1BC61FCB00DBFF8C /* NSDate+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE797E71BC61FCB00DBFF8C /* NSDate+Utility.m */; };
+		8BE797EB1BC61FCB00DBFF8C /* NSDateFormatter+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE797E91BC61FCB00DBFF8C /* NSDateFormatter+Category.m */; };
 		B2F1297E1BB4EB0A0041EBE6 /* JTCalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F129791BB4EB0A0041EBE6 /* JTCalendarManager.m */; };
 		B2F1297F1BB4EB0A0041EBE6 /* JTCalendarSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F1297B1BB4EB0A0041EBE6 /* JTCalendarSettings.m */; };
 		B2F129801BB4EB0A0041EBE6 /* JTDateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F1297D1BB4EB0A0041EBE6 /* JTDateHelper.m */; };
@@ -188,6 +190,10 @@
 		8BDD28A71BB2382D008BB393 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		8BDD28A91BB2383F008BB393 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8BDD28AB1BB2384C008BB393 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8BE797E61BC61FCB00DBFF8C /* NSDate+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utility.h"; sourceTree = "<group>"; };
+		8BE797E71BC61FCB00DBFF8C /* NSDate+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utility.m"; sourceTree = "<group>"; };
+		8BE797E81BC61FCB00DBFF8C /* NSDateFormatter+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+Category.h"; sourceTree = "<group>"; };
+		8BE797E91BC61FCB00DBFF8C /* NSDateFormatter+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+Category.m"; sourceTree = "<group>"; };
 		B2A3C3751BB128A6009E205D /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		B2F129761BB4EB0A0041EBE6 /* JTCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendar.h; sourceTree = "<group>"; };
 		B2F129771BB4EB0A0041EBE6 /* JTCalendarDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendarDelegate.h; sourceTree = "<group>"; };
@@ -406,6 +412,10 @@
 				8BDD28331BB234AA008BB393 /* storageMgr.m */,
 				8BDD28341BB234AA008BB393 /* Utilities.h */,
 				8BDD28351BB234AA008BB393 /* Utilities.m */,
+				8BE797E61BC61FCB00DBFF8C /* NSDate+Utility.h */,
+				8BE797E71BC61FCB00DBFF8C /* NSDate+Utility.m */,
+				8BE797E81BC61FCB00DBFF8C /* NSDateFormatter+Category.h */,
+				8BE797E91BC61FCB00DBFF8C /* NSDateFormatter+Category.m */,
 			);
 			path = Untlity;
 			sourceTree = "<group>";
@@ -720,6 +730,7 @@
 				B2F129861BB4EB210041EBE6 /* JTCalendarScrollManager.m in Sources */,
 				B2F129A11BB4EB430041EBE6 /* JTVerticalCalendarView.m in Sources */,
 				8BDD28931BB23575008BB393 /* weekDaysViewController.m in Sources */,
+				8BE797EA1BC61FCB00DBFF8C /* NSDate+Utility.m in Sources */,
 				B2F129A01BB4EB430041EBE6 /* JTHorizontalCalendarView.m in Sources */,
 				8BDD283F1BB234AA008BB393 /* ECSlidingSegue.m in Sources */,
 				8B7D102F1BBA2EA700F6C977 /* ZTButton.m in Sources */,
@@ -741,6 +752,7 @@
 				8BDD28851BB23575008BB393 /* issueViewController.m in Sources */,
 				8BDD28801BB23575008BB393 /* calendarViewController.m in Sources */,
 				B2F1297F1BB4EB0A0041EBE6 /* JTCalendarSettings.m in Sources */,
+				8BE797EB1BC61FCB00DBFF8C /* NSDateFormatter+Category.m in Sources */,
 				8BDD28811BB23575008BB393 /* CollectionViewCell.m in Sources */,
 				8B01DCC51BC2EC0800B83477 /* JCTagCell.m in Sources */,
 				8BDD283D1BB234AA008BB393 /* ECSlidingAnimationController.m in Sources */,
