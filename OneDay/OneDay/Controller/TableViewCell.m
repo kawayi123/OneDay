@@ -7,8 +7,9 @@
 //
 
 #import "TableViewCell.h"
-
+#import "issueViewController.h"
 @implementation TableViewCell
+
 - (IBAction)agree:(id)sender forEvent:(UIEvent *)event {
     if (_delegate&&[_delegate respondsToSelector:@selector(applyButtonPressed:)])//":"表示有参
     {

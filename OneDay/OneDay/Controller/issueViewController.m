@@ -7,7 +7,7 @@
 //
 
 #import "issueViewController.h"
-
+#import "TableViewCell.h"
 @interface issueViewController ()
 {
     NSArray *data;
@@ -147,7 +147,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
-    
+  
     if (tableView == _tableview) {
         cell.textLabel.text = data[indexPath.row];
     }else{

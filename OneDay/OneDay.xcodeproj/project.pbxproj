@@ -34,7 +34,6 @@
 		8BDD28471BB234AA008BB393 /* storageMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28331BB234AA008BB393 /* storageMgr.m */; };
 		8BDD28481BB234AA008BB393 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28351BB234AA008BB393 /* Utilities.m */; };
 		8BDD28801BB23575008BB393 /* calendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28501BB23575008BB393 /* calendarViewController.m */; };
-		8BDD28811BB23575008BB393 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28521BB23575008BB393 /* CollectionViewCell.m */; };
 		8BDD28821BB23575008BB393 /* dayListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28541BB23575008BB393 /* dayListViewController.m */; };
 		8BDD28831BB23575008BB393 /* HMImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28561BB23575008BB393 /* HMImageModel.m */; };
 		8BDD28841BB23575008BB393 /* introduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28581BB23575008BB393 /* introduceViewController.m */; };
@@ -144,8 +143,6 @@
 		8BDD28351BB234AA008BB393 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
 		8BDD284F1BB23575008BB393 /* calendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calendarViewController.h; sourceTree = "<group>"; };
 		8BDD28501BB23575008BB393 /* calendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = calendarViewController.m; sourceTree = "<group>"; };
-		8BDD28511BB23575008BB393 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
-		8BDD28521BB23575008BB393 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		8BDD28531BB23575008BB393 /* dayListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dayListViewController.h; sourceTree = "<group>"; };
 		8BDD28541BB23575008BB393 /* dayListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dayListViewController.m; sourceTree = "<group>"; };
 		8BDD28551BB23575008BB393 /* HMImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMImageModel.h; sourceTree = "<group>"; };
@@ -531,8 +528,6 @@
 		8BDD28B11BB23A64008BB393 /* cellAndNavigation */ = {
 			isa = PBXGroup;
 			children = (
-				8BDD28511BB23575008BB393 /* CollectionViewCell.h */,
-				8BDD28521BB23575008BB393 /* CollectionViewCell.m */,
 				B2F56D8E1BB8C19900ECD248 /* TableViewCell.h */,
 				B2F56D8F1BB8C19900ECD248 /* TableViewCell.m */,
 			);
@@ -753,7 +748,6 @@
 				8BDD28801BB23575008BB393 /* calendarViewController.m in Sources */,
 				B2F1297F1BB4EB0A0041EBE6 /* JTCalendarSettings.m in Sources */,
 				8BE797EB1BC61FCB00DBFF8C /* NSDateFormatter+Category.m in Sources */,
-				8BDD28811BB23575008BB393 /* CollectionViewCell.m in Sources */,
 				8B01DCC51BC2EC0800B83477 /* JCTagCell.m in Sources */,
 				8BDD283D1BB234AA008BB393 /* ECSlidingAnimationController.m in Sources */,
 				8B01DCC61BC2EC0800B83477 /* JCTagListView.m in Sources */,
