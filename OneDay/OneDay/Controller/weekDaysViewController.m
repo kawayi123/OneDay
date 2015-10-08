@@ -8,6 +8,7 @@
 
 #import "weekDaysViewController.h"
 #import "JTCalendar.h"
+#import "TableViewCell.h"
 @interface weekDaysViewController ()
 {
     NSMutableDictionary *_eventsByDate;
@@ -18,13 +19,17 @@
     
     NSDate *_dateSelected;
 }
- @end
+@end
 
 @implementation weekDaysViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self calends];
+    _rawArray = nil;
+    _rawArray = [NSMutableArray new];
+    _dateSelected = [[NSDate date] dateAtStartOfDay];
+    
     _calendarManager.settings.weekModeEnabled = !_calendarManager.settings.weekModeEnabled;
     [_calendarManager reload];
     _tableView.delegate=self;
@@ -37,8 +42,32 @@
     
     self.calendarContentViewHeight.constant = newHeight;
     [self.view layoutIfNeeded];
-    
+    [self requestDataForMe];
 }
+- (void)requestDataForMe{
+    
+    PFUser *currentUser = [PFUser currentUser];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"Publisher == %@", currentUser];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Schedule" predicate:predicate];
+    [query whereKey:@"StartDate" equalTo:_dateSelected ];
+    [query selectKeys:@[@"Schedulename",@"StartTime",@"Event"]];
+//    [query includeKey:@"Publisher"];
+    
+    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
+        [aiv stopAnimating];
+        //[rc endRefreshing];
+        if (!error) {
+            _objectsForShow = returnedObjects;
+            NSLog(@"-----%@",_objectsForShow);
+            [_tableView reloadData];
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+}
+
 -(void)calends
 {
     _calendarManager = [JTCalendarManager new];
@@ -130,6 +159,12 @@
             [_calendarContentView loadPreviousPageWithAnimation];
         }
     }
+    //NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //[dateFormatter setDateFormat:@"yyyy年MM月dd日 HH:mm:ss"];
+    //_date =  [dateFormatter stringFromDate:_dateSelected];
+    //NSLog(@"_date = %@", _date);
+    
+    [self requestDataForMe];
 }
 
 #pragma mark - CalendarManager delegate - Page mangement
@@ -205,33 +240,7 @@
         [_eventsByDate[key] addObject:randomDate];
     }
 }
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    weekDaysViewController *detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"ssss"];
-//    [self.navigationController pushViewController:detailViewController animated:YES];
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    return _objectsForShow.count;
-    return 1;
-}
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-//    PFUser *currentuser=[PFUser currentUser];
-//    if (currentuser) {
-//        NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];//实例化一个NSDateFormatter对象
-//        [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];//设定时间格式
-//        NSString *dateString = [dateFormat stringFromDate:object[@"StartTime"]]; //求出当天的时间字符串，当更改时间格式时，时间字符串也能随之改变
-//        cell.textLabel.text =object[@"Schedulename"];
-//        cell.detailTextLabel.text = dateString;
-    
-//    }else{
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请你登录在查看日程！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
-//        [alert show];
-//    }
-    return cell;
-}/*
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -245,4 +254,24 @@
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"leftSwitch" object:self];
 }
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _objectsForShow.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
+    
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell1" forIndexPath:indexPath];
+    NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];//实例化一个NSDateFormatter对象
+    PFUser *currentuser=[PFUser currentUser];
+//    PFUser *activity = object[@"Publisher"];
+    if (currentuser) {
+        [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];//设定时间格式
+        NSString *dateString = [dateFormat stringFromDate:object[@"StartTime"]]; //求出当天的时间字符串，当更改时间格式时，时间字符串也能随之改变
+        cell.Schedulename.text = object[@"Schedulename"];
+        cell.Event.text = object[@"Event"];
+        cell.StartTime.text = dateString;
+    }
+    return cell;
+}
+
 @end
