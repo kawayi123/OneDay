@@ -12,8 +12,6 @@
 #import "dayListViewController.h"
 @interface leftViewController ()
 - (IBAction)loginAction:(UIButton *)sender forEvent:(UIEvent *)event;
-- (IBAction)showAction:(UIButton *)sender forEvent:(UIEvent *)event;
-
 
 @end
 
@@ -34,28 +32,117 @@
     PFUser *currentUser=[PFUser currentUser];
     if (!currentUser) {
         [self pToLogin];
+        _objectsForShow = nil;
+        _objectsForShow = [NSMutableArray new];
+        [_tableview reloadData];
         _btn.hidden = NO;
         _perBtn.hidden = YES;
     }else{
         [self loadingData];
+        [self requestData];
         _btn.hidden = YES;
         _perBtn.hidden = NO;
     }
 }
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
+- (void)requestData
+{
+    PFUser *currentUser = [PFUser currentUser];
+    PFQuery *query = [PFQuery queryWithClassName:@"friends"];
+    [query whereKey:@"friendUser" equalTo:currentUser];
+    [query whereKey:@"State" equalTo:@NO];
+    [query includeKey:@"owner"];
+    [query selectKeys:@[@"owner"]];
+    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
+        [aiv stopAnimating];
+        if (!error) {
+            _objectsForShow = returnedObjects;
+            NSLog(@"_objectsForShow = %@",_objectsForShow);
+            [_tableview reloadData];
+        }else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 }
-*/
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _objectsForShow.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
+    PFObject *user = object[@"owner"];
+    TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.delegate=self;
+    cell.indexPath=indexPath;
+    PFUser *currentuser=[PFUser currentUser];
+    if (currentuser) {
+        NSLog(@"%@",user[@"PhoneNum"]);
+        cell.textLabel.text = [NSString stringWithFormat:@"%@", user[@"PhoneNum"]];
+    }
+    return cell;
+}
+-(void)applyButtonPressed:(NSIndexPath *)indexPath
+{
+    ip = indexPath;
+    PFObject *item = [_objectsForShow objectAtIndex:indexPath.row];
+    item[@"State"] = @YES;
+    [item saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+        if (succeeded) {
+            [Utilities popUpAlertViewWithMsg:@"你已成功加此人为好友！" andTitle:nil];
+            [self requestData];
+        }
+    }];
+}
+- (void)jujueButtonPressed:(NSIndexPath *)indexPath
+{
+    ip = indexPath;
+    PFObject *item = [_objectsForShow objectAtIndex:indexPath.row];
+    [item deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error){
+        if (succeeded) {
+            [Utilities popUpAlertViewWithMsg:@"你已成功拒绝加此人为好友！" andTitle:nil];
+            [self requestData];
+        }
+    }];
+}
 - (IBAction)loginAction:(UIButton *)sender forEvent:(UIEvent *)event
 {
-
+    
 }
+
+//- (IBAction)agreen:(UIButton *)sender forEvent:(UIEvent *)event
+//{
+//    PFUser *currentUser=[PFUser currentUser];
+//    PFQuery *query = [PFQuery queryWithClassName:@"friends"];
+//    [query whereKey:@"State" equalTo:currentUser];
+//    [query includeKey:@"owner"];
+//    [query getObjectInBackgroundWithId:@"objectId" block:^(PFObject *states, NSError *error) {
+//        if (currentUser) {
+//            states[@"State"] = @YES;
+//            //[states addUniqueObjectsFromArray:@[@NO, @YES] forKey:@"State"];
+//            [states saveInBackground];
+//        }
+//        else{
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//        }
+//    }];
+//}
+//
+//- (IBAction)que:(UIButton *)sender forEvent:(UIEvent *)event
+//{
+//
+//}
 - (void)loadingData{
     
     PFUser *User = [PFUser currentUser];
