@@ -22,36 +22,55 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self calendars];
-}
--(void)calendars
-{
-    _calendarManager = [JTCalendarManager new];
-    _calendarManager.delegate = self;
+    [self tagCloudView];
+    NSLog(@"%@",_rawArray);
     
-    // Generate random events sort by date using a dateformatter for the demonstration
-    [self createRandomEvents];
+}
+- (void)tagCloudView{
     
-    _calendarMenuView.contentRatio = .75;
-    _calendarManager.settings.weekDayFormat = JTCalendarWeekDayFormatSingle;
-    _calendarManager.dateHelper.calendar.locale = [NSLocale localeWithLocaleIdentifier:@"fr_FR"];
+    [self requestDataForMe];
     
-    [_calendarManager setMenuView:_calendarMenuView];
-    [_calendarManager setContentView:_calendarContentView];
-    [_calendarManager setDate:[NSDate date]];
+    _tagListView.canSeletedTags = YES;
+    _tagListView.tagColor = [UIColor orangeColor];
+    _tagListView.tagCornerRadius = 5.0f;
+    
+    [_tagListView.tags addObjectsFromArray:@[@"聚会", @"去上海", @"去旅游", @"项目完成期限", @"找房子", @"回家"]];
+    
+    //[_tagListView.tags addObjectsFromArray:_objectsForShow];
+    //NSLog(@"%@",_objectsForShow);
+    for (NSArray *object in _objectsForShow) {
+        
+        NSDictionary *dictt = [NSDictionary dictionaryWithObjectsAndKeys: object[0], @"Schedulename", object[1], @"StartTime", nil];
+        
+        //NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys: _objectsForShow[0], @"firstName", _objectsForShow[1], @"lastName", nil];
+        [_rawArray addObject:dictt];
+        NSLog(@"%@",_rawArray);
+    }
+    
+    [self.tagListView setCompletionBlockWithSeleted:^(NSInteger index) {
+        NSLog(@"______%ld______", (long)index);
+    }];
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-//下面两段代码二级页面不在能进行左滑操作
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"enablePanGes" object:self];
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"disablePanGes" object:self];
+- (void)requestDataForMe{
+    
+    PFUser *currentUser = [PFUser currentUser];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"Publisher == %@", currentUser];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Schedule" predicate:predicate];
+    //PFQuery *query = [PFQuery queryWithClassName:@"Schedule"];
+    [query selectKeys:@[@"Schedulename", @"StartTime"]];
+    //[query includeKey:@"Publisher"];
+    
+    //UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
+        //[aiv stopAnimating];
+        //[rc endRefreshing];
+        if (!error) {
+            _objectsForShow = returnedObjects;
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 }
 - (void)calendar:(JTCalendarManager *)calendar prepareDayView:(JTCalendarDayView *)dayView
 {
@@ -88,7 +107,43 @@
     else{
         dayView.dotView.hidden = YES;
     }
+    //NSLog(@"%@",_dateSelected);
+    NSTimeInterval  interval =24*60*60*1; //1:天数
+    NSDate *tomorrow = [_dateSelected dateByAddingTimeInterval:interval];
+    _date = tomorrow;
+    tomorrow = nil;
 }
+-(void)calendars
+{
+    _calendarManager = [JTCalendarManager new];
+    _calendarManager.delegate = self;
+    
+    // Generate random events sort by date using a dateformatter for the demonstration
+    [self createRandomEvents];
+    
+    _calendarMenuView.contentRatio = .75;
+    _calendarManager.settings.weekDayFormat = JTCalendarWeekDayFormatSingle;
+    _calendarManager.dateHelper.calendar.locale = [NSLocale localeWithLocaleIdentifier:@"fr_FR"];
+    
+    [_calendarManager setMenuView:_calendarMenuView];
+    [_calendarManager setContentView:_calendarContentView];
+    [_calendarManager setDate:[NSDate date]];
+}
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+//下面两段代码二级页面不在能进行左滑操作
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"enablePanGes" object:self];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"disablePanGes" object:self];
+}
+
 
 - (void)calendar:(JTCalendarManager *)calendar didTouchDayView:(JTCalendarDayView *)dayView
 {
@@ -221,6 +276,25 @@
     // Pass the selected object to the new view controller.
 }
 
+
+- (IBAction)ToView:(UIButton *)sender {
+    _tagView.hidden = NO;
+    
+    [self tagCloudView];
+}
+
+- (IBAction)deleteTagCloud:(UIButton *)sender {
+    
+    [self.tagListView.tags removeObjectsInArray:self.tagListView.seletedTags];
+    [self.tagListView.seletedTags removeAllObjects];
+    
+    [self.tagListView.collectionView reloadData];
+}
+
+- (IBAction)cancel:(UIButton *)sender {
+    
+    _tagView.hidden = YES;
+}
 
 - (IBAction)menuAction:(UIBarButtonItem *)sender {
     

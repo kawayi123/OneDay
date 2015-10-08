@@ -464,6 +464,17 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jh7-aU-y2r" customClass="JTCalendarMenuView">
                                 <rect key="frame" x="16" y="86" width="343" height="65"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5KY-k4-YvU">
+                                        <rect key="frame" x="305" y="27" width="30" height="30"/>
+                                        <state key="normal" title="查看">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ToView:" destination="E1E-el-SJP" eventType="touchUpInside" id="VmC-wN-gFQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.99607843139999996" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="LQF-pN-K9o"/>
@@ -476,6 +487,44 @@
                                     <constraint firstAttribute="height" constant="481" id="tUK-4t-Pmb"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="obL-dQ-bAH">
+                                <rect key="frame" x="16" y="159" width="293" height="203"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJA-DL-EdM">
+                                        <rect key="frame" x="255" y="47" width="30" height="21"/>
+                                        <state key="normal" title="删除">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteTagCloud:" destination="E1E-el-SJP" eventType="touchUpInside" id="Zvl-2j-O9x"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Z5-1j-aYc">
+                                        <rect key="frame" x="255" y="135" width="30" height="21"/>
+                                        <state key="normal" title="取消">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancel:" destination="E1E-el-SJP" eventType="touchUpInside" id="Yh9-ea-ueI"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uTh-3u-Odk" customClass="JCTagListView">
+                                        <rect key="frame" x="8" y="8" width="239" height="187"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99607843139999996" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -487,6 +536,10 @@
                             <constraint firstItem="UNL-Q1-MFi" firstAttribute="leading" secondItem="tef-Uz-wrW" secondAttribute="leading" constant="16" id="oag-Fz-DWt"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="IYW-aV-SbO"/>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="IIh-C5-x88"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="日历" id="pgl-Ni-hRR">
                         <barButtonItem key="leftBarButtonItem" systemItem="compose" id="3jZ-mO-rhV">
                             <connections>
@@ -499,10 +552,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="calendarContentView" destination="UNL-Q1-MFi" id="iDg-xN-fQZ"/>
                         <outlet property="calendarMenuView" destination="Jh7-aU-y2r" id="4Gq-EQ-3ca"/>
+                        <outlet property="tagListView" destination="uTh-3u-Odk" id="Gi2-8S-kgV"/>
+                        <outlet property="tagView" destination="obL-dQ-bAH" id="Zjt-U7-6A6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="709-Hz-01I" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2107,6 +2163,6 @@
         <image name="week" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xtl-CT-X5j"/>
+        <segue reference="DKp-L3-y9l"/>
     </inferredMetricsTieBreakers>
 </document>
