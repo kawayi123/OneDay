@@ -103,10 +103,6 @@
     else{
         dayView.dotView.hidden = YES;
     }
-    //NSLog(@"%@",_dateSelected);
-    //    NSTimeInterval  interval =24*60*60*1; //1:天数
-    //    NSDate *tomorrow = [_dateSelected dateByAddingTimeInterval:interval];
-    //tomorrow = nil;
 }
 -(void)calendars
 {
@@ -207,7 +203,7 @@
     for(UILabel *label in view.dayViews){
         label.textColor = [UIColor blackColor];
         label.font = [UIFont fontWithName:@"Helvetica" size:15];
-    }//Avenir-Light
+    }
     
     return view;
 }
@@ -284,16 +280,10 @@
 }
 
 - (IBAction)deleteTagCloud:(UIButton *)sender {
-    NSLog(@"seletedTags = %@", self.tagListView.seletedTags);
     [self.tagListView setCompletionBlockWithSeleted:^(NSInteger index) {
-        NSLog(@"______%ld______", (long)index);
-        //[self.tagListView.tags removeObjectsInArray:self.tagListView.seletedTags];
         [self.tagListView.tags removeObjectsInArray:self.tagListView.seletedTags];
     }];
-    
-    NSLog(@"tags = %@", self.tagListView.tags);
     [self.tagListView.seletedTags removeAllObjects];
-    
     [self.tagListView.collectionView reloadData];
 }
 

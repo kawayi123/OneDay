@@ -66,15 +66,10 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     [self req:searchText];
 }
-
 - (void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView {
-    
 }
-
-- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchControlle{
 }
-
 -(void)req:(NSString *)searchText
 {
     NSLog(@"IN");
@@ -83,14 +78,11 @@
     [query whereKey:@"PhoneNum" containsString:searchText];
     [query whereKey:@"PhoneNum" notEqualTo:currentUser[@"PhoneNum"]];
     [query selectKeys:@[@"PhoneNum"]];
-    
     UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
         [aiv stopAnimating];
-        //[rc endRefreshing];
         if (!error) {
             filterData = returnedObjects;
-            NSLog(@"%@",filterData);
             [searchDisplayController.searchResultsTableView reloadData];
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);

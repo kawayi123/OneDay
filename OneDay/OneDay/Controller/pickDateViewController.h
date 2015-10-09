@@ -21,24 +21,15 @@
 @property (weak, nonatomic) IBOutlet UITextField *activityTime;
 @property (weak, nonatomic) IBOutlet UITextField *placeTF;
 @property (weak, nonatomic) IBOutlet UITextView *contentTF;
-
 @property (weak, nonatomic) IBOutlet UIView *pickAlterView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *Datepicker;
 @property (weak, nonatomic) IBOutlet UIToolbar *remindToolBar;
 @property (weak, nonatomic) IBOutlet UIToolbar *beginToolBar;
-
-
-
-
+@property (strong, nonatomic)NSArray *objectsForShow;
 - (IBAction)beginAction:(UIButton *)sender;
 - (IBAction)remindAction:(UIButton *)sender;
-
 - (IBAction)cancelAction:(UIBarButtonItem *)sender;
-
 - (IBAction)confirmAction:(UIBarButtonItem *)sender;
-
 - (IBAction)remCancel:(UIBarButtonItem *)sender;
 - (IBAction)remConfirm:(UIBarButtonItem *)sender;
-@property (strong, nonatomic)NSArray *objectsForShow;
-
 @end

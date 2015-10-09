@@ -10,17 +10,13 @@
 #import "dayListViewController.h"
 @interface pickDateViewController ()
 - (IBAction)saveAction:(UIBarButtonItem *)sender;
-
 @end
-
 @implementation pickDateViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self loadInButtonTime];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -29,34 +25,25 @@
     NSDate *  senddate=[NSDate date];
     NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
     [dateformatter setDateFormat:@"yyyy年MM月dd日 HH:mm"];
-    
     NSString *  locationString=[dateformatter stringFromDate:senddate];
     [_schTime setTitle:locationString forState:UIControlStateNormal];
     [_remindBtn setTitle:locationString forState:UIControlStateNormal];
     NSLog(@"locationString:%@",locationString);
 }
 - (IBAction)beginAction:(UIButton *)sender {
-    
     _pickAlterView.hidden = NO;
     _beginToolBar.hidden = NO;
     _remindToolBar.hidden = YES;
-    
 }
-
 - (IBAction)remindAction:(UIButton *)sender {
-    
     _pickAlterView.hidden = NO;
     _beginToolBar.hidden = YES;
     _remindToolBar.hidden = NO;
 }
 - (IBAction)cancelAction:(UIBarButtonItem *)sender {
-    
     _pickAlterView.hidden = YES;
-    
 }
-
 - (IBAction)confirmAction:(UIBarButtonItem *)sender {
-    
     _pickAlterView.hidden = YES;
     NSDate *select = [_Datepicker date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -64,28 +51,21 @@
     NSString *dateAndTime =  [dateFormatter stringFromDate:select];
     _schTime.titleLabel.text = dateAndTime;
 }
-
 - (IBAction)remCancel:(UIBarButtonItem *)sender {
-    
     _pickAlterView.hidden = YES;
 }
-
 - (IBAction)remConfirm:(UIBarButtonItem *)sender {
-    
     _pickAlterView.hidden = YES;
     NSDate *select = [_Datepicker date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy年MM月dd日 HH:mm"];
     NSString *dateAndTime =  [dateFormatter stringFromDate:select];
     _remindBtn.titleLabel.text = dateAndTime;
-
 }
-
 - (IBAction)saveAction:(UIBarButtonItem *)sender {
     _savebtn.enabled = NO;
     PFUser *currentUser = [PFUser currentUser];//获取当前用户的实例
     if (currentUser) {
-       
         NSString *schname=_schName.text;//获取日程名称
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"yyyy年MM月dd日 HH:mm"];
@@ -104,7 +84,6 @@
             _savebtn.enabled = YES;
             return;
         }
-        
         PFObject *item = [PFObject objectWithClassName:@"Schedule"];
         item[@"Publisher"] = currentUser;
         item[@"Schedulename"]=schname;
@@ -126,10 +105,6 @@
             
         }];
     }
-//    else {
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请你登录在添加日程！" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
-//        [alert show];
-//    }
 }
 
  #pragma mark - Navigation

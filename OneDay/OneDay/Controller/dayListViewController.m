@@ -29,15 +29,7 @@
 }
 - (void)po{
     introduceViewController *sp = [Utilities getStoryboardInstanceByIdentity:@"splash"];
-    //UINavigationController* naviVC = [[UINavigationController alloc] initWithRootViewController:sp];
     [self presentViewController:sp animated:YES completion:nil];
-    //    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]) {
-    //        // 这里判断是否第一次
-    //
-    //        //SplashscreenViewController *sp = [Utilities getStoryboardInstanceByIdentity:@"splash"];
-    //        introduceViewController *sp = [Utilities getStoryboardInstanceByIdentity:@"splash"];
-    //        [self presentViewController:sp animated:YES completion:nil];
-    //    }
 }
 - (void)segmentAction
 {
@@ -64,10 +56,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Schedule" predicate:predicate];
     [query selectKeys:@[@"Schedulename",@"StartTime",@"Publisher"]];
     [query includeKey:@"Publisher"];
-    //UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
-        //[aiv stopAnimating];
-        //[rc endRefreshing];
         if (!error) {
             _objectsForShow = returnedObjects;
             NSLog(@"%@",_objectsForShow);
@@ -85,14 +74,11 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Schedule" predicate:predicate];
     [query selectKeys:@[@"Schedulename",@"StartTime",@"Publisher"]];
     [query includeKey:@"Publisher"];
-    
-    //UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
         //[aiv stopAnimating];
         //[rc endRefreshing];
         if (!error) {
             _objectsForShow = returnedObjects;
-            NSLog(@"-----%@",_objectsForShow);
             [_tableView reloadData];
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -124,12 +110,7 @@
 - (void)endRefreshing:(UIRefreshControl *)rc {
     [rc endRefreshing];
 }
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//        [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        weekDaysViewController *detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"ssss"];
-//       [self.navigationController pushViewController:detailViewController animated:YES];
-//}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _objectsForShow.count;
 }
@@ -175,8 +156,6 @@
         miVC.hidesBottomBarWhenPushed = YES;
     }
 }
-
-
 - (IBAction)menuAction:(UIBarButtonItem *)sender {
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"leftSwitch" object:self];

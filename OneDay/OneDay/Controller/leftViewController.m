@@ -122,29 +122,6 @@
 {
     
 }
-
-//- (IBAction)agreen:(UIButton *)sender forEvent:(UIEvent *)event
-//{
-//    PFUser *currentUser=[PFUser currentUser];
-//    PFQuery *query = [PFQuery queryWithClassName:@"friends"];
-//    [query whereKey:@"State" equalTo:currentUser];
-//    [query includeKey:@"owner"];
-//    [query getObjectInBackgroundWithId:@"objectId" block:^(PFObject *states, NSError *error) {
-//        if (currentUser) {
-//            states[@"State"] = @YES;
-//            //[states addUniqueObjectsFromArray:@[@NO, @YES] forKey:@"State"];
-//            [states saveInBackground];
-//        }
-//        else{
-//            NSLog(@"Error: %@ %@", error, [error userInfo]);
-//        }
-//    }];
-//}
-//
-//- (IBAction)que:(UIButton *)sender forEvent:(UIEvent *)event
-//{
-//
-//}
 - (void)loadingData{
     
     PFUser *User = [PFUser currentUser];

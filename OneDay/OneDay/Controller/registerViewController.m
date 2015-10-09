@@ -10,8 +10,6 @@
 
 @interface registerViewController ()
 - (IBAction)signupAction:(UIButton *)sender forEvent:(UIEvent *)event;
-- (IBAction)cancelAction:(UIBarButtonItem *)sender;
-
 @end
 
 @implementation registerViewController
@@ -97,6 +95,4 @@
      }];
 }
 
-- (IBAction)cancelAction:(UIBarButtonItem *)sender {
-}
 @end

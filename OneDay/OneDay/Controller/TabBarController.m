@@ -18,7 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //[self performSelector:@selector(po) withObject:nil afterDelay:3];
     [self po];
 }
 
@@ -30,8 +29,6 @@
 - (void)po{
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]) {
         // 这里判断是否第一次
-        
-        //SplashscreenViewController *sp = [Utilities getStoryboardInstanceByIdentity:@"splash"];
         introduceViewController *sp = [Utilities getStoryboardInstanceByIdentity:@"splash"];
         [self presentViewController:sp animated:YES completion:nil];
     }

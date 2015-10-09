@@ -159,11 +159,6 @@
             [_calendarContentView loadPreviousPageWithAnimation];
         }
     }
-    //NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    //[dateFormatter setDateFormat:@"yyyy年MM月dd日 HH:mm:ss"];
-    //_date =  [dateFormatter stringFromDate:_dateSelected];
-    //NSLog(@"_date = %@", _date);
-    
     [self requestDataForMe];
 }
 
@@ -177,12 +172,10 @@
 
 - (void)calendarDidLoadNextPage:(JTCalendarManager *)calendar
 {
-    //    NSLog(@"Next page loaded");
 }
 
 - (void)calendarDidLoadPreviousPage:(JTCalendarManager *)calendar
 {
-    //    NSLog(@"Previous page loaded");
 }
 
 #pragma mark - Fake data

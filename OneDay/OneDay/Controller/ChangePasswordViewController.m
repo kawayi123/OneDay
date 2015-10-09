@@ -67,9 +67,6 @@
                             [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
                         }
                     }];
-                    
-                    
-                    //[self.navigationController popViewControllerAnimated:YES];
                 } else {
                     [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
                 }
