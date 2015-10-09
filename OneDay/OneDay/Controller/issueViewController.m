@@ -126,15 +126,26 @@
     if (tableView != _tableview) {
         _item=nil;
         _item= filterData[indexPath.row];
-        //ToDo
-//        PFUser *currentUser=[PFUser currentUser];
-//        if(currentUser==0)
-//        {
-//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"你已经加过此人为好友"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
-//            [alert show];
-//        }
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"你确定加此人为好友"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
-        [alert show];
+            //获得当前点击的tableviewcell对应的数据
+            PFObject *obj = filterData[indexPath.row];
+            PFUser *user = [PFUser currentUser];
+            PFQuery *query = [PFQuery queryWithClassName:@"friends"];
+            [query whereKey:@"owner" equalTo:user];
+            [query whereKey:@"friendUser" equalTo:obj];
+            [query countObjectsInBackgroundWithBlock:^(int number, NSError *error)
+             {
+                 if (!error)
+                 {
+                     if (number == 0)
+                     {
+                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"你确定加此人为好友"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
+                         [alert show];
+                     } else
+                     {
+                         [Utilities popUpAlertViewWithMsg:@"你已添加过该好友！" andTitle:nil];
+                     }
+                 }
+             }];
     }
 }
 
