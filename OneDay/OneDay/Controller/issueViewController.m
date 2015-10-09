@@ -109,7 +109,6 @@
         [query whereKey:@"State" equalTo:@YES];
         [query includeKey:@"friendUser"];
         [query selectKeys:@[@"friendUser"]];
-        //UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
         [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
             [_aiv stopAnimating];
             UIRefreshControl *rc = (UIRefreshControl *)[_tableview viewWithTag:8001];
@@ -136,6 +135,12 @@
         _item=nil;
         _item= filterData[indexPath.row];
         //ToDo
+//        PFUser *currentUser=[PFUser currentUser];
+//        if(currentUser==0)
+//        {
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"你已经加过此人为好友"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
+//            [alert show];
+//        }
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"你确定加此人为好友"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
         [alert show];
     }
@@ -146,7 +151,6 @@
         
         PFObject *item = [PFObject objectWithClassName:@"friends"];
         PFUser *currentUser = [PFUser currentUser];
-        NSLog(@"in%@",currentUser);
         item[@"owner"] = currentUser;
         item[@"friendUser"] = _item;
         item[@"State"] = @NO;
@@ -187,9 +191,8 @@
         
         PFObject *obj = data[indexPath.row];
         PFUser *user= obj[@"friendUser"];
-        
-        cell1.nickname.text = user[@"NickName"];
-        cell1.phonenum.text = user[@"PhoneNum"];
+        cell1.nickname.text=[NSString stringWithFormat:@"昵称：%@", user[@"NickName"]];
+        cell1.phonenum.text =[NSString stringWithFormat:@"手机号：%@", user[@"PhoneNum"]];
         
         PFFile *file = user[@"HeadImg"];
         [file getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
@@ -201,7 +204,6 @@
                 });
             }
         }];
-        //cell.textLabel.text = [NSString stringWithFormat:@"%@", user[@"PhoneNum"]];
         return cell1;
     } else {
         static NSString *cellId = @"cell";
@@ -209,15 +211,12 @@
         if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         }
-        
-        NSLog(@"Did");
         PFObject *obj = filterData[indexPath.row];
-        cell.textLabel.text = [NSString stringWithFormat:@"%@", obj[@"PhoneNum"]];
+        cell.textLabel.text = [NSString stringWithFormat:@"手机号：%@", obj[@"PhoneNum"]];
         
         return cell;
     }
 }
-
 /*
  #pragma mark - Navigation
  
@@ -227,8 +226,6 @@
  // Pass the selected object to the new view controller.
  }
  */
-
-
 - (IBAction)menuAction:(UIBarButtonItem *)sender {
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"leftSwitch" object:self];
@@ -278,7 +275,6 @@
 //点击图片时执行的方法
 - (void)photoTapAtIndexPath:(NSIndexPath *)indexPath
 {
-    //ActivityObject *object = [_objectsForShow objectAtIndex:indexPath.row];
     PFObject *obj = data[indexPath.row];
     PFUser *user= obj[@"friendUser"];
     _zoomIV = [[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -293,7 +289,6 @@
             });
         }
     }];
-    //_zoomIV.image = [Utilities imageUrl:object.imgUrl];
     _zoomIV.contentMode = UIViewContentModeScaleAspectFit;//UIViewContentModeScaleAspectFit达到屏幕一样长的边
     _zoomIV.backgroundColor = [UIColor blackColor];
     UITapGestureRecognizer *ivTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ivTap:)];

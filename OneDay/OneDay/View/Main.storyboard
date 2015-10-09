@@ -2232,6 +2232,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="ss" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell1" rowHeight="63" id="374-Wc-mjM" customClass="TableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -2273,6 +2274,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="image" destination="Jb8-89-LNE" id="8hR-WH-S0v"/>
                                             <outlet property="nickname" destination="tZi-bT-xgA" id="oJr-4t-woj"/>
