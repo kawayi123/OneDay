@@ -22,5 +22,6 @@
 + (void)popUpAlertViewWithMsg:(NSString *)msg andTitle:(NSString* )title;
 //获得保护膜
 + (UIActivityIndicatorView *)getCoverOnView:(UIView *)view ;
-
+//先去内存里去找图片，如果没有找到，就通过线程的url把图片下载并缓存，存到硬盘里
++ (UIImage *)imageUrl:(NSString *)url;
 @end

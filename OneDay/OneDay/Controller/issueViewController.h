@@ -7,15 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface issueViewController : UIViewController<UISearchBarDelegate,UISearchDisplayDelegate,UISearchResultsUpdating,UITableViewDelegate,UITableViewDataSource>
-{
-    Boolean state;
-}
+#import "TableViewCell.h"
+@interface issueViewController : UIViewController<UISearchBarDelegate,UISearchDisplayDelegate,UISearchResultsUpdating,UITableViewDelegate,UITableViewDataSource,TableViewCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (strong, nonatomic) UISearchBar *searchBar;
 - (IBAction)menuAction:(UIBarButtonItem *)sender;
 @property(strong,nonatomic)PFObject *item;
-
+@property(strong,nonatomic)UIImageView *zoomIV;
+@property(strong,nonatomic)NSArray *objectsForShow;
+@property(strong,nonatomic)UIActivityIndicatorView *aiv;
 @end

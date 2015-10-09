@@ -7,7 +7,10 @@
 //
 
 #import "issueViewController.h"
-#import "TableViewCell.h"
+
+#import "Utilities.h"
+
+#import "UIImageView+WebCache.h"
 @interface issueViewController ()
 {
     NSArray *data;
@@ -34,6 +37,9 @@
     searchDisplayController.searchResultsDataSource = self;
     // searchResultsDelegate 就是 UITableViewDelegate
     searchDisplayController.searchResultsDelegate = self;
+    
+    [self dataPreparation];
+    [self uiConfiguration];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -92,13 +98,49 @@
     }];
     
 }
+
+-(void)loadDataBegin
+{
+    PFUser *currentUser = [PFUser currentUser];
+    NSLog(@"%@", currentUser);
+    if (currentUser) {
+        PFQuery *query = [PFQuery queryWithClassName:@"friends"];
+        [query whereKey:@"owner" equalTo:currentUser];
+        [query whereKey:@"State" equalTo:@YES];
+        [query includeKey:@"friendUser"];
+        [query selectKeys:@[@"friendUser"]];
+        //UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
+            [_aiv stopAnimating];
+            UIRefreshControl *rc = (UIRefreshControl *)[_tableview viewWithTag:8001];
+            [rc endRefreshing];
+            if (!error) {
+                data = returnedObjects;
+                NSLog(@"data = %@",data);
+                [_tableview reloadData];
+            }else {
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
+    } else {
+        UIRefreshControl *rc = (UIRefreshControl *)[_tableview viewWithTag:8001];
+        [rc endRefreshing];
+        [_aiv stopAnimating];
+        data = [NSArray new];
+    }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    _item=nil;
-    _item= filterData[indexPath.row];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"你确定加此人为好友"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
-    [alert show];
+    if (tableView != _tableview) {
+        _item=nil;
+        _item= filterData[indexPath.row];
+        //ToDo
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"你确定加此人为好友"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
+        [alert show];
+    }
 }
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
         
@@ -132,31 +174,48 @@
     if (tableView == self.tableview) {
         return data.count;
     }else{
-        // 谓词搜索
-        //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self contains [cd] %@",searchDisplayController.searchBar.text];
-        //filterData =  [[NSArray alloc] initWithArray:[data filteredArrayUsingPredicate:predicate]];
         return filterData.count;
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellId = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-    }
-  
     if (tableView == _tableview) {
-        cell.textLabel.text = data[indexPath.row];
-    }else{
+        TableViewCell *cell1 = [tableView dequeueReusableCellWithIdentifier:@"cell1" forIndexPath:indexPath];
+        cell1.delegate=self;
+        cell1.indexPath=indexPath;
+        
+        PFObject *obj = data[indexPath.row];
+        PFUser *user= obj[@"friendUser"];
+        
+        cell1.nickname.text = user[@"NickName"];
+        cell1.phonenum.text = user[@"PhoneNum"];
+        
+        PFFile *file = user[@"HeadImg"];
+        [file getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+            if (!error) {
+                UIImage *image = [UIImage imageWithData:photoData];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    //把图片放到cell上的imageview上
+                    cell1.image.image = image;
+                });
+            }
+        }];
+        //cell.textLabel.text = [NSString stringWithFormat:@"%@", user[@"PhoneNum"]];
+        return cell1;
+    } else {
+        static NSString *cellId = @"cell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        }
+        
         NSLog(@"Did");
         PFObject *obj = filterData[indexPath.row];
         cell.textLabel.text = [NSString stringWithFormat:@"%@", obj[@"PhoneNum"]];
+        
+        return cell;
     }
-    
-    return cell;
 }
 
 /*
@@ -173,5 +232,93 @@
 - (IBAction)menuAction:(UIBarButtonItem *)sender {
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"leftSwitch" object:self];
+}
+
+//对界面进行操作
+-(void)uiConfiguration
+{
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];//在可以滚动视图中添加RefreshControl下拉即可刷新视图
+    NSString *title = [NSString stringWithFormat:@"下拉即可刷新"];
+    NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    [style setAlignment:NSTextAlignmentCenter];
+    [style setLineBreakMode:NSLineBreakByWordWrapping];
+    NSDictionary *attrsDictionary = @{NSUnderlineStyleAttributeName:@(NSUnderlineStyleNone),NSFontAttributeName:[UIFont preferredFontForTextStyle:UIFontTextStyleBody],NSParagraphStyleAttributeName:style,NSForegroundColorAttributeName:[UIColor brownColor]};
+    NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:attrsDictionary];
+    refreshControl.attributedTitle = attributedTitle;
+    refreshControl.tintColor = [UIColor brownColor];
+    refreshControl.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    refreshControl.tag=8001;
+    [refreshControl addTarget:self action:@selector(initializeData) forControlEvents:UIControlEventValueChanged];//当变化时刷新列表数据
+    [self.tableview addSubview:refreshControl];
+    self.tableview.tableFooterView=[[UIView alloc]init];
+}
+
+- (void)refreshData:(UIRefreshControl *)rc {
+    [self.tableview reloadData];//重新加载数据
+    [self performSelector:@selector(endRefreshing:) withObject:rc afterDelay:1.f];//让方法延迟1秒,在执行endRefreshing方法
+}
+- (void)endRefreshing:(UIRefreshControl *)rc {
+    [rc endRefreshing];
+}
+//对数据初始化
+-(void)dataPreparation//进入页面,菊花膜＋初始数据（第一页数据）
+{
+    _objectsForShow=nil;
+    _objectsForShow=[NSMutableArray new];
+    _aiv=[Utilities getCoverOnView:[[UIApplication sharedApplication]keyWindow]];//整个屏幕上转菊花
+    [self initializeData];//下拉刷新调用initializeData
+}
+-(void)initializeData//下拉刷新，刷新器＋初始数据（第一页数据）
+{
+    //    loadCount=1;//显示页码
+    //    perPage=3;//每页显示3页
+    [self loadDataBegin];
+    [_tableview reloadData];
+}
+//点击图片时执行的方法
+- (void)photoTapAtIndexPath:(NSIndexPath *)indexPath
+{
+    //ActivityObject *object = [_objectsForShow objectAtIndex:indexPath.row];
+    PFObject *obj = data[indexPath.row];
+    PFUser *user= obj[@"friendUser"];
+    _zoomIV = [[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    _zoomIV.userInteractionEnabled = YES;
+    PFFile *file = user[@"HeadImg"];
+    [file getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:photoData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //把图片放到cell上的imageview上
+                _zoomIV.image = image;
+            });
+        }
+    }];
+    //_zoomIV.image = [Utilities imageUrl:object.imgUrl];
+    _zoomIV.contentMode = UIViewContentModeScaleAspectFit;//UIViewContentModeScaleAspectFit达到屏幕一样长的边
+    _zoomIV.backgroundColor = [UIColor blackColor];
+    UITapGestureRecognizer *ivTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ivTap:)];
+    [_zoomIV addGestureRecognizer:ivTap];
+    [[[UIApplication sharedApplication] keyWindow] addSubview:_zoomIV];
+}
+
+-(void)ivTap:(UITapGestureRecognizer *)tap{
+    if (tap.state==UIGestureRecognizerStateRecognized) {
+        [_zoomIV removeFromSuperview];
+        _zoomIV=nil;//将zoomIV内存释放掉
+    }
+}
+
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (scrollView.contentSize.height>scrollView.frame.size.height) {
+        if (!scrollView.contentOffset.y>(scrollView.contentSize.height-scrollView.frame.size.height)) {//当scrollView的y轴大于scrollView内容高度减去scrollView本身的高度时执行下拉刷新
+            [self loadDataBegin];
+        }
+    }
+}
+//结束加载数据
+-(void)loadDataEnd
+{
+    self.tableview.tableFooterView = [[UIView alloc] init];
 }
 @end

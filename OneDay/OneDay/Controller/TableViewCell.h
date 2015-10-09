@@ -11,6 +11,7 @@
 @protocol TableViewCellDelegate <NSObject>
 - (void)applyButtonPressed:(NSIndexPath *)indexPath;
 - (void)jujueButtonPressed:(NSIndexPath *)indexPath;
+- (void)photoTapAtIndexPath:(NSIndexPath *)indexPath;
 @end
 @interface TableViewCell : UITableViewCell
 //以下左滑通知cell
