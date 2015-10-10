@@ -2086,6 +2086,9 @@
                                 <state key="normal" title="更改邮箱">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="changeemail:forEvent:" destination="PUB-E1-R3F" eventType="touchUpInside" id="TEq-jq-RAK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFa-jW-FSn">
                                 <rect key="frame" x="16" y="602" width="343" height="45"/>

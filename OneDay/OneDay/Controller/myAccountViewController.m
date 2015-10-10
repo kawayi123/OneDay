@@ -10,6 +10,7 @@
 #import "dayListViewController.h"
 
 @interface myAccountViewController ()
+- (IBAction)changeemail:(UIButton *)sender forEvent:(UIEvent *)event;
 - (IBAction)changphonenum:(UIButton *)sender forEvent:(UIEvent *)event;
 
 - (IBAction)logoutAction:(UIButton *)sender forEvent:(UIEvent *)event;
@@ -21,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self loadDataBegin];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,6 +54,33 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)changeemail:(UIButton *)sender forEvent:(UIEvent *)event {
+//    UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"请输入你的新的邮箱"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
+//    alert1.alertViewStyle= UIAlertViewStylePlainTextInput;
+//    [alert1 show];
+}
+- (void)alertView1:(UIAlertView *)alertView1 clickedButtonAtIndex:(NSInteger)buttonIndex1 {
+//    if (buttonIndex1 == 1) {
+//        UITextField *textField1 = [alertView1 textFieldAtIndex:0];
+//        if ([textField1.text isEqualToString:@""]) {
+//            [Utilities popUpAlertViewWithMsg:@"请输入你的新的邮箱" andTitle:nil];
+//            return;//终止该方法操作
+//        }
+//        
+//        PFUser *user1=[PFUser currentUser];
+//        user1[@"email"] = textField1.text;
+//        
+//        [user1 saveInBackgroundWithBlock:^(BOOL succeed1,NSError *error) {
+//            if (succeed1) {
+//                [Utilities popUpAlertViewWithMsg:@"你已成功修改!" andTitle:nil];
+//            }else
+//            {
+//                [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
+//            }
+//        }];
+//    }
+}
 
 - (IBAction)changphonenum:(UIButton *)sender forEvent:(UIEvent *)event {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"请输入你的新的手机号"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
