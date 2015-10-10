@@ -56,56 +56,60 @@
 */
 
 - (IBAction)changeemail:(UIButton *)sender forEvent:(UIEvent *)event {
-//    UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"请输入你的新的邮箱"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
-//    alert1.alertViewStyle= UIAlertViewStylePlainTextInput;
-//    [alert1 show];
-}
-- (void)alertView1:(UIAlertView *)alertView1 clickedButtonAtIndex:(NSInteger)buttonIndex1 {
-//    if (buttonIndex1 == 1) {
-//        UITextField *textField1 = [alertView1 textFieldAtIndex:0];
-//        if ([textField1.text isEqualToString:@""]) {
-//            [Utilities popUpAlertViewWithMsg:@"请输入你的新的邮箱" andTitle:nil];
-//            return;//终止该方法操作
-//        }
-//        
-//        PFUser *user1=[PFUser currentUser];
-//        user1[@"email"] = textField1.text;
-//        
-//        [user1 saveInBackgroundWithBlock:^(BOOL succeed1,NSError *error) {
-//            if (succeed1) {
-//                [Utilities popUpAlertViewWithMsg:@"你已成功修改!" andTitle:nil];
-//            }else
-//            {
-//                [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
-//            }
-//        }];
-//    }
+    UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"请输入你的新的邮箱"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
+    alert1.tag = 1;
+    alert1.alertViewStyle= UIAlertViewStylePlainTextInput;
+    [alert1 show];
 }
 
 - (IBAction)changphonenum:(UIButton *)sender forEvent:(UIEvent *)event {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"请输入你的新的手机号"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
+    alert.tag = 2;
     alert.alertViewStyle= UIAlertViewStylePlainTextInput;
     [alert show];
 }
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 1) {
-        UITextField *textField = [alertView textFieldAtIndex:0];
-        if ([textField.text isEqualToString:@""]) {
-            [Utilities popUpAlertViewWithMsg:@"请输入你的新的手机号" andTitle:nil];
-            return;//终止该方法操作
-        }
-        
-        PFUser *user=[PFUser currentUser];
-        user[@"PhoneNum"] = textField.text;
-        
-        [user saveInBackgroundWithBlock:^(BOOL succeeded,NSError *error) {
-            if (succeeded) {
-                [Utilities popUpAlertViewWithMsg:@"你已成功修改!" andTitle:nil];
-            }else
-            {
-                [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
+    if (alertView.tag == 1) {
+        if (buttonIndex == 1) {
+            UITextField *textField1 = [alertView textFieldAtIndex:0];
+            if ([textField1.text isEqualToString:@""]) {
+                [Utilities popUpAlertViewWithMsg:@"请输入你的新的邮箱" andTitle:nil];
+                return;//终止该方法操作
             }
-        }];
+            
+            PFUser *currentuser=[PFUser currentUser];
+            currentuser[@"email"]=textField1.text;
+            [currentuser saveInBackgroundWithBlock:^(BOOL succeed1,NSError *error) {
+                if (succeed1) {
+                    [Utilities popUpAlertViewWithMsg:@"你已成功修改!" andTitle:nil];
+                }else
+                {
+                    [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
+                }
+            }];
+        }
+    } else if (alertView.tag == 2) {
+        if (buttonIndex == 1) {
+            UITextField *textField = [alertView textFieldAtIndex:0];
+            if ([textField.text isEqualToString:@""]) {
+                [Utilities popUpAlertViewWithMsg:@"请输入你的新的手机号" andTitle:nil];
+                
+                return;//终止该方法操作
+            }
+            
+            PFUser *user=[PFUser currentUser];
+            user[@"PhoneNum"] = textField.text;
+            
+            [user saveInBackgroundWithBlock:^(BOOL succeeded,NSError *error) {
+                if (succeeded) {
+                    [Utilities popUpAlertViewWithMsg:@"你已成功修改!" andTitle:nil];
+                }else
+                {
+                    [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
+                }
+            }];
+        }
     }
 }
 
@@ -118,4 +122,5 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 @end
