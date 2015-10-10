@@ -10,6 +10,7 @@
 #import "dayListViewController.h"
 
 @interface myAccountViewController ()
+
 - (IBAction)logoutAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
 @end
@@ -25,7 +26,22 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)loadDataBegin
+{       NSLog(@"IN");
+    PFUser *currentUser=[PFUser currentUser];
+    PFFile *file=currentUser[@"HeadImg"];
+    [file getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error)
+     {
+         if (!error) {
+             UIImage *image=[UIImage imageWithData:photoData];
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 //把图片放到imageview上
+                 _image.image=image;
+             });
+         }
+     }];
+    _username.text=[NSString stringWithFormat:@"用户名：%@", currentUser[@"username"]];
+}
 /*
 #pragma mark - Navigation
 

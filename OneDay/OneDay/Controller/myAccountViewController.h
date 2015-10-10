@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface myAccountViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+@property (weak, nonatomic) IBOutlet UILabel *username;
 
 - (IBAction)backAction:(UIBarButtonItem *)sender;
 
