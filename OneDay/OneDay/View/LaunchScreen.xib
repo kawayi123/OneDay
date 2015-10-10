@@ -40,6 +40,6 @@
         </view>
     </objects>
     <resources>
-        <image name="1.png" width="750" height="1337"/>
+        <image name="1.png" width="750" height="1334"/>
     </resources>
 </document>
