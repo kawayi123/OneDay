@@ -22,6 +22,8 @@
     [super viewDidLoad];
     _rawArray = nil;
     _rawArray = [NSMutableArray new];
+    _targetArray = nil;
+    _targetArray = [NSMutableArray new];
     _dateSelected = [[NSDate date] dateAtStartOfDay];
     [self calendars];
     [self requestDataForMe];
@@ -36,7 +38,14 @@
     NSLog(@"_rawArray = %@", _rawArray);
     [_tagListView.tags removeAllObjects];
     [_tagListView.tags addObjectsFromArray:_rawArray];
-    
+    [self.tagListView setCompletionBlockWithSeleted:^(NSInteger index) {
+        if ([_targetArray containsObject:[NSString stringWithFormat:@"%ld", (long)index]]) {
+            [_targetArray removeObject:[NSString stringWithFormat:@"%ld", (long)index]];
+        } else {
+            [_targetArray addObject:[NSString stringWithFormat:@"%ld", (long)index]];
+        }
+        NSLog(@"%@", _targetArray);
+    }];
     _tagListView.canSeletedTags = YES;
     _tagListView.tagColor = [UIColor orangeColor];
     _tagListView.tagCornerRadius = 5.0f;
@@ -280,11 +289,24 @@
 }
 
 - (IBAction)deleteTagCloud:(UIButton *)sender {
-    [self.tagListView setCompletionBlockWithSeleted:^(NSInteger index) {
-        [self.tagListView.tags removeObjectsInArray:self.tagListView.seletedTags];
-    }];
+    [self.tagListView.tags removeObjectsInArray:self.tagListView.seletedTags];
     [self.tagListView.seletedTags removeAllObjects];
     [self.tagListView.collectionView reloadData];
+//    [self.tagListView setCompletionBlockWithSeleted:^(NSInteger index) {
+//        [self.tagListView.tags removeObjectsInArray:self.tagListView.seletedTags];
+//    }];
+//    for (int i = 0; i < _objectsForShow.count; i ++) {
+//        if ([_targetArray containsObject:[NSString stringWithFormat:@"%d", i]]) {
+//            PFObject *obj = [_objectsForShow objectAtIndex:i];
+//            [obj deleteInBackground];
+//            [_targetArray removeObject:[NSString stringWithFormat:@"%d", i]];
+//        }
+//    }
+    for (NSString *index in _targetArray) {
+        PFObject *obj = [_objectsForShow objectAtIndex:[index integerValue]];
+        [obj deleteInBackground];
+        [_targetArray removeObject:index];
+    }
 }
 
 - (IBAction)cancel:(UIButton *)sender {
