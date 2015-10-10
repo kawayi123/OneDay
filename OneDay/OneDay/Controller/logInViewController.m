@@ -89,9 +89,32 @@
 //重设密码
 - (IBAction)forgetpwd:(UIButton *)sender forEvent:(UIEvent *)event {
     
-    [PFUser requestPasswordResetForEmailInBackground:@"932220954@qq.com"];
-    [Utilities popUpAlertViewWithMsg:@"密码重置信息已发送至您的邮箱，请修改后在登陆！" andTitle:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"请输入你要密码重置的邮箱"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
+    alert.alertViewStyle= UIAlertViewStylePlainTextInput;
+    [alert show];
     
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        UITextField *textField = [alertView textFieldAtIndex:0];
+        if ([textField.text isEqualToString:@""]) {
+            [Utilities popUpAlertViewWithMsg:@"请您输入邮件地址" andTitle:nil];
+            return;//终止该方法操作
+        } else {
+            NSString *email=textField.text;
+            NSString *emailCheck = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+            //  转为正则表达式
+            NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES%@",emailCheck];
+            
+            if (![emailTest evaluateWithObject:email]) {
+                [Utilities popUpAlertViewWithMsg:@"请输入合法的邮箱地址" andTitle:nil];
+                return;//终止该方法操作
+            } else {
+                [PFUser requestPasswordResetForEmailInBackground:email];
+            }
+        }
+        
+    }
 }
 //登陆
 - (IBAction)signupAction:(UIButton *)sender forEvent:(UIEvent *)event {
