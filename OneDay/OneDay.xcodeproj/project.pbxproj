@@ -25,6 +25,7 @@
 		8B95AC611BAC233A001D54E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B95AC601BAC233A001D54E2 /* main.m */; };
 		8B95AC641BAC233A001D54E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B95AC631BAC233A001D54E2 /* AppDelegate.m */; };
 		8B95AC7E1BAC233A001D54E2 /* OneDayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B95AC7D1BAC233A001D54E2 /* OneDayTests.m */; };
+		8BCB3F9A1BCB9F2E0062598E /* The background color(2).png in Resources */ = {isa = PBXBuildFile; fileRef = 8BCB3F991BCB9F2E0062598E /* The background color(2).png */; };
 		8BDD283C1BB234AA008BB393 /* ECPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD28181BB234AA008BB393 /* ECPercentDrivenInteractiveTransition.m */; };
 		8BDD283D1BB234AA008BB393 /* ECSlidingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD281A1BB234AA008BB393 /* ECSlidingAnimationController.m */; };
 		8BDD283E1BB234AA008BB393 /* ECSlidingInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDD281D1BB234AA008BB393 /* ECSlidingInteractiveTransition.m */; };
@@ -147,6 +148,7 @@
 		8B95AC771BAC233A001D54E2 /* OneDayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneDayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B95AC7C1BAC233A001D54E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B95AC7D1BAC233A001D54E2 /* OneDayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneDayTests.m; sourceTree = "<group>"; };
+		8BCB3F991BCB9F2E0062598E /* The background color(2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "The background color(2).png"; sourceTree = "<group>"; };
 		8BDD28171BB234AA008BB393 /* ECPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
 		8BDD28181BB234AA008BB393 /* ECPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
 		8BDD28191BB234AA008BB393 /* ECSlidingAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingAnimationController.h; sourceTree = "<group>"; };
@@ -523,6 +525,7 @@
 				88F2559A1BC7AEE4008AD711 /* 4.png */,
 				88F2559C1BC7B1D9008AD711 /* 5.png */,
 				8B7D10361BBA5F7500F6C977 /* newWorld.png */,
+				8BCB3F991BCB9F2E0062598E /* The background color(2).png */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -823,6 +826,7 @@
 				88F2559B1BC7AEE4008AD711 /* 4.png in Resources */,
 				8B7D10371BBA5F7500F6C977 /* newWorld.png in Resources */,
 				88F255971BC7AEDA008AD711 /* 2.png in Resources */,
+				8BCB3F9A1BCB9F2E0062598E /* The background color(2).png in Resources */,
 				88F255991BC7AEDF008AD711 /* 3.png in Resources */,
 				8BDD289B1BB23575008BB393 /* Main.storyboard in Resources */,
 				88F255951BC7AED5008AD711 /* 1.png in Resources */,
