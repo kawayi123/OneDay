@@ -25,33 +25,49 @@
     if (![[Utilities getUserDefaults:@"username"] isKindOfClass:[NSNull class]]) {
         _usernameTF.text = [Utilities getUserDefaults:@"username"];
     } //记住用户名
+    [self setIsRemember];
     
 }
 
+- (void)setIsRemember {
+    if (![[Utilities getUserDefaults:@"rp"] isKindOfClass:[NSNull class]]) {
+        if ([[Utilities getUserDefaults:@"rp"] boolValue] == YES) {
+            [_Rememberpwd setOn:YES animated:YES];
+            if (![[Utilities getUserDefaults:@"password"] isKindOfClass:[NSNull class]]) {
+                _passwordTF.text = [Utilities getUserDefaults:@"password"];
+            }
+        } else {
+            [_Rememberpwd setOn:NO animated:YES];
+            _passwordTF.text = @"";
+        }
+    } else {
+        _passwordTF.text = @"";
+    }
+}
 - (IBAction)rememberPwdAction:(UISwitch *)sender {
     
-    if (_Rememberpwd) {
-        if (![[Utilities getUserDefaults:@"password"] isKindOfClass:[NSNull class]]) {
-            _passwordTF.text = [Utilities getUserDefaults:@"password"];
-        }
+    if (_Rememberpwd.isOn) {
+        [Utilities setUserDefaults:@"rp" content:@YES];
+    } else {
+        [Utilities setUserDefaults:@"rp" content:@NO];
     }
-    else {
-        
-        _passwordTF.text = @"";
-        
-    }
+    [self setIsRemember];
 }
 
 - (IBAction)displayPwdAction:(UISwitch *)sender {
     
-    if (_displaypwd) {
-        
-        _passwordTF.secureTextEntry = NO;
-        
+    if (_displaypwd.isOn) {
+        if (_displaypwd) {
+            
+            _passwordTF.secureTextEntry = NO;
+            
+        }
     }
     else {
         _passwordTF.secureTextEntry = YES;
     }
+    
+
 
 }
 
