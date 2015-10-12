@@ -114,6 +114,8 @@
             }
             
         }];
+    }else{
+        [Utilities popUpAlertViewWithMsg:@"请先登录后在使用！" andTitle:nil];
     }
 }
 
