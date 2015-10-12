@@ -101,6 +101,7 @@
 		B2F35BDB1BC7576200D5C8C5 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F35BD01BC7576200D5C8C5 /* AFURLRequestSerialization.m */; };
 		B2F35BDC1BC7576200D5C8C5 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F35BD21BC7576200D5C8C5 /* AFURLResponseSerialization.m */; };
 		B2F35BDD1BC7576200D5C8C5 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F35BD41BC7576200D5C8C5 /* AFURLSessionManager.m */; };
+		B2F3A0EF1BCBA3D9003E1996 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = B2F3A0EE1BCBA3D9003E1996 /* 6.png */; };
 		B2F56D901BB8C19900ECD248 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F56D8F1BB8C19900ECD248 /* TableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -303,6 +304,7 @@
 		B2F35BD21BC7576200D5C8C5 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		B2F35BD31BC7576200D5C8C5 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		B2F35BD41BC7576200D5C8C5 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		B2F3A0EE1BCBA3D9003E1996 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
 		B2F56D8E1BB8C19900ECD248 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		B2F56D8F1BB8C19900ECD248 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -519,6 +521,7 @@
 				8BDD287F1BB23575008BB393 /* Main.storyboard */,
 				8BDD287E1BB23575008BB393 /* LaunchScreen.xib */,
 				8BDD287D1BB23575008BB393 /* Images.xcassets */,
+				B2F3A0EE1BCBA3D9003E1996 /* 6.png */,
 				88F255941BC7AED5008AD711 /* 1.png */,
 				88F255961BC7AEDA008AD711 /* 2.png */,
 				88F255981BC7AEDF008AD711 /* 3.png */,
@@ -823,6 +826,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F3A0EF1BCBA3D9003E1996 /* 6.png in Resources */,
 				88F2559B1BC7AEE4008AD711 /* 4.png in Resources */,
 				8B7D10371BBA5F7500F6C977 /* newWorld.png in Resources */,
 				88F255971BC7AEDA008AD711 /* 2.png in Resources */,
