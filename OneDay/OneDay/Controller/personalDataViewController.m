@@ -50,50 +50,57 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)saveAction:(UIBarButtonItem *)sender {
-  
-    NSString *nickname = _nickName.text;
-    NSString *peosign = _peoSignTF.text;
-    NSString *email = _emailTF.text;
-    NSString *phonenum = _phoneNum.text;
-    if (_headImage.image == nil) {
-        [Utilities popUpAlertViewWithMsg:@"请选择一张照片" andTitle:nil];
-        return;
-    }
-    if ([nickname isEqualToString:@""] ||
-        [email isEqualToString:@""]|| [phonenum isEqualToString:@""]) {
-        [Utilities popUpAlertViewWithMsg:@"请填写所有信息" andTitle:nil];
-        return;
-    }
-    //PFObject *item = [PFObject objectWithClassName:@"User"];
-    PFUser *item = [PFUser currentUser];
-    item[@"NickName"] = nickname;
-    item[@"PeoSignature"] = peosign;
-    item[@"email"] = email;
-    item[@"PhoneNum"] = phonenum;
-    
-    NSData *photoData = UIImagePNGRepresentation(_headImage.image);
-    PFFile *photoFile = [PFFile fileWithName:@"photo.png" data:photoData];
-    item[@"HeadImg"] = photoFile;//给上传的图片起个名字
-    PFUser *currentUser = [PFUser currentUser];//获取当前用户的实例
-    item[@"owner"] = currentUser;
-    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
-    _btn.enabled=NO;
-    [item saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        [aiv stopAnimating];
-        _btn.enabled=YES;
-        if (succeeded) {
-              [self.navigationController popViewControllerAnimated:YES];//结合线程触发通知，通过通知更新列表，上传成功后返回上页
-            
-        }else if (error.code == 101) {
-            [Utilities popUpAlertViewWithMsg:@"你的信息有误" andTitle:nil];
-        } else if (error.code == 100) {
-            [Utilities popUpAlertViewWithMsg:@"网络不给力，请稍后再试" andTitle:nil];
+    PFUser *currentuser=[PFUser currentUser];
+    if (currentuser) {
+        NSString *username=_userName.text;
+        NSString *nickname = _nickName.text;
+        NSString *peosign = _peoSignTF.text;
+        NSString *email = _emailTF.text;
+        NSString *phonenum = _phoneNum.text;
+        if (_headImage.image == nil) {
+            [Utilities popUpAlertViewWithMsg:@"请选择一张照片" andTitle:nil];
+            return;
         }
-        else {
-            [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
+        if ([username isEqualToString:@""]||[nickname isEqualToString:@""]||[peosign isEqualToString:@""] ||
+            [email isEqualToString:@""]|| [phonenum isEqualToString:@""]) {
+            [Utilities popUpAlertViewWithMsg:@"请填写所有信息" andTitle:nil];
+            return;
         }
-    }];
-}
+        PFUser *item = [PFUser currentUser];
+        item[@"username"]=username;
+        item[@"NickName"] = nickname;
+        item[@"PeoSignature"] = peosign;
+        item[@"email"] = email;
+        item[@"PhoneNum"] = phonenum;
+        
+        NSData *photoData = UIImagePNGRepresentation(_headImage.image);
+        PFFile *photoFile = [PFFile fileWithName:@"photo.png" data:photoData];
+        item[@"HeadImg"] = photoFile;//给上传的图片起个名字
+        PFUser *currentUser = [PFUser currentUser];//获取当前用户的实例
+        item[@"owner"] = currentUser;
+        UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+        _btn.enabled=NO;
+        [item saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            [aiv stopAnimating];
+            _btn.enabled=YES;
+            if (succeeded) {
+                [self.navigationController popViewControllerAnimated:YES];//结合线程触发通知，通过通知更新列表，上传成功后返回上页
+                
+            }else if (error.code == 101) {
+                [Utilities popUpAlertViewWithMsg:@"你的信息有误" andTitle:nil];
+            } else if (error.code == 100) {
+                [Utilities popUpAlertViewWithMsg:@"网络不给力，请稍后再试" andTitle:nil];
+            }
+            else {
+                [Utilities popUpAlertViewWithMsg:nil andTitle:nil];
+            }
+        }];
+
+    }else
+    {
+        [Utilities popUpAlertViewWithMsg:@"请先登录在使用！" andTitle:nil];
+    }
+    }
 //设置imagePickerController的UIActionSheet的事件
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 2)
