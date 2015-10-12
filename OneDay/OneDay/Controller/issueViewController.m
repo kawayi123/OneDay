@@ -70,6 +70,7 @@
 }
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchControlle{
 }
+//在搜索框查找用户的手机号
 -(void)req:(NSString *)searchText
 {
     PFUser *currentUser=[PFUser currentUser];
@@ -99,20 +100,20 @@
 -(void)loadDataBegin
 {
     PFUser *currentUser = [PFUser currentUser];
-    NSLog(@"%@", currentUser);
     if (currentUser) {
+        //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"owner == %@ OR friendUser == %@", currentUser, currentUser];
         PFQuery *query = [PFQuery queryWithClassName:@"friends"];
         [query whereKey:@"owner" equalTo:currentUser];
         [query whereKey:@"State" equalTo:@YES];
         [query includeKey:@"friendUser"];
-        [query selectKeys:@[@"friendUser"]];
+        [query includeKey:@"owner"];
+        [query selectKeys:@[@"owner", @"friendUser"]];
         [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
             [_aiv stopAnimating];
             UIRefreshControl *rc = (UIRefreshControl *)[_tableview viewWithTag:8001];
             [rc endRefreshing];
             if (!error) {
                 data = returnedObjects;
-                NSLog(@"data = %@",data);
                 [_tableview reloadData];
             }else {
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -195,13 +196,13 @@
         TableViewCell *cell1 = [tableView dequeueReusableCellWithIdentifier:@"cell1" forIndexPath:indexPath];
         cell1.delegate=self;
         cell1.indexPath=indexPath;
-        
+        //PFUser *user = [PFUser currentUser];
         PFObject *obj = data[indexPath.row];
-        PFUser *user= obj[@"friendUser"];
-        cell1.nickname.text=[NSString stringWithFormat:@"昵称：%@", user[@"NickName"]];
-        cell1.phonenum.text =[NSString stringWithFormat:@"手机号：%@", user[@"PhoneNum"]];
-        
-        PFFile *file = user[@"HeadImg"];
+        //PFUser *user1 = obj[@"owner"];
+        PFUser *user2 = obj[@"friendUser"];
+        cell1.nickname.text=[NSString stringWithFormat:@"昵称：%@", user2[@"NickName"]];
+        cell1.phonenum.text =[NSString stringWithFormat:@"手机号：%@", user2[@"PhoneNum"]];
+        PFFile *file = user2[@"HeadImg"];
         [file getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
             if (!error) {
                 UIImage *image = [UIImage imageWithData:photoData];
@@ -211,6 +212,33 @@
                 });
             }
         }];
+//        if (user == user1) {
+//            cell1.nickname.text=[NSString stringWithFormat:@"昵称：%@", user2[@"NickName"]];
+//            cell1.phonenum.text =[NSString stringWithFormat:@"手机号：%@", user2[@"PhoneNum"]];
+//            PFFile *file = user2[@"HeadImg"];
+//            [file getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+//                if (!error) {
+//                    UIImage *image = [UIImage imageWithData:photoData];
+//                    dispatch_async(dispatch_get_main_queue(), ^{
+//                        //把图片放到cell上的imageview上
+//                        cell1.image.image = image;
+//                    });
+//                }
+//            }];
+//        } else {
+//            cell1.nickname.text=[NSString stringWithFormat:@"昵称：%@", user1[@"NickName"]];
+//            cell1.phonenum.text =[NSString stringWithFormat:@"手机号：%@", user1[@"PhoneNum"]];
+//            PFFile *file = user1[@"HeadImg"];
+//            [file getDataInBackgroundWithBlock:^(NSData *photoData, NSError *error) {
+//                if (!error) {
+//                    UIImage *image = [UIImage imageWithData:photoData];
+//                    dispatch_async(dispatch_get_main_queue(), ^{
+//                        //把图片放到cell上的imageview上
+//                        cell1.image.image = image;
+//                    });
+//                }
+//            }];
+//        }
         return cell1;
     } else {
         static NSString *cellId = @"cell";

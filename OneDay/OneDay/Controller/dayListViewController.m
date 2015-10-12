@@ -132,7 +132,6 @@
     if (currentuser) {
         [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];//设定时间格式
         NSString *dateString = [dateFormat stringFromDate:object[@"StartTime"]]; //求出当天的时间字符串，当更改时间格式时，时间字符串也能随之改变
-        NSLog(@"!!!%@",activity[@"NickName"]);
         NSString *act = [NSString stringWithFormat:@"发布人:%@",activity[@"NickName"]];
         cell.calendarName.text =object[@"Schedulename"];
         cell.beginTime.text = dateString;

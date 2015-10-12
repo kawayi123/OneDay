@@ -35,7 +35,6 @@
         NSLog(@"%@", sn);
         [_rawArray addObject:sn];
     }
-    NSLog(@"_rawArray = %@", _rawArray);
     [_tagListView.tags removeAllObjects];
     [_tagListView.tags addObjectsFromArray:_rawArray];
     [self.tagListView setCompletionBlockWithSeleted:^(NSInteger index) {
@@ -44,7 +43,6 @@
         } else {
             [_targetArray addObject:[NSString stringWithFormat:@"%ld", (long)index]];
         }
-        NSLog(@"%@", _targetArray);
     }];
     _tagListView.canSeletedTags = YES;
     _tagListView.tagColor = [UIColor orangeColor];
@@ -58,19 +56,14 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"Publisher == %@", currentUser];
     NSLog(@"_dateSelected = %@", [_dateSelected description]);
     PFQuery *query = [PFQuery queryWithClassName:@"Schedule" predicate:predicate];
-    //PFQuery *query = [PFQuery queryWithClassName:@"Schedule"];
     [query whereKey:@"StartDate" equalTo:_dateSelected];
     [query selectKeys:@[@"Schedulename", @"StartTime"]];
-    //[query includeKey:@"Publisher"];
-    
     UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
         [aiv stopAnimating];
-        //[rc endRefreshing];
         if (!error) {
             _objectsForShow = returnedObjects;
             [self tagCloudView];
-            
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
@@ -151,17 +144,10 @@
     
     // Animation for the circleView
     dayView.circleView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.1, 0.1);
-    [UIView transitionWithView:dayView
-                      duration:.3
-                       options:0
-                    animations:^{
-                        dayView.circleView.transform = CGAffineTransformIdentity;
-                        [_calendarManager reload];
-                    } completion:nil];
-    
-    
-    // Load the previous or next page if touch a day from another month
-    
+    [UIView transitionWithView:dayView duration:.3 options:0 animations:^{
+     dayView.circleView.transform = CGAffineTransformIdentity;
+        [_calendarManager reload];
+    }completion:nil];
     if(![_calendarManager.dateHelper date:_calendarContentView.date isTheSameMonthThan:dayView.date]){
         if([_calendarContentView.date compare:dayView.date] == NSOrderedAscending){
             [_calendarContentView loadNextPageWithAnimation];
@@ -290,16 +276,6 @@
     [self.tagListView.tags removeObjectsInArray:self.tagListView.seletedTags];
     [self.tagListView.seletedTags removeAllObjects];
     [self.tagListView.collectionView reloadData];
-//    [self.tagListView setCompletionBlockWithSeleted:^(NSInteger index) {
-//        [self.tagListView.tags removeObjectsInArray:self.tagListView.seletedTags];
-//    }];
-//    for (int i = 0; i < _objectsForShow.count; i ++) {
-//        if ([_targetArray containsObject:[NSString stringWithFormat:@"%d", i]]) {
-//            PFObject *obj = [_objectsForShow objectAtIndex:i];
-//            [obj deleteInBackground];
-//            [_targetArray removeObject:[NSString stringWithFormat:@"%d", i]];
-//        }
-//    }
     for (NSString *index in _targetArray) {
         PFObject *obj = [_objectsForShow objectAtIndex:[index integerValue]];
         [obj deleteInBackground];
