@@ -44,15 +44,6 @@
     }
     return YES;
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)backAction:(UIBarButtonItem *)sender {
     
@@ -61,7 +52,6 @@
 - (IBAction)saveAction:(UIBarButtonItem *)sender {
   
     NSString *nickname = _nickName.text;
-    //NSString *username = _userName.text;
     NSString *peosign = _peoSignTF.text;
     NSString *email = _emailTF.text;
     NSString *phonenum = _phoneNum.text;
@@ -70,7 +60,6 @@
         return;
     }
     if ([nickname isEqualToString:@""] ||
-        //[peosign isEqualToString:@""]||
         [email isEqualToString:@""]|| [phonenum isEqualToString:@""]) {
         [Utilities popUpAlertViewWithMsg:@"请填写所有信息" andTitle:nil];
         return;
@@ -78,7 +67,6 @@
     //PFObject *item = [PFObject objectWithClassName:@"User"];
     PFUser *item = [PFUser currentUser];
     item[@"NickName"] = nickname;
-    //item[@"username"] = username;
     item[@"PeoSignature"] = peosign;
     item[@"email"] = email;
     item[@"PhoneNum"] = phonenum;

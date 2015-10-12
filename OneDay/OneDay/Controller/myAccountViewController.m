@@ -45,15 +45,6 @@
      }];
     _username.text=[NSString stringWithFormat:@"用户名：%@", currentUser[@"username"]];
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)changeemail:(UIButton *)sender forEvent:(UIEvent *)event {
     UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:@"请输入你的新的邮箱"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];

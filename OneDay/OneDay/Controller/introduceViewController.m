@@ -64,7 +64,6 @@
     [_button setTitle:@"进入" forState:UIControlStateNormal];
     //[_button setBackgroundColor:[UIColor orangeColor]];
     [_button setTintColor:[UIColor orangeColor]];
-    //[self performSelector:@selector(buttonAction) withObject:nil afterDelay:1];
     [[UIApplication sharedApplication].keyWindow addSubview:_button];
     [_button addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
 

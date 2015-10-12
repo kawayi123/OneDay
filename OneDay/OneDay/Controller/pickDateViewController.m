@@ -84,9 +84,9 @@
         NSDateFormatter *df = [[NSDateFormatter alloc] init];
         [df setDateFormat:@"yyyy年MM月dd日 HH:mm"];
         NSDate *remind =  [df dateFromString:_remindBtn.titleLabel.text];//获取提醒时间
-        NSString *s =  _schTime.titleLabel.text;
-        NSString *r =  _remindBtn.titleLabel.text;
-        NSLog(@"%@,%@",s,r);
+//        NSString *s =  _schTime.titleLabel.text;
+//        NSString *r =  _remindBtn.titleLabel.text;
+//        NSLog(@"%@,%@",s,r);
         NSString *place=_placeTF.text;//获取地点
         NSString *content=_contentTF.text;//获取日程内容
         if ([avtivityoften isEqualToString:@""] || [place isEqualToString:@""]|| [content isEqualToString:@""]) {

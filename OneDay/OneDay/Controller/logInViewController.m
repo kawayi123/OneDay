@@ -66,9 +66,6 @@
     else {
         _passwordTF.secureTextEntry = YES;
     }
-    
-
-
 }
 
 - (IBAction)backAction:(UIBarButtonItem *)sender {
@@ -137,13 +134,10 @@
     
     NSString *username = _usernameTF.text;
     NSString *password = _passwordTF.text;
-    //NSString *email;
-    
     if ([username isEqualToString:@""] || [password isEqualToString:@""]) {
         [Utilities popUpAlertViewWithMsg:@"请输入您的用户名或密码！" andTitle:nil];
         return;
     }
-    
     UIActivityIndicatorView *aiv = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     aiv.frame = self.view.bounds;
     [self.view addSubview:aiv];
@@ -153,7 +147,6 @@
         if (user) {
             [Utilities setUserDefaults:@"username" content:username];
             [Utilities setUserDefaults:@"password" content:password];
-            //[self popUpHomePage];
             [self dismissViewControllerAnimated:YES completion:nil];
         } else if (error.code == 101) {
             [Utilities popUpAlertViewWithMsg:@"用户名或密码错误" andTitle:nil];

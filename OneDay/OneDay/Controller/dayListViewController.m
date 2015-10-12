@@ -19,7 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self po];
     _objectsForShow = [NSMutableArray new];
     [self.segmented addTarget:self action:@selector(segmentAction) forControlEvents:UIControlEventValueChanged];
     [self uiConfiguration];
@@ -35,52 +34,27 @@
 - (void)segmentAction
 {
     NSInteger index = self.segmented.selectedSegmentIndex;
-    switch (index) {
-        case 0: {
-            [self requestDataForMe];
+    PFUser *curr=[PFUser currentUser];
+    if (curr) {
+        switch (index) {
+            case 0: {
+                [self requestDataForMe];
+            }
+                break;
+            case 1: {
+                [self requestDataForAnother];
+            }
+                break;
+            default:
+                break;
         }
-            break;
-        case 1: {
-            [self requestDataForAnother];
-        }
-            break;
-        default:
-            break;
+        [self.tableView reloadData];
+    }else{
+        [Utilities popUpAlertViewWithMsg:@"请先登录后在使用！" andTitle:nil];
     }
-    [self.tableView reloadData];
+    
 }
 - (void)requestDataForAnother{
-    NSLog(@"IN");
-//    PFUser *currentUser = [PFUser currentUser];
-//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"Publisher != %@", currentUser];
-//
-//    PFQuery *friends = [PFQuery queryWithClassName:@"friends"];
-//    [friends whereKey:@"owner" equalTo:currentUser];
-//    [friends whereKey:@"State" equalTo:@YES];
-//    [friends includeKey:@"friendUser"];
-//    [friends findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
-//        if (!error) {
-//            
-//            PFQuery *query = [PFQuery queryWithClassName:@"Schedule" predicate:predicate];
-//            [query selectKeys:@[@"Schedulename",@"StartTime",@"Publisher"]];
-//            [query whereKey:@"Publisher" equalTo:[friends includeKey:@"friendUser"]];
-//            [query includeKey:@"Publisher"];
-//            
-//            [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
-//                if (!error) {
-//                    _objectsForShow = returnedObjects;
-//                    NSLog(@"%@",_objectsForShow);
-//                    [_tableView reloadData];
-//                } else {
-//                    NSLog(@"Error: %@ %@", error, [error userInfo]);
-//                }
-//            }];
-//            
-//        } else {
-//            NSLog(@"Error: %@ %@", error, [error userInfo]);
-//        }
-//    }];
-    
     PFQuery *query = [PFQuery queryWithClassName:@"Schedule"];
     [query selectKeys:@[@"Schedulename",@"StartTime",@"Publisher"]];
     [query includeKey:@"Publisher"];
@@ -93,32 +67,9 @@
     
     //查询Schedule表中Publisher值与friends表中friendUser值相同的项目
     [query whereKey:@"Publisher" matchesKey:@"friendUser" inQuery:friends];
-    
-//    [friends findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
-//        if (!error) {
-//            for (PFObject *obj in returnedObjects) {
-//                [query whereKey:@"Publisher" equalTo:obj[@"friendUser"]];
-//                [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
-//                    if (!error) {
-//                        for (PFObject *plan in returnedObjects) {
-//                            [_objectsForShow addObject:plan];
-//                        }
-//                        NSLog(@"%@",_objectsForShow);
-//                        [_tableView reloadData];
-//                    } else {
-//                        NSLog(@"Error: %@ %@", error, [error userInfo]);
-//                    }
-//                }];
-//            }
-//        } else {
-//            NSLog(@"Error: %@ %@", error, [error userInfo]);
-//        }
-//    }];
-    
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
         if (!error) {
             _objectsForShow = [NSMutableArray arrayWithArray:returnedObjects];
-            NSLog(@"_objectsForShow = %@", _objectsForShow);
             [_tableView reloadData];
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -134,8 +85,6 @@
     [query selectKeys:@[@"Schedulename",@"StartTime",@"Publisher"]];
     [query includeKey:@"Publisher"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
-        //[aiv stopAnimating];
-        //[rc endRefreshing];
         if (!error) {
             _objectsForShow = returnedObjects;
             [_tableView reloadData];

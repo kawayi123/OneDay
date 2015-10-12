@@ -174,8 +174,6 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy年MM月dd日 HH:mm:ss"];
     _date =  [dateFormatter stringFromDate:_dateSelected];
-    //NSLog(@"_date = %@", _date);
-    
     [self requestDataForMe];
 }
 

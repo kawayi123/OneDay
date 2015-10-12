@@ -13,6 +13,6 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmented;
 
 - (IBAction)menuAction:(UIBarButtonItem *)sender;
-@property (strong, nonatomic) NSMutableArray *objectsForShow;
+@property (strong, nonatomic) NSArray *objectsForShow;
 @property (strong, nonatomic) PFObject *item;
 @end

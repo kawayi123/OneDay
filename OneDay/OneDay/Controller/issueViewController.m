@@ -224,15 +224,7 @@
         return cell;
     }
 }
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+
 - (IBAction)menuAction:(UIBarButtonItem *)sender {
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"leftSwitch" object:self];
@@ -274,8 +266,6 @@
 }
 -(void)initializeData//下拉刷新，刷新器＋初始数据（第一页数据）
 {
-    //    loadCount=1;//显示页码
-    //    perPage=3;//每页显示3页
     [self loadDataBegin];
     [_tableview reloadData];
 }
@@ -325,10 +315,5 @@
 }
 -(void)dealloc
 {
-//    #define FRelease(x) {[x removeFromSuperview]; x = nil;}
-//    _item=nil;
-//    _objectsForShow=nil;
-//    _aiv=nil;
-//    _searchBar=nil;
 }
 @end

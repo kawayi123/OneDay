@@ -52,15 +52,11 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Schedule" predicate:predicate];
     [query whereKey:@"StartDate" equalTo:_dateSelected ];
     [query selectKeys:@[@"Schedulename",@"StartTime",@"Event"]];
-//    [query includeKey:@"Publisher"];
-    
     UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
         [aiv stopAnimating];
-        //[rc endRefreshing];
         if (!error) {
             _objectsForShow = returnedObjects;
-            NSLog(@"-----%@",_objectsForShow);
             [_tableView reloadData];
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -233,16 +229,6 @@
         [_eventsByDate[key] addObject:randomDate];
     }
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)menuAction:(UIBarButtonItem *)sender {
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"leftSwitch" object:self];
@@ -256,7 +242,6 @@
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell1" forIndexPath:indexPath];
     NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];//实例化一个NSDateFormatter对象
     PFUser *currentuser=[PFUser currentUser];
-//    PFUser *activity = object[@"Publisher"];
     if (currentuser) {
         [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm"];//设定时间格式
         NSString *dateString = [dateFormat stringFromDate:object[@"StartTime"]]; //求出当天的时间字符串，当更改时间格式时，时间字符串也能随之改变
