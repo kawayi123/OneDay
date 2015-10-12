@@ -163,4 +163,8 @@
         [Utilities popUpAlertViewWithMsg:@"个人信息需要登陆后才能查看呦~" andTitle:@"贴心小提示"];
     }
 }
+-(void)dealloc
+{
+    
+}
 @end

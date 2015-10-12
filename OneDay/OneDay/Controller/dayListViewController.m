@@ -219,4 +219,8 @@
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"leftSwitch" object:self];
 }
+-(void)dealloc
+{
+    
+}
 @end

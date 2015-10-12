@@ -391,7 +391,6 @@
 				8BDD282E1BB234AA008BB393 /* Model */,
 				8BDD28771BB23575008BB393 /* View */,
 				8BDD284E1BB23575008BB393 /* Controller */,
-				8BDD28261BB234AA008BB393 /* Constans */,
 				8BDD28311BB234AA008BB393 /* Untlity */,
 				8B95AC5E1BAC233A001D54E2 /* Supporting Files */,
 			);
@@ -470,7 +469,8 @@
 			children = (
 				8BDD28271BB234AA008BB393 /* Constants.h */,
 			);
-			path = Constans;
+			name = Constans;
+			path = ../Constans;
 			sourceTree = "<group>";
 		};
 		8BDD282E1BB234AA008BB393 /* Model */ = {
@@ -499,6 +499,7 @@
 		8BDD284E1BB23575008BB393 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8BDD28261BB234AA008BB393 /* Constans */,
 				8BDD28AE1BB23977008BB393 /* logIn */,
 				8BDD28B11BB23A64008BB393 /* cellAndNavigation */,
 				8BDD28B01BB23A18008BB393 /* tabView */,

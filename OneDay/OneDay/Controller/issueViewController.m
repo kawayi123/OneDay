@@ -72,22 +72,27 @@
 }
 -(void)req:(NSString *)searchText
 {
-    NSLog(@"IN");
     PFUser *currentUser=[PFUser currentUser];
-    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
-    [query whereKey:@"PhoneNum" containsString:searchText];
-    [query whereKey:@"PhoneNum" notEqualTo:currentUser[@"PhoneNum"]];
-    [query selectKeys:@[@"PhoneNum"]];
-    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
-        [aiv stopAnimating];
-        if (!error) {
-            filterData = returnedObjects;
-            [searchDisplayController.searchResultsTableView reloadData];
-        } else {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
+    if (currentUser) {
+        PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+        [query whereKey:@"PhoneNum" containsString:searchText];
+        [query whereKey:@"PhoneNum" notEqualTo:currentUser[@"PhoneNum"]];
+        [query selectKeys:@[@"PhoneNum"]];
+        UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *returnedObjects, NSError *error) {
+            [aiv stopAnimating];
+            if (!error) {
+                filterData = returnedObjects;
+                [searchDisplayController.searchResultsTableView reloadData];
+            } else {
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
+
+    }else
+    {
+        [Utilities popUpAlertViewWithMsg:@"请先登录后在使用！" andTitle:nil];
+    }
     
 }
 
@@ -151,7 +156,6 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
-        
         PFObject *item = [PFObject objectWithClassName:@"friends"];
         PFUser *currentUser = [PFUser currentUser];
         item[@"owner"] = currentUser;
@@ -318,5 +322,13 @@
 -(void)loadDataEnd
 {
     self.tableview.tableFooterView = [[UIView alloc] init];
+}
+-(void)dealloc
+{
+//    #define FRelease(x) {[x removeFromSuperview]; x = nil;}
+//    _item=nil;
+//    _objectsForShow=nil;
+//    _aiv=nil;
+//    _searchBar=nil;
 }
 @end
