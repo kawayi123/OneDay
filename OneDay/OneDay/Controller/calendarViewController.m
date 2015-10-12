@@ -7,17 +7,13 @@
 //
 
 #import "calendarViewController.h"
-
 @interface calendarViewController ()
 {
     NSMutableDictionary *_eventsByDate;
     NSDate *_dateSelected;
 }
-
 @end
-
 @implementation calendarViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     _rawArray = nil;
@@ -32,7 +28,6 @@
     [_rawArray removeAllObjects];
     for (PFObject *obj in _objectsForShow) {
         NSString *sn = obj[@"Schedulename"];
-        NSLog(@"%@", sn);
         [_rawArray addObject:sn];
     }
     [_tagListView.tags removeAllObjects];
@@ -52,9 +47,7 @@
 - (void)requestDataForMe{
     
     PFUser *currentUser = [PFUser currentUser];
-    NSLog(@"currentUser = %@", currentUser);
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"Publisher == %@", currentUser];
-    NSLog(@"_dateSelected = %@", [_dateSelected description]);
     PFQuery *query = [PFQuery queryWithClassName:@"Schedule" predicate:predicate];
     [query whereKey:@"StartDate" equalTo:_dateSelected];
     [query selectKeys:@[@"Schedulename", @"StartTime"]];

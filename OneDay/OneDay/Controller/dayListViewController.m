@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _objectsForShow=nil;
     _objectsForShow = [NSMutableArray new];
     [self.segmented addTarget:self action:@selector(segmentAction) forControlEvents:UIControlEventValueChanged];
     [self uiConfiguration];

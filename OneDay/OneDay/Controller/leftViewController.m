@@ -12,13 +12,12 @@
 #import "dayListViewController.h"
 @interface leftViewController ()
 - (IBAction)loginAction:(UIButton *)sender forEvent:(UIEvent *)event;
-
 @end
-
 @implementation leftViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _objectsForShow=nil;
+    _objectsForShow=[NSArray new];
     _btn.hidden = NO;
     _perBtn.hidden = YES;
 }
@@ -58,31 +57,25 @@
         [aiv stopAnimating];
         if (!error) {
             _objectsForShow = returnedObjects;
-            NSLog(@"_objectsForShow = %@",_objectsForShow);
             [_tableview reloadData];
         }else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return _objectsForShow.count;
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     PFObject *object = [_objectsForShow objectAtIndex:indexPath.row];
     PFObject *user = object[@"owner"];
-    NSLog(@"user = %@", user);
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.delegate=self;
     cell.indexPath=indexPath;
     PFUser *currentuser=[PFUser currentUser];
     if (currentuser) {
-        NSLog(@"%@",user[@"PhoneNum"]);
         cell.textLabel.text = [NSString stringWithFormat:@"%@", user[@"PhoneNum"]];
     }
     return cell;
@@ -130,7 +123,6 @@
     }];
 }
 - (void)pToLogin{
-    
     _nickName.text = @"请登录";
     _IndividualitySignature.text = @"";
     _headImg.image = [UIImage imageNamed:@"dragon"];
@@ -140,7 +132,6 @@
     
     PFUser *currentUser=[PFUser currentUser];
     if (currentUser) {
-        
         personalDataViewController *person = [self.storyboard instantiateViewControllerWithIdentifier:@"person"];
         //初始化导航控制器
         UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:person];
